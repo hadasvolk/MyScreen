@@ -29,7 +29,7 @@ from returnThread import ThreadWithReturnValue
 label = cfg.label
 
 ag_logo = '{}/{}'.format(curdir, cfg.ag_logo)
-myscreen_png = '{}/{}'.format(curdir, cfg.myscreen_png)
+myscreen_png = '{}/{}'.format(curdir, cfg.myscreen_png)     
 
 main_dir = "{}_RESULTS".format(cfg.myscreen_ver)
 
