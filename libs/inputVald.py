@@ -6,7 +6,8 @@ import pandas as pd
 import numpy as np
 import os
 
-import checkboxes
+import combobox
+import cfg
 
 
 """
@@ -16,6 +17,7 @@ Function to handle user input files
 bam_d = "Click to choose run directory \n(where bam, bai files)"
 samplesheet_d = "Click to import SampleSheet.csv"
 extraInfo_d = "Do you wish to add extra information? \nExcel file"
+panel_d = 'Choose panel for ALL samples?'
 
 #ERROR pop-up msg
 def popupmsg(root, msg):
@@ -32,6 +34,7 @@ def validate_bams(root):
     #Help func to destroy GUI
     def Destroying():
         button_bam.destroy()
+        click_label.destroy()
         try:
             warning.destroy()
         except:
@@ -39,9 +42,11 @@ def validate_bams(root):
 
     while True:
         #GUI Message
+        click_label = Label(root, text=bam_d,  font=('calibre', 12, 'bold'))
+        click_label.place(relx=.5, rely=.45, anchor="c")
         var_bam = IntVar()
-        button_bam = Button(root, text=bam_d, command=lambda: var_bam.set(1))
-        button_bam.place(relx=.5, rely=.6, anchor="c")
+        button_bam = Button(root, text="Click", command=lambda: var_bam.set(1))
+        button_bam.place(relx=.5, rely=.7, anchor="c")
         button_bam.wait_variable(var_bam)
         BAM_PATH = filedialog.askdirectory(title = "Please choose the results library")
         if len(BAM_PATH) == 0:
@@ -74,6 +79,7 @@ def validate_bams(root):
         Destroying()
         return BAM_PATH, SAMPLE_DICT
 
+
 def validate_sampleSheet(root):
     global BAM_PATH
     global RUN_NAME
@@ -104,6 +110,7 @@ def validate_sampleSheet(root):
         Destroying()
         return SAMPLE_SHEET_PATH, RUN_NAME
 
+
 def validate_extraInfo(root):
     global EXTRA_INFO_PATH
     global BAM_PATH
@@ -121,8 +128,8 @@ def validate_extraInfo(root):
 
     while True:
         #GUI Message
-        extraInfo_label = Label(root, text=extraInfo_d, relief=RAISED)
-        extraInfo_label.place(relx=.5, rely=.6, anchor="c")
+        extraInfo_label = Label(root, text=extraInfo_d,  font=('calibre', 12, 'bold'))
+        extraInfo_label.place(relx=.5, rely=.45, anchor="c")
         var_extraInfo = IntVar(value=0)
         button_extraInfo_yes = Button(root, text="Yes",
                                       command=lambda: var_extraInfo.set(1))
@@ -158,8 +165,10 @@ def validate_extraInfo(root):
             warning.place(relx=.5, rely=.35, anchor="c")
             Destroying()
             continue
-
-        if not (set(list(SAMPLE_DICT.values())) == set(extraInfo.Sample.tolist())):
+        samples = []
+        for i in SAMPLE_DICT.values():
+            samples.append(i[0])
+        if not (set(samples) == set(extraInfo.Sample.tolist())):
             msg = "Sample list error"
             Destroying()
             warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
@@ -169,7 +178,9 @@ def validate_extraInfo(root):
         Destroying()
         return EXTRA_INFO_PATH
 
-def getRunName(master, illegal = False):
+
+def getRunName(master, bam_path, illegal = False):
+
     def Destroying():
         run.destroy()
         e.destroy()
@@ -182,11 +193,11 @@ def getRunName(master, illegal = False):
     var = IntVar()
     illegal_label = Label(master, text = 'Illegal run name, e.g: 190504_MNXXXXX_YYYY_ZZZZZZZ', font=('calibre', 12, 'bold'))
     if illegal:
-        illegal_label.place(relx=.5, rely=.45, anchor="c")
+        illegal_label.place(relx=.5, rely=.35, anchor="c")
     run = Label(master, text="Insert the name of the run library, including the date", font=('calibre', 12, 'bold'))
-    run.place(relx=.5, rely=.5, anchor="c")
-    v = StringVar(master, value='190504_MNXXXXX_YYYY_ZZZZZZZ')
-    e = Entry(master, textvariable=v)
+    run.place(relx=.5, rely=.45, anchor="c")
+    v = StringVar(master, value=bam_path.split('/')[-1])
+    e = Entry(master, textvariable=v, width=50)
     e.place(relx=.5, rely=.55, anchor="c")
     sub_btn = Button(master,text = 'Submit', command=lambda: var.set(1))
     sub_btn.place(relx=.5, rely=.6, anchor="c")
@@ -194,7 +205,7 @@ def getRunName(master, illegal = False):
     s = e.get()
     Destroying()
     if s == None or "_M" not in s:
-        return getRunName(master, illegal = True)
+        return getRunName(master, bam_path, illegal = True)
     else:
         return s
     return s
@@ -204,11 +215,12 @@ def build_dir_tree(root, ver):
     global BAM_PATH
     folder_list_up = []
     folder_list = ["{}".format(ver),
-                   "{}/Genotyping".format(ver),
-                   "{}/Genotyping/Logs".format(ver),
-                   "{}/Genotyping/Logs/PiscesLogs".format(ver),
-                   "{}/CNV".format(ver),
-                   "{}/CNV/Logs".format(ver)]
+                   "{}/Info".format(ver),
+                   "{}/Info/Genotyping".format(ver),
+                   "{}/Info/Genotyping/Logs".format(ver),
+                   "{}/Info/Genotyping/Logs/PiscesLogs".format(ver),
+                   "{}/Info/CNV".format(ver),
+                   "{}/Info/CNV/Logs".format(ver)]
     os.chdir(BAM_PATH)
     for folder in folder_list:
         folder_list_up.append("/".join([BAM_PATH, folder]))
@@ -219,35 +231,31 @@ def build_dir_tree(root, ver):
     return folder_list_up
 
 
-def panel(root, sample_dict):
-    samples = list(sample_dict.values())
-    var = IntVar()
+def panel(root, sample_dict, ag_logo):
+    def Destroying():
+        button_0.destroy()
+        button_1.destroy()
+        button_custom.destroy()
+        label.destroy()
 
-    def extended_fnc():
-        var.set(1)
-        q.destroy()
-        extended.destroy()
-        not_extended.destroy()
-        for s in sample_dict:
-            sample_dict[s] = [s, 'Extended']
+    while True:
+        #GUI Message
+        label = Label(root, text=panel_d, font=('calibre', 12, 'bold'))
+        label.place(relx=.5, rely=.45, anchor="c")
+        var = IntVar(value=0)
+        button_0 = Button(root, text=cfg.Panels[0], command=lambda: var.set(0))
+        button_0.place(relx=.35, rely=.7, anchor="c")
+        button_1 = Button(root, text=cfg.Panels[1], command=lambda: var.set(1))
+        button_1.place(relx=.5, rely=.7, anchor="c")
+        button_custom = Button(root, text="Custom", command=lambda: var.set(2))
+        button_custom.place(relx=.65, rely=.7, anchor="c")
+        button_custom.wait_variable(var)
 
-    def not_extended_fnc():
-        var.set(1)
-        q.destroy()
-        extended.destroy()
-        not_extended.destroy()
+        if var.get() == 2:
+            combobox.combos(sample_dict, cfg.Panels, ag_logo)
+        else:
+            for k,v in sample_dict.items():
+                sample_dict[k] = [v, cfg.Panels[var.get()]]
 
-
-    q = Label(root, text = 'Are all samples to be analyzed as Extended panel?', font=('calibre', 12, 'bold'))
-    q.place(relx=.5, rely=.45, anchor="c")
-
-    extended = Button(root, text='Yes', command=extended_fnc)
-    extended.place(relx=.45, rely=.55, anchor="c")
-    not_extended = Button(root, text='No', command=not_extended_fnc)
-    not_extended.place(relx=.55, rely=.55, anchor="c")
-    extended.wait_variable(var)
-    not_extended.wait_variable(var)
-    # all_panel = checkboxes.Checkbar(root, ['Bedouin', 'Extended'])
-    # all_panel.place(relx=.5, rely=.5, anchor="c")
-    # sumbit = Button(root, text='Sumbit', command=allstates)
-    # submit.place(relx=.45, rely=.55, anchor="c")
+        Destroying()
+        return sample_dict
