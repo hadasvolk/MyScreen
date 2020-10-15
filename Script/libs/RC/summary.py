@@ -108,7 +108,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
 
     try:
         sample_summary = RCv2.MAIN_RCv2wrapper(PATHS["DIR_TREE"][0], wordVer,
-                PATHS["BAM_PATH"], cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
+                PATHS["BAM_PATH"], PATHS["Hospital"], cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
                 PATHS["EXTRA_INFO_PATH"])
     except Exception as e:
         main_logger.error("Failed to exceute MAIN_RCv2wrapper\n{}".format(e))

@@ -295,6 +295,8 @@ def parserMainFunction(inputFile, outputFile, bamFilesDir, vcfFile, input_file_n
     Output: None (the output is created in parserMainFunction)
 '''
 def MAIN_ParserWrapper(input_file, output_path, myscreen_version, logger_name, bam_files_path=''):
+    if 'phased' in input_file:
+        return
     genome_input_file_name = re.findall('[^\\\/]+\.genome\.vcf', input_file)
     input_file_name = re.sub('\.genome\.vcf', '', genome_input_file_name[len(genome_input_file_name)-1])
     input_file_dir = re.sub('[^\\\/]+\.genome\.vcf', '', input_file)

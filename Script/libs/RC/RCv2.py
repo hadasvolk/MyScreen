@@ -81,6 +81,13 @@ def formatSampleSummary(summary_table, decon_positive, out_dir, bam_path, MyScre
     *NO OUTPUT - edits in place*
 """
 def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen_version, Results_Folder, logger_name):
+    DB_header = ['Sample', 'Analysis Version', 'Date of Run', 'Disease', 'Gene',
+                'AGID', 'Mutation', 'Classification', 'Clalit Disease Makat',
+                'Clalit Mutation Makat', 'Genotype', 'GQX', 'Alt Variant Freq',
+                'Read Depth', 'Alt Read Depth', 'Allelic Depths', 'Correlation',
+                'N.comp', 'Custom.first', 'Custom.last', 'BF', 'Reads.expected',
+                'Reads.observed', 'Reads.ratio', 'Sample Source', 'Sex', 'Mother Ethnicity',
+                'Father Ethnicity', 'Partner Sample', 'Gender', 'MOH', 'Ethnicity']
 
     global rc_logger
     rc_logger = logging.getLogger(logger_name)
@@ -92,8 +99,22 @@ def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen
         raw_stat_file = pd.read_excel(cfg.AG_DB_excel) # Upload statistics file with past runs (or empty statistic file if first analysis).
     except:
         updateDB = False
-        print ("\tWARNING: DB_statistics file not in appendix. Will not update file.")
-        rc_logger.info("\tWARNING: DB_statistics file not in appendix. Will not update file.")
+        print ("\tWARNING: Unable to open: {}".format(cfg.AG_DB_excel))
+        rc_logger.info("\tWARNING: Unable to open: {}".format(cfg.AG_DB_excel))
+
+    if not updateDB:
+        try:
+            os.remove(cfg.AG_DB_excel)
+        except OSError:
+            pass
+        df = pd.DataFrame(columns=DB_header)
+        writer = pd.ExcelWriter(cfg.AG_DB_excel)
+        df.to_excel(writer, 'Sheet1')
+        writer.save()
+        rc_logger.info("Created {}".format(cfg.AG_DB_excel))
+        raw_stat_file = df
+        updateDB = True
+
     if updateDB:
         rows_to_remove = []
         for index, row in raw_stat_file.iterrows():
@@ -123,7 +144,7 @@ def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen
         result.to_excel(writer, 'Sheet1')
         writer.save()
         # Create internal full run statistics excel file (for future analysis):
-        writer = pd.ExcelWriter('C:\Gamidor\Appendix\db_statistics-v2.xlsx')
+        writer = pd.ExcelWriter(cfg.AG_DB_excel)
         result.to_excel(writer, 'Sheet1')
         writer.save()
 
@@ -138,12 +159,12 @@ def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen
 """
     Wrapper for all functions. Allows to call externally and not run MAIN.
 """
-def MAIN_RCv2wrapper(output_dir, office_version, bam_dir, MyScreen_version, logger_name, run_name, geno_file, cnv_file, extraInfo_file):
+def MAIN_RCv2wrapper(output_dir, office_version, bam_dir, hospital, MyScreen_version, logger_name, run_name, geno_file, cnv_file, extraInfo_file):
 
     # Results_Folder = 'MyScreen_Analysis_' + MyScreen_version + '_RESULTS' # Folder for output.
     Results_Folder = output_dir
     sample_summary, decon_positive, run_name, output_folder = createResultSummaries(output_dir, office_version, MyScreen_version, logger_name, Results_Folder,
-           run_name, geno_file, cnv_file, extraInfo_file)
+           hospital, run_name, geno_file, cnv_file, extraInfo_file)
 
     sample_table = formatSampleSummary(sample_summary, decon_positive, output_dir, bam_dir, MyScreen_version, Results_Folder, logger_name)
 

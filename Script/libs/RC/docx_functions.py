@@ -10,11 +10,6 @@ from getInfo_functions import get_INFO_posRes, get_INFO_decon
 
 import cfg
 
-template_sick = cfg.template_sick
-template_norm = cfg.template_norm
-template_carrier = cfg.template_carrier
-template_carrier_and_sick = cfg.template_carrier_and_sick
-
 genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Problem', 'HOM'] # For createReports().
 cnvs = ['CNV', 'CNV Big Del Boundaries Different as Reported', 'CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 cnvs_problem = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
@@ -93,8 +88,13 @@ def update_Table(row_cells, status, mutation, gene, CA, problem=False):
         8) MyScreen_version - the program version and version date.
     *NO OUTPUT - creates the reports*
 """
-def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name):
+def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital):
 
+    template_sick = cfg.template_sick.format(hospital)
+    template_norm = cfg.template_norm.format(hospital)
+    template_carrier = cfg.template_carrier.format(hospital)
+    template_carrier_and_sick = cfg.template_carrier_and_sick.format(hospital)
+    
     ### ------------- Pre-processing ------------- ###
     now = datetime.datetime.now()
     date = now.strftime("%d-%m-%Y") # Today's date.

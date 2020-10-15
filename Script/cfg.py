@@ -10,10 +10,10 @@ n_workrs = 3
 MyScreen_Ver = "MyScreen_Analysis_v2.0.c"
 Label = "MyScreen Analysis v2.0.c - Gamidor AppliedGenomics"
 Main_Dir = "{}_RESULTS".format(MyScreen_Ver)
-Hospital = "Zer"
+Hospitals = '{}/docs/word_templates'.format(curdir)
 MutPDF = "Ver-{}[October2020]".format(MyScreen_Ver.split('v')[-1]) #Mutation PDF update date
 AG_DB = "C:/Gamidor/Appendix/AG_DB"
-AG_DB_excel = 'C:\Gamidor\Appendix\db_statistics-v2.xlsx'
+AG_DB_excel = 'C:/Gamidor/Appendix/db_statistics-v2.xlsx'
 
 # נספחים ופרוטוקולים
 vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive.xlsx'.format(curdir)
@@ -91,7 +91,8 @@ full_results = ['Geno Full', 'Geno Positive', 'Geno WT Poly', 'Geno Gender',
                 'Geno NonReported', 'CNV Calls', 'CNV Fail Samples',
                 'CNV Fail Exons']
 
-template_sick = '{}/docs/word_templates/{}/template_sick.docx'.format(curdir, Hospital)
-template_norm = '{}/docs/word_templates/{}/template_norm.docx'.format(curdir, Hospital)
-template_carrier = '{}/docs/word_templates/{}/template_carrier.docx'.format(curdir, Hospital)
-template_carrier_and_sick = '{}/docs/word_templates/{}/template_carrier_and_sick.docx'.format(curdir, Hospital)
+template_dict = '{}/docs/word_templates/'.format(curdir)
+template_sick = template_dict + '{}/template_sick.docx'
+template_norm = template_dict + '{}/template_norm.docx'
+template_carrier = template_dict + '{}/template_carrier.docx'
+template_carrier_and_sick = template_dict + '{}/template_carrier_and_sick.docx'

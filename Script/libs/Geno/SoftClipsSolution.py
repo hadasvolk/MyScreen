@@ -169,13 +169,13 @@ def AnalysisWithSoftClippedReads(bam_files_dir, df, sampleName):
     sampleData[2] = str(newData[0] - newData[1]) + ',' + str(newData[1])
     sampleData[3] = str(newData[0])
     sampleData[4] = str(ratio)
-    if newData[1] != 0:
+    if newData[1] != 0 and (':'.join(sampleData)) != df.iloc[9]:
         soft_clips_logger.info("Editing Genotyping raw data according to the new calculated ratio")
         if sampleData[1] == '0':
             df.iloc[4] = 'NNN,' + df.iloc[4]
         df.iloc[7] = 'DP=' + str(newData[0])
         df.iloc[9] = ':'.join(sampleData)
-        # df.iloc[5] = -1 # indicator to mark "-With soft clipped reads" or not
+        df.iloc[5] = -1 # indicator to mark "-With soft clipped reads" or not
     else:
         getError(mutation, "ratio calculation", "ratio calculated as 0 although positive reads were found")  # throw exception
 
@@ -215,7 +215,7 @@ def Parser_AnalysisWithSoftClips(input_file, bam_files_dir, df, mutation, sample
 def MAIN_AnalysisWithSoftClipsWrapper(input_path, myscreen_version, logger_name, bam_files_path=''):
     if bam_files_path == '':
         bam_files_path = re.sub(r'{}_RESULTS.+'.format(myscreen_version), '', input_path)
-    mutations_list = ['chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T', 'chr1-235564867-TGGGAGCCACGAA-T', 'chr10-13699443-C-CCTGGGACTCCAGG']
+    mutations_list = ['chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T', 'chr1-235564867-TGGGAGCCACGAA-T', 'chr10-13699443-C-CCTGGGACTCCAGG', 'chr7-143036379-ATACCCTGCGGAGGC-A']
 
     # check for legal paths
     logger_path = os.path.join(input_path, 'Logs' + os.sep)

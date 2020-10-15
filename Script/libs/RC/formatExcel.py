@@ -31,20 +31,19 @@ orange = 'ffa500'
 cyan = '00FFFF'
 grey = 'E0E0E0'
 magneta = 'C5D9F1'
-green_george = 'C4D79B'
+purple_softclipped = 'E4C7F0'
 green = 'D2F9C7'
 
 thin = Side(border_style="thin", color="000000")
 thick = Side(border_style="thick", color="000000")
 double = Side(border_style="double", color="000000")
 
-georgian = ['CARRIER-Georgian', 'CARRIER-Georgian - With soft-clipped reads']
+georgian = ['CARRIER-Georgian', 'CARRIER-Georgian - With soft-clipped reads',
+            'CARRIER-Georgian-Problem', 'CARRIER-Georgian-Problem - With soft-clipped reads']
 non_reported_wt = 'WT - Low GQX - NON_REPORTED variant in the same loc'
-problems = ['WT', 'WT-Problem', 'Problem', 'NO_CALL',
-            'CARRIER-Georgian-Problem', 'CARRIER-Problem',
+problems = ['WT', 'WT-Problem', 'Problem', 'NO_CALL', 'NO_CALL-Problem', 'CARRIER-Problem',
             'WT - With soft-clipped reads', 'WT-Problem - With soft-clipped reads',
             'Problem - With soft-clipped reads', 'NO_CALL - With soft-clipped reads',
-            'CARRIER-Georgian-Problem - With soft-clipped reads',
             'CARRIER-Problem - With soft-clipped reads']
 problems_cnv = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported']
 warnings = ['Big Del Boundaries Different as Reported',
@@ -225,13 +224,22 @@ def excel_formatter(df, write_path, Analysis_Version):
         if cells[29].row != 5:  # don't color the header
             cells[29].font = Font(u='single', color=colors.BLUE)  # add blue color to the link
 
-        if any(x in clas.value for x in problems):
-            for each_cell in cells:
-                fill(each_cell, yellow)
-        elif clas.value in warnings:
-            fill(clas, orange)
+        if ' - With soft-clipped reads' in clas.value:
+            fill(clas, purple_softclipped)
+
+        if clas.value in problems:
+            fill(clas, yellow)
         elif clas.value in problems_cnv:
             fill(clas, yellow)
+            try:
+                if int(cells[20].value) < 15:
+                    fill(cells[20], yellow)
+                else:
+                    fill(cells[23], yellow)
+            except:
+                pass
+        elif clas.value in warnings:
+            fill(clas, orange)
         elif clas.value in georgian:
             fill(clas, magneta)
         elif clas.value == non_reported_wt:
@@ -239,19 +247,16 @@ def excel_formatter(df, write_path, Analysis_Version):
             continue
 
         if geno.value == 'hom':
-            fill(geno, orange)
+            fill(geno, yellow)
 
         try:
             if int(gqx.value) < 15:
                 fill(gqx, yellow)
 
             if float(altVar.value) < 30 or float(altVar.value) > 70:
-                fill(geno, yellow)
+                fill(altVar, yellow)
         except:
             pass
-
-        if ' - With soft-clipped reads' in clas.value:
-            fill(clas, orange)
 
     ws.sheet_view.zoomScale = 85
     wb.save(out_file)

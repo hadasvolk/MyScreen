@@ -19,6 +19,7 @@ bam_d = "Click to choose run directory \n(where bam, bai files)"
 samplesheet_d = "Click to import SampleSheet.csv"
 extraInfo_d = "Do you wish to add extra information? \nExcel file"
 panel_d = 'Choose panel for ALL samples?'
+hospital_d = "Do you wish to output PDF patient reports?"
 
 #ERROR pop-up msg
 def popupmsg(root, msg):
@@ -210,6 +211,65 @@ def getRunName(master, bam_path, illegal = False):
     else:
         return s
     return s
+
+
+def getHospital(root):
+    hospitals = [d for d in os.listdir(cfg.Hospitals)]
+    buttons = [*range(len(hospitals))]
+    var_b = IntVar()
+    global n
+    n = None
+    #Help func to destroy GUI
+    def Destroying():
+        button_no.destroy()
+        button_yes.destroy()
+        label.destroy()
+        try:
+            warning.destory()
+        except:
+            pass
+
+    def func(name):
+        global n
+        n = name
+        var_b.set(1)
+        label.destroy()
+        for h in hospitals:
+            for idx, h in enumerate(hospitals):
+                buttons[idx].destroy()
+
+    while True:
+        #GUI Message
+        label = Label(root, text=hospital_d,  font=('calibre', 12, 'bold'))
+        label.place(relx=.5, rely=.45, anchor="c")
+
+        var = IntVar(value=0)
+        button_yes = Button(root, text="Yes", command=lambda: var.set(1))
+        button_yes.place(relx=.45, rely=.7, anchor="c")
+        button_no = Button(root, text="No", command=lambda: var.set(0))
+        button_no.place(relx=.55, rely=.7, anchor="c")
+        button_no.wait_variable(var)
+
+        if var.get():
+            i = 1
+            j = 0
+            Destroying()
+            label = Label(root, text="Choose hospital name",  font=('calibre', 12, 'bold'))
+            label.place(relx=.5, rely=.4, anchor="c")
+            for idx, h in enumerate(hospitals):
+                buttons[idx] = Button(root, text=h, command=lambda x=h: func(x))
+                if i % 4 != 0:
+                    buttons[idx].place(relx=(0.1 + i/5), rely=(0.5 + j/10), anchor="c")
+                    i+=1
+                else:
+                    i = 1
+                    j+=1
+                    buttons[idx].place(relx=(0.1 + i/5), rely=(0.5 + j/10), anchor="c")
+            buttons[0].wait_variable(var_b)
+            return n
+        else:
+            Destroying()
+            return False
 
 
 def build_dir_tree(root, ver):

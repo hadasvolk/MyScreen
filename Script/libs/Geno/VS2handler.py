@@ -180,7 +180,7 @@ class Engine():
             chr = row['CHROM']
 
             # small-medium indel cases
-            indels = ['AG2408', 'AG2508', 'AG2846']
+            indels = ['AG2408', 'AG2508', 'AG2846', 'AG5105']
             if vcf.loc[index, 'AGID'] in indels and vcf.loc[index,'QUAL'] == "-1":
                 vcf.loc[index, 'SoftClipped Reads'] = " - With soft-clipped reads"
 
@@ -302,7 +302,7 @@ def VS2parser(input_path, main_out, extra_info, logger_name):
     vs2_logger.info("Pickled compressed full Norm genotyping")
 
     vcf_positive = reorder(vcf_positive)
-    # vcf_positive.to_csv('{}positiveResults.tsv'.format(input_path) , sep='\t',
+    # vcf_positive.to_csv('{}/positiveResults.tsv'.format(extra_info) , sep='\t',
     #                     encoding='utf-8', index=False)
 
     vcf_bed = reorder(vcf_bed)

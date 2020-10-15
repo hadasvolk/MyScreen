@@ -118,6 +118,9 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     PATHS["RUN_NAME"] = inputVald.getRunName(root, PATHS["BAM_PATH"])
     main_logger.info("Run Name: {}".format(PATHS["RUN_NAME"]))
 
+    PATHS["Hospital"] = inputVald.getHospital(root)
+    main_logger.info("Hospital: {}".format(PATHS["Hospital"]))
+
     widget_list = all_children(root)
     for item in widget_list:
         item.pack_forget()

@@ -122,7 +122,7 @@ def getResults(output, geno_file, cnv_file, extraInfo_file):
         extraInfo_filepath = "/".join([output, extraInfo_file])
     if extraInfo_filepath != '': # Read only if extraInfo file was given. otherwise skip.
         try:
-            extraInfo = pd.read_excel(extraInfo_filepath, sheet_name=0, converters={0: lambda x: str(x), 1: lambda x: str(x), 7: lambda x: str(x), 10: lambda x: str(x)})
+            extraInfo = pd.read_excel(extraInfo_file, sheet_name=0, converters={0: lambda x: str(x), 1: lambda x: str(x), 7: lambda x: str(x), 10: lambda x: str(x)})
         except Exception as e:
             print("Unable to read extraInfo file")
             logging.error("ERROR: Unable to read extraInfo file\n{}".format(e))
@@ -253,7 +253,7 @@ def update_samplesummary(sample_summary, sample, run_name, sampleStatus, posResF
         2) cnv - pd dataframe of CNV results (DECoN_results.tsv).
         3) run_name - name of run after CheckRunName() function.
 """
-def createResultSummaries(output, office_version, MyScreen_version, logger_name, Results_Folder, run_name = None, geno_file = None,
+def createResultSummaries(output, office_version, MyScreen_version, logger_name, Results_Folder, hospital, run_name = None, geno_file = None,
                   cnv_file = None, extraInfo_file = None):
     office = bool(int(office_version) < 2016)
     run_name = CheckRunName(run_name)
@@ -387,18 +387,19 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
     print("Results summarization successful.")
 
     ### REPORT CREATOR ###
-    print("Creating Microsoft word reports...")
-    rc_logger.info("Creating docx reports...")
-    for cur_sample in sorted(sampleSet): # Iterate over every sample.
-        rc_logger.info("\tIn sample " + cur_sample + "...")
-        try:
-            createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name)
-        except Exception as e:
-            print("Error when trying to create report for sample " + cur_sample + ".")
-            rc_logger.error("ERROR: when running createReports() function.\n{}".format(e))
-            sys.exit(2)
-        rc_logger.info("\tSample " + cur_sample + " done.")
-    rc_logger.info("Finished Microsoft word reports.")
+    if hospital != False:
+        print("Creating Microsoft word reports...")
+        rc_logger.info("Creating docx reports...")
+        for cur_sample in sorted(sampleSet): # Iterate over every sample.
+            rc_logger.info("\tIn sample " + cur_sample + "...")
+            try:
+                createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
+            except Exception as e:
+                print("Error when trying to create report for sample " + cur_sample + ".")
+                rc_logger.error("ERROR: when running createReports() function.\n{}".format(e))
+                sys.exit(2)
+            rc_logger.info("\tSample " + cur_sample + " done.")
+        rc_logger.info("Finished Microsoft word reports.")
     rc_logger.info("Continuing to sample summary excel creation, formatExcel.py and DB_statistics file creation.")
     rc_logger.info("---------------------------")
     print("Finished Microsoft word reports.")
