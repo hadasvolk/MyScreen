@@ -8,4 +8,4 @@ MyScreen - NGS Based Carriers Screening
 4. Install all relevent python packages from the requirements text file:
 *pip install -U -r requirements.txt*
 
-### MyScreen.exe can we moved to desktop directory if wanted
+#### MyScreen.exe can be moved to desktop directory if wanted
