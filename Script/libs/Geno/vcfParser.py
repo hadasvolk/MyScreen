@@ -8,9 +8,9 @@
 """
 import warnings
 import pandas as pd
-from pandas.core.common import SettingWithCopyWarning
-warnings.simplefilter(action='ignore', category=FutureWarning)
-warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
+#from pandas.core.common import SettingWithCopyWarning
+#warnings.simplefilter(action='ignore', category=FutureWarning)
+#warnings.simplefilter(action="ignore", category=SettingWithCopyWarning)
 import csv
 import re
 import getopt
@@ -24,9 +24,10 @@ import logging
 
 import cfg
 
-pd.set_option('display.max_colwidth', -1)
+pd.set_option('display.max_colwidth', None)
 pd.set_option('display.max_columns', None)
 pd.set_option('display.width', None)
+pd.options.mode.chained_assignment = None
 
 # inputfile = sys.argv[1]
 # outputfile = sys.argv[2]
