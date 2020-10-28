@@ -94,7 +94,7 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
     template_norm = cfg.template_norm.format(hospital)
     template_carrier = cfg.template_carrier.format(hospital)
     template_carrier_and_sick = cfg.template_carrier_and_sick.format(hospital)
-    
+
     ### ------------- Pre-processing ------------- ###
     now = datetime.datetime.now()
     date = now.strftime("%d-%m-%Y") # Today's date.
@@ -117,6 +117,17 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
         pVer.font.name = 'Arial'
         pVer.font.size = Pt(10)
 
+    elif geno_indices==[]:
+        genes = []
+        for i in cnv_indices:
+            CA, gene, agid, mutation, Classification, Genotype, Correlation, Ncomp, first, last, BF, expected, observed, ratio, moh, eth, DM, MM = get_INFO_decon(i, decon_filtered)
+            genes.append(gene)
+        if all(g == "DMD" for g in genes):
+            document = Document('template_norm.docx') # Template document.
+            pVer = document.paragraphs[15].add_run(MyScreen_version) # Update version.
+            pVer.font.name = 'Arial'
+            pVer.font.size = Pt(10)
+            
     # CARRIER #
     elif current_status == "CARRIER": # Only HET.
         document = Document(template_carrier) # Template document.
