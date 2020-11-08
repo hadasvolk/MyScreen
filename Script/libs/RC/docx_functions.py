@@ -168,6 +168,8 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
                 continue
             if NC in amp:
                 continue # skip row update.
+            if gene == "DMD":
+                continue
             if office:
                 status = HETOFFICEOLD
             else:
@@ -223,6 +225,8 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             CA, gene, agid, mutation, Classification, Genotype, Correlation, Ncomp, first, last, BF, expected, observed, ratio, moh, eth, DM, MM = get_INFO_decon(i, decon_filtered, logger_name)
             if class_decon not in cnvs or NC in amp:
                 continue # skip table update.
+            if gene == "DMD":
+                continue
             if office:
                 status = HOMOFFICEOLD
             else:
@@ -291,6 +295,8 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             amp = decon_filtered.iloc[i]['Annotation1'] # Get amplicon name.
             class_decon = decon_filtered.iloc[i]['Classification']
             if class_decon not in cnvs or NC in amp:
+                continue
+            if gene == "DMD":
                 continue
             if decon_geno == 'het':
                 if office:
