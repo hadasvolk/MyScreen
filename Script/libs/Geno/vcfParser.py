@@ -275,9 +275,9 @@ def parserMainFunction(inputFile, outputFile, bamFilesDir, vcfFile, input_file_n
                             outfile.write("\t".join(vals) + "\n")  # Write AG3268_part1 first.
 
                     # The medium CNVs dealt separately because of soft clipped reads
-                    mutations_list = ['chr3-53265545-C-CCAGAAGATAAGGAGGTAG', 'chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T',
-                                      'chr1-235564867-TGGGAGCCACGAA-T', 'chr10-13699443-C-CCTGGGACTCCAGG',
-                                      'chr7-143036379-ATACCCTGCGGAGGC-A', 'chr6-66204879-CTCAGCCACTTAGAAT-C']
+                    medium_cnvs = ['chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T', 'chr1-235564867-TGGGAGCCACGAA-T',
+                                   'chr10-13699443-C-CCTGGGACTCCAGG', 'chr7-143036379-ATACCCTGCGGAGGC-A',
+                                   'chr6-66204879-CTCAGCCACTTAGAAT-C', 'chr3-53265545-C-CCAGAAGATAAGGAGGTAG']
                     mutation = str(df.iloc[0]) + '-' + str(df.iloc[1]) + '-' + df.iloc[3] + '-' + df.iloc[4]
                     if mutation in medium_cnvs:
                         df = SoftClipsSolution.Parser_AnalysisWithSoftClips(inputFile, bamFilesDir, df, mutation, sampleName, logger_name)
