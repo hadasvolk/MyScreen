@@ -38,13 +38,13 @@ thin = Side(border_style="thin", color="000000")
 thick = Side(border_style="thick", color="000000")
 double = Side(border_style="double", color="000000")
 
-georgian = ['CARRIER-Georgian', 'CARRIER-Georgian - With soft-clipped reads']
+georgian_druze = ['CARRIER-Georgian', 'CARRIER-Georgian - With soft-clipped reads', 'CARRIER-Druze']
 non_reported_wt = 'WT - Low GQX - NON_REPORTED variant in the same loc'
 problems = ['WT', 'WT-Problem', 'Problem', 'NO_CALL', 'NO_CALL-Problem', 'CARRIER-Problem',
             'WT - With soft-clipped reads', 'WT-Problem - With soft-clipped reads',
             'Problem - With soft-clipped reads', 'NO_CALL - With soft-clipped reads',
             'CARRIER-Problem - With soft-clipped reads', 'CARRIER-Georgian-Problem',
-            'CARRIER-Georgian-Problem - With soft-clipped reads']
+            'CARRIER-Georgian-Problem - With soft-clipped reads', 'CARRIER-Druze-Problem']
 problems_cnv = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported']
 warnings = ['Big Del Boundaries Different as Reported',
             'CNV Big Del Boundaries Different as Reported']
@@ -240,7 +240,7 @@ def excel_formatter(df, write_path, Analysis_Version):
                 pass
         elif clas.value in warnings:
             fill(clas, orange)
-        elif clas.value in georgian:
+        elif clas.value in georgian_druze:
             fill(clas, magneta)
         elif clas.value == non_reported_wt:
             fill(clas, green)
@@ -258,6 +258,7 @@ def excel_formatter(df, write_path, Analysis_Version):
         except:
             pass
 
+    ws.auto_filter.ref = "A5:AF5"
     ws.sheet_view.zoomScale = 85
     wb.save(out_file)
 

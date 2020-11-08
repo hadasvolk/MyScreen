@@ -7,18 +7,18 @@ date = datetime.datetime.now().strftime("%d-%m-%Y")
 n_workrs = 3
 
 #Global Strings to incoopraite in GUI and to change in version update
-MyScreen_Ver = "MyScreen_Analysis_v2.0.c"
-Label = "MyScreen Analysis v2.0.c - Gamidor AppliedGenomics"
+MyScreen_Ver = "MyScreen_Analysis_v2.1"
+Label = "MyScreen Analysis v2.1 - Gamidor AppliedGenomics"
 Main_Dir = "{}_RESULTS".format(MyScreen_Ver)
 Hospitals = '{}/docs/word_templates'.format(curdir)
-MutPDF = "Ver-{}[October2020]".format(MyScreen_Ver.split('v')[-1]) #Mutation PDF update date
+MutPDF = "Ver-{}[November2020]".format(MyScreen_Ver.split('v')[-1]) #Mutation PDF update date
 AG_DB = "C:/Gamidor/Appendix/AG_DB"
 AG_DB_excel = 'C:/Gamidor/Appendix/db_statistics-v2.xlsx'
 
 # נספחים ופרוטוקולים
-vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive.xlsx'.format(curdir)
-appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.0.c_App.Note2000714.pdf'.format(curdir)
-mut_list = '{}/../נספחים ופרוטוקולים/(2020-08-11) Ver 2.0.c - רשימת מחלות ומוטציות גירסה.pdf'.format(curdir)
+vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive_(2020-11-08)Ver2.1.xlsx'.format(curdir)
+appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.1_App.Note.pdf'.format(curdir)
+mut_list = '{}/../(2020-11-08) Ver 2.1 - רשימת מחלות ומוטציות גירסה.pdf'.format(curdir)
 
 # Avilable panels
 Panels = ('Bedouin', 'Extended')

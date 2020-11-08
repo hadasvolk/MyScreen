@@ -19,13 +19,14 @@ bed_pkl = cfg.bed_pkl
 anno_excel = cfg.anno_excel
 
 
-def CYBA_HEXB_cor(positive, complete):
+def CYBA_HEXB_AGXT_cor(positive, complete):
     if positive.empty:
         return positive
 
-    cyba_agids = ['AG1476', 'AG4982', 'AG4810']
-    hexb_agids = ['AG3456', 'AG5049', 'AG5048']
-    agid_sets = [cyba_agids, hexb_agids]
+    cyba_agids = ['AG1476', 'AG4982', 'AG4810', 3]
+    hexb_agids = ['AG3456', 'AG5049', 'AG5048', 3]
+    agxt_agids = ['AG2466', 'AG5317', 2]
+    agid_sets = [cyba_agids, hexb_agids, agxt_agids]
 
     for agid_set in agid_sets:
         df = positive.where(positive.AGID == agid_set[0])
@@ -39,12 +40,16 @@ def CYBA_HEXB_cor(positive, complete):
                 second_df.dropna(how='all', inplace=True)
                 second_avf = second_df.loc[second_df.index[0], 'Alt Variant Freq']
 
-                third_df = complete.where(complete.AGID == agid_set[2])
-                third_df.dropna(how='all', inplace=True)
-                third_avf = third_df.loc[third_df.index[0], 'Alt Variant Freq']
+                if agid_set[-1] == 3:
+                    third_df = complete.where(complete.AGID == agid_set[2])
+                    third_df.dropna(how='all', inplace=True)
+                    third_avf = third_df.loc[third_df.index[0], 'Alt Variant Freq']
 
-                if first_avf < 7.0 and (second_avf > 7.0 or third_avf > 7.0):
-                    positive.loc[i, 'Problem'] = " - Low GQX - NON_REPORTED variant in the same loc"
+                    if first_avf < 7.0 and (second_avf > 7.0 or third_avf > 7.0):
+                        positive.loc[i, 'Problem'] = " - Low GQX - NON_REPORTED variant in the same loc"
+                else:
+                    if first_avf < 7.0 and second_avf > 7.0:
+                        positive.loc[i, 'Problem'] = " - Low GQX - NON_REPORTED variant in the same loc"
 
     return positive
 
@@ -180,7 +185,7 @@ class Engine():
             chr = row['CHROM']
 
             # small-medium indel cases
-            indels = ['AG2408', 'AG2508', 'AG2846', 'AG5105']
+            indels = ['AG2408', 'AG2508', 'AG2846', 'AG5105', 'AG3373', 'AG4652']
             if vcf.loc[index, 'AGID'] in indels and vcf.loc[index,'QUAL'] == "-1":
                 vcf.loc[index, 'SoftClipped Reads'] = " - With soft-clipped reads"
 
@@ -200,8 +205,9 @@ class Engine():
 
                 if (((((gqx < 15 ) or ((avf > 10) and (avf < 30 )))
                 or (clas == 'CARRIER') or (clas == 'CARRIER-Non-Ashkenazi')
-                or (clas == 'CARRIER-Georgian') or (clas == 'ERROR') or (clas == 'NO_CALL')
-                or (clas == cust_an) or (clas == 'HOM')) and (clas != 'MALE') and (clas != 'FEMALE'))
+                or (clas == 'CARRIER-Georgian') or (clas == 'CARRIER-Druze')
+                or (clas == 'ERROR') or (clas == 'NO_CALL') or (clas == cust_an)
+                or (clas == 'HOM')) and (clas != 'MALE') and (clas != 'FEMALE'))
                 and (clas != 'NON_REPORTED') and (gene != 'SMN1')):
                     vcf_positive = vcf_positive.append(vcf.loc[index].to_frame().T,
                         ignore_index=True)
@@ -220,7 +226,7 @@ class Engine():
                         ignore_index=True)
 
         vcf_complete = vcf_complete.append(vcf, ignore_index=True)
-        vcf_positive = CYBA_HEXB_cor(vcf_positive, vcf_complete)
+        vcf_positive = CYBA_HEXB_AGXT_cor(vcf_positive, vcf_complete)
         self.vs2_logger.info("Finished processesing VS2 {}".format(sample))
         # self.Output.insert(END, "Finished annotating sample {}\n".format(sample))
         # self.Output.yview_pickplace("end")

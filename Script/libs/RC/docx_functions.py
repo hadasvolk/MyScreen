@@ -10,12 +10,16 @@ from getInfo_functions import get_INFO_posRes, get_INFO_decon
 
 import cfg
 
-genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Problem', 'HOM'] # For createReports().
+genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Druze', 'CARRIER-Problem', 'HOM'] # For createReports().
 cnvs = ['CNV', 'CNV Big Del Boundaries Different as Reported', 'CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 cnvs_problem = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 
 REPORTS_folder = 'REPORTS' # Folder for output.
 LC = 'Low Confidence' # Text for problem.
+GC = 'Pathogenic in Georgian ethnicity' # Text for NCF1 Georgian.
+DC = 'Pathogenic in Druze' # Text for HOGA1 Druze.
+agid_gc = 'AG1470' # Georgian AGID
+agid_dc = 'AG2482' # Druze AGID
 NC = '_NC'
 
 HETOFFICEOLD = '*נשאות באלל אחד )הטרוזיגוט('
@@ -117,17 +121,12 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
         pVer.font.name = 'Arial'
         pVer.font.size = Pt(10)
 
-    elif geno_indices==[]:
-        genes = []
-        for i in cnv_indices:
-            CA, gene, agid, mutation, Classification, Genotype, Correlation, Ncomp, first, last, BF, expected, observed, ratio, moh, eth, DM, MM = get_INFO_decon(i, decon_filtered)
-            genes.append(gene)
-        if all(g == "DMD" for g in genes):
-            document = Document('template_norm.docx') # Template document.
-            pVer = document.paragraphs[15].add_run(MyScreen_version) # Update version.
-            pVer.font.name = 'Arial'
-            pVer.font.size = Pt(10)
-            
+    elif geno_indices==[] and all(g == "DMD" for g in genes):
+        document = Document('template_norm.docx') # Template document.
+        pVer = document.paragraphs[15].add_run(MyScreen_version) # Update version.
+        pVer.font.name = 'Arial'
+        pVer.font.size = Pt(10)
+
     # CARRIER #
     elif current_status == "CARRIER": # Only HET.
         document = Document(template_carrier) # Template document.
@@ -143,6 +142,12 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             CA, gene, agid, mutation, mutation_gDNA, Classification, Genotype, GQX, AVF, RD, ARD, AD, moh, eth, DM, MM = get_INFO_posRes(i, posResFiltered, logger_name)
             if (int(posResFiltered.iloc[i]['GQX']) < GQXTOP) or ((int(posResFiltered.iloc[i]['Alt Variant Freq']) > AFVBOTTOM) and (int(posResFiltered.iloc[i]['Alt Variant Freq']) < AFVTOP)):
                 problem = LC
+                red = True
+            elif agid == agid_gc:
+                problem = GC
+                red = True
+            elif agid == agid_dc:
+                problem = DC
                 red = True
             else:
                 problem = ""
@@ -197,6 +202,12 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             if (int(posResFiltered.iloc[i]['GQX']) < GQXTOP) or ((int(posResFiltered.iloc[i]['Alt Variant Freq']) > AFVBOTTOM) and (int(posResFiltered.iloc[i]['Alt Variant Freq']) < AFVTOP)):
                 problem = LC
                 red = True
+            elif agid == agid_gc:
+                problem = GC
+                red = True
+            elif agid == agid_dc:
+                problem = DC
+                red = True
             else:
                 problem = ""
                 red = False
@@ -249,6 +260,12 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             CA, gene, agid, mutation, mutation_gDNA, Classification, Genotype, GQX, AVF, RD, ARD, AD, moh, eth, DM, MM = get_INFO_posRes(i, posResFiltered, logger_name)
             if (posResFiltered.iloc[i]['GQX'] < GQXTOP) or ((posResFiltered.iloc[i]['Alt Variant Freq'] > AFVBOTTOM) and (posResFiltered.iloc[i]['Alt Variant Freq'] < AFVTOP)):
                 problem = LC
+                red = True
+            elif agid == agid_gc:
+                problem = GC
+                red = True
+            elif agid == agid_dc:
+                problem = DC
                 red = True
             else:
                 problem = ""
