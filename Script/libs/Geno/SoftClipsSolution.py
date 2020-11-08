@@ -215,8 +215,9 @@ def Parser_AnalysisWithSoftClips(input_file, bam_files_dir, df, mutation, sample
 def MAIN_AnalysisWithSoftClipsWrapper(input_path, myscreen_version, logger_name, bam_files_path=''):
     if bam_files_path == '':
         bam_files_path = re.sub(r'{}_RESULTS.+'.format(myscreen_version), '', input_path)
-    mutations_list = ['chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T', 'chr1-235564867-TGGGAGCCACGAA-T', 'chr10-13699443-C-CCTGGGACTCCAGG', 'chr7-143036379-ATACCCTGCGGAGGC-A']
-
+    mutations_list = ['chr3-53265545-C-CCAGAAGATAAGGAGGTAG', 'chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T',
+                      'chr1-235564867-TGGGAGCCACGAA-T', 'chr10-13699443-C-CCTGGGACTCCAGG',
+                      'chr7-143036379-ATACCCTGCGGAGGC-A', 'chr6-66204879-CTCAGCCACTTAGAAT-C']
     # check for legal paths
     logger_path = os.path.join(input_path, 'Logs' + os.sep)
     if os.path.isdir(logger_path):
