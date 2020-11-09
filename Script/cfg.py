@@ -18,7 +18,7 @@ AG_DB_excel = 'C:/Gamidor/Appendix/db_statistics-v2.xlsx'
 # נספחים ופרוטוקולים
 vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive_(2020-11-08)Ver2.1.xlsx'.format(curdir)
 appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.1_App.Note.pdf'.format(curdir)
-mut_list = '{}/../(2020-11-08) Ver 2.1 - רשימת מחלות ומוטציות גירסה.pdf'.format(curdir)
+mut_list = '{}/../נספחים ופרוטוקולים/mut.pdf'.format(curdir)
 
 # Avilable panels
 Panels = ('Bedouin', 'Extended')
