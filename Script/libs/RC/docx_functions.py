@@ -109,6 +109,11 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
     ### ------------- Table creation ------------- ###
 
     # WT #
+    genes = []
+    for i in cnv_indices:
+        CA, gene, agid, mutation, Classification, Genotype, Correlation, Ncomp, first, last, BF, expected, observed, ratio, moh, eth, DM, MM = get_INFO_decon(i, decon_filtered, logger_name)
+        genes.append(gene)
+
     if (geno_indices==[]) and (cnv_indices==[]): # Sample does not exist in 'positiveResults.tsv' and has no DECoN mutations:
         document = Document(template_norm) # Template document.
         pVer = document.paragraphs[15].add_run(MyScreen_version) # Update version.
@@ -122,7 +127,7 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
         pVer.font.size = Pt(10)
 
     elif geno_indices==[] and all(g == "DMD" for g in genes):
-        document = Document('template_norm.docx') # Template document.
+        document = Document(template_norm) # Template document.
         pVer = document.paragraphs[15].add_run(MyScreen_version) # Update version.
         pVer.font.name = 'Arial'
         pVer.font.size = Pt(10)
