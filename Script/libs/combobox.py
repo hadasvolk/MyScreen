@@ -26,7 +26,7 @@ def combos(samples, panels, ag_logo, x, y):
         master = tk.Toplevel()
         # master.iconbitmap(ag_logo)
         # master.title("Panel Selector")
-        master.geometry("+%d+%d" % (x + 700, y))
+        master.geometry("+%d+%d" % (x + 700, 0))
         master.overrideredirect(True)
 
         var = tk.IntVar(value=0)

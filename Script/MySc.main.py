@@ -92,7 +92,7 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     PATHS["DIR_TREE"] = DIR_TREE
 
     log = tools.setup_logger('stdout', '{}/.out.log'.format(DIR_TREE[1], curDate), logging.DEBUG)
-    sys.stdout = tools.LoggerWriter(log.debug)
+    # sys.stdout = tools.LoggerWriter(log.debug)
     # sys.stderr = tools.ProcessError("Unexpected error occured")
 
     main_logger = tools.setup_logger('main', '{}/MyScreen_Analysis-{}.log'.format(DIR_TREE[1], curDate))
@@ -118,7 +118,7 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     PATHS["RUN_NAME"] = inputVald.getRunName(root, PATHS["BAM_PATH"])
     main_logger.info("Run Name: {}".format(PATHS["RUN_NAME"]))
 
-    PATHS["Hospital"] = inputVald.getHospital(root)
+    PATHS["Hospital"] = inputVald.getHospital_Panel(root, 'dir')
     main_logger.info("Hospital: {}".format(PATHS["Hospital"]))
 
     widget_list = all_children(root)

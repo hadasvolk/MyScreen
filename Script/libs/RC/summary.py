@@ -65,7 +65,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
 
     panels = {}
-    for panel in cfg.Panels:
+    for panel in cfg.Panels_names[:-1]:
         if panel != 'Extended':
             cur = "{}{}{}".format(cfg.path_to_panel, panel,'.AGID.pbz2')
             if not os.path.isfile(cur):
@@ -118,9 +118,9 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         sample_summary = formatExcel.AddIgvLink(sample_summary, PATHS["BAM_PATH"], cfg.MyScreen_Ver)
     except Exception as e:
         main_logger.error("Failed to exceute AddIgvLink\n{}".format(e))
-
+    # formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     try:
-        formatExcel.excel_formatter(sample_summary, PATHS["DIR_TREE"][0], cfg.MyScreen_Ver)
+        formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     except Exception as e:
         main_logger.error("Failed to exceute format excel\n{}".format(e))
         app = tools.ProcessError("Format Sample Summary")

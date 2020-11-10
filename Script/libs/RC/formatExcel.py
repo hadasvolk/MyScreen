@@ -56,7 +56,7 @@ def fill(cell, color, type='solid'):
                                    fill_type=type)
 
 
-def adjust_df(df):
+def adjust_df(df, paths):
     # df.sort_values(by=['S'], inplace=True)
     df.reset_index(inplace=True)
     df['S'] = pd.to_numeric(df['S'])
@@ -75,7 +75,16 @@ def adjust_df(df):
                        "N.comp": "N comp", "Custom.first": "Custom First",
                        "Custom.last": "Custom Last", "Reads.expected": "Reads Expected",
                        "Reads.observed": "Reads Observed", "Reads.ratio": "Reads Ratio"}, inplace=True)
-    df = df[['Sample', 'S', 'Disease', 'Gene', 'Mutation', 'MOH', 'Ethnicity', 'Classification',
+
+    D = {name : code for name, code in cfg.Panels}
+    for index, row in df.iterrows():
+        s = 'S{}'.format(row.S)
+        panel = paths['SAMPLE_DICT'][s][1]
+        df['Test Code'] = D.get(panel)
+        df['Test Name'] = panel
+
+    df = df[['Sample', 'S', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
+            'MOH', 'Ethnicity', 'Classification',
             'Clalit Disease Makat', 'Clalit Mutation Makat', 'Genotype', 'GQX',
             'Alt Variant Freq', 'Read Depth', 'Alt Read Depth', 'Allelic Depths',
             'Correlation', 'N comp', 'Custom First', 'Custom Last', 'BF',
@@ -92,7 +101,9 @@ def header(cell, to_bold):
     fill(cell, magneta)
 
 
-def excel_formatter(df, write_path, Analysis_Version):
+def excel_formatter(df, paths, Analysis_Version):
+    write_path = paths["DIR_TREE"][0]
+    print(paths)
     # wb = load_workbook(filename=write_path)
     # ws = wb.active
     # data = ws.values
@@ -101,7 +112,7 @@ def excel_formatter(df, write_path, Analysis_Version):
     # idx = [r[0] for r in data]
     # data = (islice(r, 0, None) for r in data)
     # df = pd.DataFrame(data, index=idx, columns=cols)
-    df, run = adjust_df(df)
+    df, run = adjust_df(df, paths)
 
     new_order = list(df.columns)
     if 'IGV Link (open IGV before)' in new_order:  # move 'IGV Link' column to the end of the table
@@ -116,7 +127,7 @@ def excel_formatter(df, write_path, Analysis_Version):
     wb = openpyxl.load_workbook(out_file)
     ws = wb["Sheet1"]
 
-    float_rows = ['K', 'L', 'M', 'T', 'W', 'P']
+    float_rows = ['M', 'N', 'O', 'V', 'Y', 'R']
     for row in range(3, df.shape[0] + 2):
         for char in float_rows:
             try:
@@ -126,7 +137,7 @@ def excel_formatter(df, write_path, Analysis_Version):
             except:
                 pass
 
-    int_rows = ['H', 'I', 'U', 'V']
+    int_rows = ['J', 'K', 'W', 'X']
     for row in range(3, df.shape[0] + 2):
         for char in int_rows:
             try:
@@ -167,20 +178,20 @@ def excel_formatter(df, write_path, Analysis_Version):
     for i in letters:
         ws.column_dimensions[i].width = 6
     ws.column_dimensions['B'].width = 3
-    ws.column_dimensions['C'].width = 40
-    ws.column_dimensions['D'].width = 10
     ws.column_dimensions['E'].width = 40
-    ws.column_dimensions['F'].width = 30
-    ws.column_dimensions['G'].width = 20
-    ws.column_dimensions['H'].width = 20
-    ws.column_dimensions['I'].width = 10
-    ws.column_dimensions['J'].width = 10
+    ws.column_dimensions['F'].width = 10
+    ws.column_dimensions['G'].width = 40
+    ws.column_dimensions['H'].width = 30
+    ws.column_dimensions['I'].width = 20
+    ws.column_dimensions['J'].width = 20
     ws.column_dimensions['K'].width = 10
-    ws.column_dimensions['P'].width = 8
-    ws.column_dimensions['Q'].width = 10
-    ws.column_dimensions['Y'].width = 8
-    ws.column_dimensions['AE'].width = 10
-    ws.column_dimensions['AF'].width = 25
+    ws.column_dimensions['L'].width = 10
+    ws.column_dimensions['M'].width = 10
+    ws.column_dimensions['R'].width = 8
+    ws.column_dimensions['S'].width = 10
+    ws.column_dimensions['AA'].width = 8
+    ws.column_dimensions['AG'].width = 10
+    ws.column_dimensions['AH'].width = 25
 
     samples = []
     for col in ws['A']:
@@ -189,15 +200,15 @@ def excel_formatter(df, write_path, Analysis_Version):
     samples.pop(0)
     samples = list(dict.fromkeys(samples))[::2]
 
-    for cells in ws.iter_rows(min_row=6, min_col=1, max_col=32):
+    for cells in ws.iter_rows(min_row=6, min_col=1, max_col=34):
         sample_cell = cells[0]
-        clas = cells[7]
-        geno = cells[10]
-        gqx = cells[11]
-        altVar = cells[12]
-        mut = cells[13]
-        ints = [cells[8], cells[9], cells[17], cells[18], cells[19], cells[20],
-                cells[21], cells[22]]
+        clas = cells[9]
+        geno = cells[12]
+        gqx = cells[13]
+        altVar = cells[14]
+        mut = cells[15]
+        ints = [cells[10], cells[11], cells[19], cells[20], cells[21], cells[22],
+                cells[23], cells[24]]
 
         mut.alignment = Alignment(wrap_text=True)
         for i in range(2, 8):
@@ -258,10 +269,19 @@ def excel_formatter(df, write_path, Analysis_Version):
         except:
             pass
 
-    ws.auto_filter.ref = "A5:AF5"
+    ws.auto_filter.ref = "A5:AH5"
     ws.sheet_view.zoomScale = 85
     wb.save(out_file)
 
+    r = ws.max_row
+    ws.move_range("C5:AH{}".format(r), cols=-1)
+    ws.move_range("C3:C3", cols=-1)
+    ws.move_range("D2:D2", cols=-1)
+    ws.move_range("F2:F2", rows=-1)
+    ws.move_range("C2:C2", cols=-1, rows=-1)
+    ws.move_range("A5:AH{}".format(r), rows=2)
+    ws['D1'] = 'Run Name'
+    ws['B1'] = 'Data Analysis Version'
     with open("{}.csv".format(out_file.split('.xlsx')[0]), 'w', newline='') as f:
         c = csv.writer(f)
         for r in ws.rows:
@@ -323,7 +343,18 @@ def AddIgvLink(dataframe, input_path, my_screen_version):
 if __name__ == "__main__":
     original = ""
     target = ""
-    df = pd.DataFrame()
+    # df = pd.DataFrame()
 
-    shutil.copyfile(original, target)
-    excel_formatter(df, target, "V2.0.b")
+    # shutil.copyfile(original, target)
+    paths = {'BAM_PATH': 'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY', 'SAMPLE_DICT': {'S12': ['10039-20', 'Bedouin'], 'S13': ['10040-20', 'Bedouin'], 'S14': ['10062-20', 'Bedouin'], 'S15': ['10063-20', 'Bedouin'], 'S38': ['10182-20', 'Bedouin'], 'S39': ['10183-20', 'Bedouin'], 'S16': ['10184-20', 'Bedouin'], 'S17': ['10185-20', 'Bedouin'], 'S18': ['10368-20', 'Bedouin'], 'S19': ['10369-20', 'Bedouin'], 'S20': ['10420-20', 'Bedouin'], 'S21': ['10421-20', 'Bedouin'], 'S22': ['10422-20', 'Bedouin'], 'S23': ['10423-20', 'Bedouin'], 'S24': ['10424-20', 'Bedouin'], 'S25': ['10425-20', 'Bedouin'], 'S26': ['10435-20', 'Bedouin'], 'S27': ['10436-20', 'Bedouin'], 'S28': ['10506-20', 'Bedouin'], 'S29': ['10507-20', 'Bedouin'], 'S30': ['10533-20', 'Bedouin'], 'S31': ['10618-20', 'Bedouin'], 'S32': ['10619-20', 'Bedouin'], 'S33': ['10626-20', 'Bedouin'], 'S34': ['10627-20', 'Bedouin'], 'S35': ['10632-20', 'Bedouin'], 'S36': ['10633-20', 'Bedouin'], 'S37': ['2309-ZER', 'Bedouin'], 'S1': ['9029-20', 'Bedouin'], 'S2': ['9030-20', 'Bedouin'], 'S3': ['9221-20', 'Bedouin'], 'S4': ['9234-20', 'Bedouin'], 'S5': ['9235-20', 'Bedouin'], 'S6': ['9615-20', 'Bedouin'], 'S7': ['9616-20', 'Bedouin'], 'S8': ['9960-20', 'Bedouin'], 'S9': ['9961-20', 'Bedouin'], 'S10': ['9976-20', 'Bedouin'], 'S11': ['9977-20', 'Bedouin']},
+    'DIR_TREE': ['C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs/PiscesLogs',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/CNV',
+    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/CNV/Logs'],
+    'EXTRA_INFO_PATH': False, 'RUN_NAME': '201013_MN00937_0047_A000H352JY', 'Hospital': 'Belinson'}
+
+    df = pd.read_pickle('c:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/tmp.pkl')
+    excel_formatter(df, paths, "MyScreen_Analysis_v2.1")

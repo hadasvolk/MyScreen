@@ -213,18 +213,23 @@ def getRunName(master, bam_path, illegal = False):
     return s
 
 
-def getHospital(root):
-    hospitals = [d for d in os.listdir(cfg.Hospitals)]
-    buttons = [*range(len(hospitals))]
+def getHospital_Panel(root, x):
+    lab_hospital = "Choose hospital name"
+
+    if x == 'dir':
+        names = [d for d in os.listdir(cfg.Hospitals)]
+    else:
+        names = cfg.Panels_names
+    buttons = [*range(len(names))]
     var_b = IntVar()
     global n
     n = None
     #Help func to destroy GUI
     def Destroying():
-        button_no.destroy()
-        button_yes.destroy()
-        label.destroy()
         try:
+            button_no.destroy()
+            button_yes.destroy()
+            label.destroy()
             warning.destory()
         except:
             pass
@@ -234,29 +239,35 @@ def getHospital(root):
         n = name
         var_b.set(1)
         label.destroy()
-        for h in hospitals:
-            for idx, h in enumerate(hospitals):
+        for h in names:
+            for idx, h in enumerate(names):
                 buttons[idx].destroy()
 
     while True:
         #GUI Message
-        label = Label(root, text=hospital_d,  font=('calibre', 12, 'bold'))
-        label.place(relx=.5, rely=.45, anchor="c")
-
         var = IntVar(value=0)
-        button_yes = Button(root, text="Yes", command=lambda: var.set(1))
-        button_yes.place(relx=.45, rely=.7, anchor="c")
-        button_no = Button(root, text="No", command=lambda: var.set(0))
-        button_no.place(relx=.55, rely=.7, anchor="c")
-        button_no.wait_variable(var)
+        if x == 'dir':
+            label = Label(root, text=hospital_d,  font=('calibre', 12, 'bold'))
+            label.place(relx=.5, rely=.45, anchor="c")
+
+            button_yes = Button(root, text="Yes", command=lambda: var.set(1))
+            button_yes.place(relx=.45, rely=.7, anchor="c")
+            button_no = Button(root, text="No", command=lambda: var.set(0))
+            button_no.place(relx=.55, rely=.7, anchor="c")
+            button_no.wait_variable(var)
+        else:
+            var.set(1)
 
         if var.get():
             i = 1
             j = 0
             Destroying()
-            label = Label(root, text="Choose hospital name",  font=('calibre', 12, 'bold'))
+            if x == 'dir':
+                label = Label(root, text=lab_hospital,  font=('calibre', 12, 'bold'))
+            else:
+                label = Label(root, text=panel_d,  font=('calibre', 12, 'bold'))
             label.place(relx=.5, rely=.4, anchor="c")
-            for idx, h in enumerate(hospitals):
+            for idx, h in enumerate(names):
                 buttons[idx] = Button(root, text=h, command=lambda x=h: func(x))
                 if i % 4 != 0:
                     buttons[idx].place(relx=(0.1 + i/5), rely=(0.5 + j/10), anchor="c")
@@ -293,32 +304,43 @@ def build_dir_tree(root, ver):
 
 
 def panel(root, sample_dict, ag_logo):
-    def Destroying():
-        button_0.destroy()
-        button_1.destroy()
-        button_custom.destroy()
-        label.destroy()
-
-    while True:
-        #GUI Message
-        label = Label(root, text=panel_d, font=('calibre', 12, 'bold'))
-        label.place(relx=.5, rely=.45, anchor="c")
-        var = IntVar(value=0)
-        button_0 = Button(root, text=cfg.Panels[0], command=lambda: var.set(0))
-        button_0.place(relx=.35, rely=.7, anchor="c")
-        button_1 = Button(root, text=cfg.Panels[1], command=lambda: var.set(1))
-        button_1.place(relx=.5, rely=.7, anchor="c")
-        button_custom = Button(root, text="Custom", command=lambda: var.set(2))
-        button_custom.place(relx=.65, rely=.7, anchor="c")
-        button_custom.wait_variable(var)
+    name = getHospital_Panel(root, 'pan')
+    if name == 'Custom':
         x = root.winfo_x()
         y = root.winfo_y()
+        combobox.combos(sample_dict, cfg.Panels_names[:-1], ag_logo, x, y)
+    else:
+        for k,v in sample_dict.items():
+            sample_dict[k] = [v, name]
 
-        if var.get() == 2:
-            combobox.combos(sample_dict, cfg.Panels, ag_logo, x, y)
-        else:
-            for k,v in sample_dict.items():
-                sample_dict[k] = [v, cfg.Panels[var.get()]]
+    return sample_dict
 
-        Destroying()
-        return sample_dict
+    # def Destroying():
+    #     button_0.destroy()
+    #     button_1.destroy()
+    #     button_custom.destroy()
+    #     label.destroy()
+    #
+    # while True:
+    #     #GUI Message
+    #     label = Label(root, text=panel_d, font=('calibre', 12, 'bold'))
+    #     label.place(relx=.5, rely=.45, anchor="c")
+    #     var = IntVar(value=0)
+    #     button_0 = Button(root, text=cfg.Panels[0], command=lambda: var.set(0))
+    #     button_0.place(relx=.35, rely=.7, anchor="c")
+    #     button_1 = Button(root, text=cfg.Panels[1], command=lambda: var.set(1))
+    #     button_1.place(relx=.5, rely=.7, anchor="c")
+    #     button_custom = Button(root, text="Custom", command=lambda: var.set(2))
+    #     button_custom.place(relx=.65, rely=.7, anchor="c")
+    #     button_custom.wait_variable(var)
+        # x = root.winfo_x()
+        # y = root.winfo_y()
+    #
+    #     if var.get() == 2:
+    #         combobox.combos(sample_dict, [item[0] for item in cfg.Panels], ag_logo, x, y)
+    #     else:
+    #         for k,v in sample_dict.items():
+    #             sample_dict[k] = [v, [item[0] for item in cfg.Panels][var.get()]]
+    #
+    #     Destroying()
+    #     return sample_dict
