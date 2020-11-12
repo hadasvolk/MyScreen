@@ -1,4 +1,5 @@
 import os
+import pandas as pd
 import tkinter as tk
 import tkinter.ttk as ttk
 
@@ -32,6 +33,14 @@ def combos(samples, panels, ag_logo, x, y):
         var = tk.IntVar(value=0)
         glabel = tk.Label(master, text="Choose panel for each sample ", font=('calibre', 12))
         glabel.grid(column=1, row=0)
+
+        df = pd.DataFrame(list(samples.items()), columns=['S', 'number'])
+        df[['das','n']] = df.S.str.split("S",expand=True,)
+        df['n'] = pd.to_numeric(df['n'])
+        df.sort_values(by=['n'], inplace=True)
+        df.drop(['das', 'n'], axis=1, inplace=True)
+        samples = dict(df.values.tolist())
+
         for i, sample in enumerate(samples.values()):
             label = tk.Label(master, text=sample, font=('calibre', 12))
             label.grid(column=0, row=i+1)

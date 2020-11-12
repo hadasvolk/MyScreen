@@ -10,7 +10,8 @@ from getInfo_functions import get_INFO_posRes, get_INFO_decon
 
 import cfg
 
-genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Druze', 'CARRIER-Problem', 'HOM'] # For createReports().
+genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Georgian-Problem',
+             'CARRIER-Druze', 'CARRIER-Druze-Problem', 'CARRIER-Problem', 'HOM'] # For createReports().
 cnvs = ['CNV', 'CNV Big Del Boundaries Different as Reported', 'CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 cnvs_problem = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 
@@ -148,6 +149,10 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             if (int(posResFiltered.iloc[i]['GQX']) < GQXTOP) or ((int(posResFiltered.iloc[i]['Alt Variant Freq']) > AFVBOTTOM) and (int(posResFiltered.iloc[i]['Alt Variant Freq']) < AFVTOP)):
                 problem = LC
                 red = True
+                if agid == agid_gc:
+                    problem = "{} - {}".format(LC, GC)
+                if agid == agid_dc:
+                    problem = "{} - {}".format(LC, DC)
             elif agid == agid_gc:
                 problem = GC
                 red = True
@@ -209,6 +214,10 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             if (int(posResFiltered.iloc[i]['GQX']) < GQXTOP) or ((int(posResFiltered.iloc[i]['Alt Variant Freq']) > AFVBOTTOM) and (int(posResFiltered.iloc[i]['Alt Variant Freq']) < AFVTOP)):
                 problem = LC
                 red = True
+                if agid == agid_gc:
+                    problem = "{} - {}".format(LC, GC)
+                if agid == agid_dc:
+                    problem = "{} - {}".format(LC, DC)
             elif agid == agid_gc:
                 problem = GC
                 red = True
@@ -270,6 +279,10 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             if (posResFiltered.iloc[i]['GQX'] < GQXTOP) or ((posResFiltered.iloc[i]['Alt Variant Freq'] > AFVBOTTOM) and (posResFiltered.iloc[i]['Alt Variant Freq'] < AFVTOP)):
                 problem = LC
                 red = True
+                if agid == agid_gc:
+                    problem = "{} - {}".format(LC, GC)
+                if agid == agid_dc:
+                    problem = "{} - {}".format(LC, DC)
             elif agid == agid_gc:
                 problem = GC
                 red = True

@@ -12,7 +12,8 @@ import tools
 genotypes = ['CARRIER', 'CARRIER-Non-Ashkenazi', 'CARRIER-Problem', 'HOM',
              'CARRIER-Georgian', 'CARRIER-Georgian - With soft-clipped reads', 'CARRIER-Druze',
              'CARRIER - With soft-clipped reads', 'CARRIER-Non-Ashkenazi - With soft-clipped reads',
-             'CARRIER-Problem - With soft-clipped reads', 'HOM - With soft-clipped reads'] # For defineStatus().
+             'CARRIER-Problem - With soft-clipped reads', 'HOM - With soft-clipped reads',
+             'CARRIER-Georgian-Problem', 'CARRIER-Druze', 'CARRIER-Druze-Problem',] # For defineStatus().
 cnvs = ['CNV', 'CNV Big Del Boundaries Different as Reported', 'CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For defineStatus().
 
 # Column names for sample summary and DB statistics file: #

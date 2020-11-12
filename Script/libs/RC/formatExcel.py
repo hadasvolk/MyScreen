@@ -103,7 +103,7 @@ def header(cell, to_bold):
 
 def excel_formatter(df, paths, Analysis_Version):
     write_path = paths["DIR_TREE"][0]
-    print(paths)
+    # print(paths)
     # wb = load_workbook(filename=write_path)
     # ws = wb.active
     # data = ws.values

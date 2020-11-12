@@ -73,16 +73,18 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
                  app = tools.ProcessError("{} \nMissing".format(cur))
             temp = tools.decompress_pickle(cur)
             panels[panel] = [agid for line in temp for agid in line.split('/')]
+            panels[panel].append(np.nan)
 
     results = cfg.full_results
     results.insert(0, 'temp')
     results.insert(0, 'temp')
     writer = pd.ExcelWriter("{}/Results.xlsx".format(PATHS["DIR_TREE"][1]), engine='xlsxwriter')
-    for i in range(2, len(files)-2):
+    for i in range(1, len(files)-2):
         df = tools.decompress_pickle(files[i])
         for s, info in PATHS["SAMPLE_DICT"].items():
             sample_panel = info[1]
             if sample_panel != 'Extended':
+                # print(s, sample_panel)
                 sub = df.where(df.Sample == "{}_{}".format(info[0], s))
                 sub.dropna(how = 'all', inplace = True)
                 to_remove = []
