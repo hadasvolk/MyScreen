@@ -21,7 +21,7 @@ appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.1_App.Note.pdf'
 mut_list = '{}/../נספחים ופרוטוקולים/mut.pdf'.format(curdir)
 
 # Avilable panels
-Panels = [['Clalit', '0001'], ['Extended', '0002'], ['Bedouin', '0003'], ['Custom', '000']]
+Panels = [['Extended', '0001'], ['Clalit', '0002'], ['Bedouin', '0003']]
 Panels_names = [item[0] for item in Panels]
 path_to_panel = '{}/docs/'.format(curdir)
 
@@ -97,3 +97,17 @@ template_sick = template_dict + '{}/template_sick.docx'
 template_norm = template_dict + '{}/template_norm.docx'
 template_carrier = template_dict + '{}/template_carrier.docx'
 template_carrier_and_sick = template_dict + '{}/template_carrier_and_sick.docx'
+
+# Classifictions
+Classifictions = {
+"WT" : ["WT",  "WT - With soft-clipped reads",  "WT - Low GQX - NON_REPORTED variant in the same loc"],
+"PROBLEM" : ["WT-Problem",  "WT-Problem - With soft-clipped reads",  "NO_CALL",
+           "NO_CALL-Problem",  "CARRIER-Problem", "CARRIER-Georgian-Problem",
+           "CARRIER-Druze-Problem",  "CARRIER-Problem - With soft-clipped reads",
+           "CARRIER-Georgian-Problem - With soft-clipped reads", "HOM-Problem",
+           "CNV-Problem", "CNV Big Del Boundaries Different as Reported-Problem"],
+"NON_REPORTED" : ["NON_REPORTED", "NON_REPORTED-Problem", "POLYMORPHISM", "POLYMORPHISM-Problem"],
+"CARRIER" : ["CARRIER" , "CARRIER-Georgian", "CARRIER-Druze",  "CARRIER - With soft-clipped reads",
+           "CARRIER-Georgian - With soft-clipped reads",  "CNV",  "CNV Big Del Boundaries Different as Reported"],
+"HOM" : ["HOM", "HOM - With soft-clipped reads", "HOM-Problem - With soft-clipped reads"]
+}

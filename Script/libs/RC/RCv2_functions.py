@@ -92,7 +92,8 @@ def getResults(output, geno_file, cnv_file, extraInfo_file):
     except Exception as e:
         print("Unable to read Genotyping results file.")
         logging.error("ERROR: Unable to read Genotyping result file\n{}".format(e))
-        sys.exit(2)
+        # sys.exit(2)
+        raise
     logging.info("Genotyping Results: {}".format(geno_filepath))
 
     if cnv_file is None: # No cnv file defined.
@@ -110,7 +111,8 @@ def getResults(output, geno_file, cnv_file, extraInfo_file):
     except Exception as e:
         print("Unable to read CNV results file.")
         logging.error("ERROR: Unable to read CNV results file\n{}".format(e))
-        sys.exit(2)
+        # sys.exit(2)
+        raise
     logging.info("CNV Results: {}".format(cnv_filepath))
 
     if extraInfo_file is None: # No extraInfo file was defined.
@@ -128,7 +130,8 @@ def getResults(output, geno_file, cnv_file, extraInfo_file):
         except Exception as e:
             print("Unable to read extraInfo file")
             logging.error("ERROR: Unable to read extraInfo file\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
     logging.info("extraInfo file (BLANK = no file specified): {}".format(extraInfo_filepath))
     return geno, cnv, extraInfo
 
@@ -219,7 +222,8 @@ def update_samplesummary(sample_summary, sample, run_name, sampleStatus, posResF
             except Exception as e:
                 print("Error when trying to get sample's " + sample + " genotype data.")
                 logging.error("ERROR: when running get_INFO_posRes() function.\n{}".format(e))
-                sys.exit(2)
+                # sys.exit(2)
+                raise
             cur_sumrow = pd.DataFrame(np.array([[sample, run_name, CA, gene, agid, mutation_gDNA, moh, eth, Classification, DM, MM, Genotype, GQX, AVF, RD, ARD, AD,
                                     '---', '---', '---', '---', '---', '---', '---', '---', source, gender, sexBam, eth_m, eth_f, partner]]), columns = col_names) # Create row for summary table.
             sample_summary = sample_summary.append(cur_sumrow) # Add row to summary table.
@@ -229,7 +233,8 @@ def update_samplesummary(sample_summary, sample, run_name, sampleStatus, posResF
             except Exception as e:
                 print("Error when trying to get sample's " + sample + " CNV data.")
                 logging.error("ERROR: when running get_INFO_decon() function.\n{}".format(e))
-                sys.exit(2)
+                # sys.exit(2)
+                raise
             cur_sumrow = pd.DataFrame(np.array([[sample, run_name, CA, gene, agid, mutation, moh, eth, Classification, DM, MM, Genotype, '---', '---', '---', '---', '---',
                                     Correlation, Ncomp, first, last, BF, expected, observed, ratio, source, gender, sexBam, eth_m, eth_f, partner]]), columns = col_names) # Create row for summary table.
             sample_summary = sample_summary.append(cur_sumrow) # Add row to summary table.
@@ -267,7 +272,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         pass
     except:
         print("Creation of the results directory failed")
-        sys.exit(2)
+        # sys.exit(2)
+        raise
 
     logger(output_folder, logger_name)
     rc_logger.info("Starting RCv2_functions session:")
@@ -297,7 +303,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         except Exception as e:
             print("Error in sample names.")
             rc_logger.error("ERROR: strip_name() function failed.\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
         posSamples.append(name)
     rc_logger.info("Data extraction successful.")
 
@@ -314,7 +321,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
     except Exception as e:
         print("CNV results file wrong format (check column names).")
         rc_logger.error("ERROR: CNV results file wrong format\n{}".format(e))
-        sys.exit(2)
+        # sys.exit(2)
+        raise
     posSamples_decon = []
     sampleSet = set()
     sampleSex = {}
@@ -324,7 +332,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         except Exception as e:
             print("Error in sample names.")
             rc_logger.error("ERROR: strip_name() function failed.\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
         if isinstance(row['AGID'], str):
             posSamples_decon.append(name)
         sampleSet.add(name)
@@ -348,7 +357,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
     except Exception as e:
         print("Error when extracting data from extraInfo file. Please check table format, column names and table contents.")
         rc_logger.error("ERROR: when running get_sampleInfo() function.\n{}".format(e))
-        sys.exit(2)
+        # sys.exit(2)
+        raise
     rc_logger.info("Data extraction successful.")
     print("Done extracting data.")
 
@@ -365,7 +375,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         except Exception as e:
             print("Error when trying to define sample's " + cur_sample + " status.")
             rc_logger.error("ERROR: when running defineStatus() function.\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
         sampleStatus[cur_sample] = (sampStat, indices, indices_decon)
         print("\tSample " + cur_sample + " is " + sampStat + ".")
         rc_logger.info("\tSample " + cur_sample + " is " + sampStat + ".")
@@ -383,7 +394,8 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         except Exception as e:
             print("Error when trying to summarize sample's " + cur_sample + " results.")
             rc_logger.error("ERROR: when running update_samplesummary() function.\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
         rc_logger.info("\tSample " + cur_sample + " done.")
     rc_logger.info("Finished filling out sample summary pd dataframe.")
     print("Results summarization successful.")
@@ -394,12 +406,14 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         rc_logger.info("Creating docx reports...")
         for cur_sample in sorted(sampleSet): # Iterate over every sample.
             rc_logger.info("\tIn sample " + cur_sample + "...")
+            # createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
             try:
                 createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
             except Exception as e:
                 print("Error when trying to create report for sample " + cur_sample + ".")
                 rc_logger.error("ERROR: when running createReports() function.\n{}".format(e))
-                sys.exit(2)
+                # sys.exit(2)
+                raise
             rc_logger.info("\tSample " + cur_sample + " done.")
         rc_logger.info("Finished Microsoft word reports.")
     rc_logger.info("Continuing to sample summary excel creation, formatExcel.py and DB_statistics file creation.")

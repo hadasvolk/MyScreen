@@ -108,7 +108,13 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
     cnv_indices = sampleStatus[sample][2] # Get indices of occurences in 'DECoN_results.tsv'.
 
     ### ------------- Table creation ------------- ###
-
+    classes = []
+    for i in geno_indices:
+        CA, gene, agid, mutation, mutation_gDNA, Classification, Genotype, GQX, AVF, RD, ARD, AD, moh, eth, DM, MM = get_INFO_posRes(i, posResFiltered, logger_name)
+        classes.append(Classification)
+    s = list(set(classes))
+    if len(s) == 1 and s[0] == "NO_CALL-Problem":
+        geno_indices = []
     # WT #
     genes = []
     for i in cnv_indices:
@@ -276,7 +282,7 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
         # Insert mutations to table:
         for i in geno_indices:
             CA, gene, agid, mutation, mutation_gDNA, Classification, Genotype, GQX, AVF, RD, ARD, AD, moh, eth, DM, MM = get_INFO_posRes(i, posResFiltered, logger_name)
-            if (posResFiltered.iloc[i]['GQX'] < GQXTOP) or ((posResFiltered.iloc[i]['Alt Variant Freq'] > AFVBOTTOM) and (posResFiltered.iloc[i]['Alt Variant Freq'] < AFVTOP)):
+            if (int(posResFiltered.iloc[i]['GQX']) < GQXTOP) or ((int(posResFiltered.iloc[i]['Alt Variant Freq']) > AFVBOTTOM) and (int(posResFiltered.iloc[i]['Alt Variant Freq']) < AFVTOP)):
                 problem = LC
                 red = True
                 if agid == agid_gc:
@@ -313,27 +319,20 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleIn
             amp = decon_filtered.iloc[i]['Annotation1'] # Get amplicon name.
             class_decon = decon_filtered.iloc[i]['Classification']
             if class_decon not in cnvs or NC in amp:
-                continue
+                continue # skip table update.
             if gene == "DMD":
                 continue
-            if decon_geno == 'het':
-                if office:
-                    status = HETOFFICEOLD
-                else:
-                    status = HETOFFICENEW
-                row_cells = het_table.add_row().cells
+            if office:
+                status = HOMOFFICEOLD
             else:
-                if office:
-                    status = HOMOFFICEOLD
-                else:
-                    status = HOMOFFICENEW
-                row_cells = hom_table.add_row().cells
+                status = HOMOFFICENEW
             if class_decon in cnvs_problem:
                 problem = LC
                 red = True
             else:
                 problem = ""
                 red = False
+            row_cells = het_table.add_row().cells
             update_Table(row_cells, status + '\n' + problem, mutation, gene, CA)
         # Move hom table to middle of document:
         para1 = document.paragraphs[13] # Location.

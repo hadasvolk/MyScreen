@@ -54,15 +54,15 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     combained = pd.concat([geno, cnv], ignore_index=True, sort=False)
     combained.insert(0, 'Analysis Date', curDate)
     combained.insert(0, 'Run Name', PATHS["RUN_NAME"])
-
-    if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
-        ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
-        ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
-        ag_db.drop_duplicates(keep='last', inplace=True)
-    else:
-        ag_db = combained
-    tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
-    tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
+    #
+    # if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
+    #     ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
+    #     ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
+    #     ag_db.drop_duplicates(keep='last', inplace=True)
+    # else:
+    #     ag_db = combained
+    # tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
+    # tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
 
     panels = {}
     for panel in cfg.Panels_names[:-1]:
@@ -81,6 +81,8 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     writer = pd.ExcelWriter("{}/Results.xlsx".format(PATHS["DIR_TREE"][1]), engine='xlsxwriter')
     for i in range(1, len(files)-2):
         df = tools.decompress_pickle(files[i])
+        if i == 1:
+            temp = df[['Sample', 'Gender']].drop_duplicates()
         for s, info in PATHS["SAMPLE_DICT"].items():
             sample_panel = info[1]
             if sample_panel != 'Extended':
@@ -92,8 +94,12 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
                     if row.AGID not in panels[sample_panel]:
                         to_remove.append(index)
                 df.drop(to_remove, inplace = True)
-        df.to_excel(writer, sheet_name=results[i], index=False)
-        tools.compressed_pickle(files[i].split('.pbz2')[0], df)
+        if i != 1:
+            df.to_excel(writer, sheet_name=results[i], index=False)
+        else:
+            df = df.merge(temp, how='outer', on=['Sample', 'Gender'])
+        tools.compressed_pickle(files[i].split('.pbz2')[0] + '.filtered', df)
+        files[i] = files[i].split('.pbz2')[0] + '.filtered.pbz2'
     df = tools.decompress_pickle(files[i+1])
     df.to_excel(writer, sheet_name=results[i+1], index=False)
     df = tools.decompress_pickle(files[i+2])
@@ -107,7 +113,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     except Exception as e:
         main_logger.info("Unable to get word version. Assuming 2016\n{}".format(e))
         tools.put_text("Unable to get word version. Assuming 2016", q, txt)
-
+    
     try:
         sample_summary = RCv2.MAIN_RCv2wrapper(PATHS["DIR_TREE"][0], wordVer,
                 PATHS["BAM_PATH"], PATHS["Hospital"], cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
@@ -116,6 +122,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         main_logger.error("Failed to exceute MAIN_RCv2wrapper\n{}".format(e))
         app = tools.ProcessError("Report Creator")
     tools.put_text("Formating Sample Summary", q, txt)
+
     try:
         sample_summary = formatExcel.AddIgvLink(sample_summary, PATHS["BAM_PATH"], cfg.MyScreen_Ver)
     except Exception as e:
@@ -127,11 +134,12 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         main_logger.error("Failed to exceute format excel\n{}".format(e))
         app = tools.ProcessError("Format Sample Summary")
 
-    tools.put_text("Converting Reports to PDF", q, txt)
-    try:
-        docx2pdf.convert("{}/REPORTS/".format(PATHS["DIR_TREE"][0]))
-    except Exception as e:
-        main_logger.error("Failed to convert reports to PDF\n{}".format(e))
+    if PATHS["Hospital"] != False:
+        tools.put_text("Converting Reports to PDF", q, txt)
+        try:
+            docx2pdf.convert("{}/REPORTS/".format(PATHS["DIR_TREE"][0]))
+        except Exception as e:
+            main_logger.error("Failed to convert reports to PDF\n{}".format(e))
 
     start.destroy()
 

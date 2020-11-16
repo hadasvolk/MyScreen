@@ -31,6 +31,10 @@ def cnvThread(root, PATHS, ver, curDir, genoCompl, cnvCompl, q, txt):
     while not genoCompl.isSet():
         time.sleep(1)
 
+    if PATHS["SUMMARY"]:
+        cnvCompl.set()
+        return
+
     global main_logger
     main_logger = logging.getLogger('main')
     main_logger.info("Starting CNV DECoN Analysis")

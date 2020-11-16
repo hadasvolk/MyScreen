@@ -41,6 +41,10 @@ def genoThread(root, initial_information, PATHS, ver, genoCompl, q, txt):
     while not initial_information.isSet():
         time.sleep(1)
 
+    if PATHS["SUMMARY"]:
+        genoCompl.set()
+        return
+
     global main_logger
     main_logger = logging.getLogger('main')
     main_logger.info("Starting Genotyping multiprocessing")

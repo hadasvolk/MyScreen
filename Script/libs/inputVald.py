@@ -17,7 +17,7 @@ Function to handle user input files
 
 bam_d = "Click to choose run directory \n(where bam, bai files)"
 samplesheet_d = "Click to import SampleSheet.csv"
-extraInfo_d = "Do you wish to add extra information? \nExcel file"
+extraInfo_d = "Do you wish to add extra information? Optinal Excel file\nIf not chosen all samples will be analyzed for Extended panel"
 panel_d = 'Choose panel for ALL samples?'
 hospital_d = "Do you wish to output PDF patient reports?"
 
@@ -113,7 +113,7 @@ def validate_sampleSheet(root):
         return SAMPLE_SHEET_PATH, RUN_NAME
 
 
-def validate_extraInfo(root):
+def validate_extraInfo(root, sample_dict):
     global EXTRA_INFO_PATH
     global BAM_PATH
     global SMAPLE_DICT
@@ -147,16 +147,18 @@ def validate_extraInfo(root):
                                                          ("all files","*.*")))
         else:
             EXTRA_INFO_PATH = False
+            for k,v in sample_dict.items():
+                sample_dict[k] = [v, cfg.Panels[0][0]]
             Destroying()
-            return EXTRA_INFO_PATH
+            return EXTRA_INFO_PATH, sample_dict
 
         #Validate extraInfoSheet
         try:
             msg = "Failed to open file"
-            extraInfo = pd.read_excel(EXTRA_INFO_PATH, usecols="A:K")
+            extraInfo = pd.read_excel(EXTRA_INFO_PATH, usecols="A:L")
             column_names = ['Sample', 'ID_number', 'Name', 'Source', 'Gender',
                             'City', 'Street', 'Phone', 'Mother Ethnicity',
-                            'Father Ethnicity', 'Spouse Sample Number']
+                            'Father Ethnicity', 'Spouse Sample Number', 'Panel']
             extraInfo.set_axis(column_names, axis=1, inplace=True)
             msg = "Invalid sample number\nPlease check input file"
             extraInfo.Sample = extraInfo.Sample.astype(str)
@@ -167,18 +169,37 @@ def validate_extraInfo(root):
             warning.place(relx=.5, rely=.35, anchor="c")
             Destroying()
             continue
+
         samples = []
         for i in SAMPLE_DICT.values():
-            samples.append(i[0])
-        if not (set(samples) == set(extraInfo.Sample.tolist())):
-            msg = "Sample list error"
+            samples.append(i)
+        samples_file = extraInfo.Sample.tolist()
+
+        if not (set(samples) == set(samples_file)):
+            msg = "Sample list error\n Missing samples in extra info file. Please review file"
             Destroying()
             warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
             warning.place(relx=.5, rely=.35, anchor="c")
             continue
 
+        panels_file = extraInfo.Panel.tolist()
+        panels_names = cfg.Panels_names
+        panels_names.append(np.nan)
+        if not set(panels_file).issubset(set(panels_names)):
+            msg = "Panel list error\n Some samples are with unkown panel"
+            Destroying()
+            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+            warning.place(relx=.5, rely=.35, anchor="c")
+            continue
+
+        for k,v in sample_dict.items():
+            x = extraInfo.loc[extraInfo.Sample == v, 'Panel'].item()
+            if pd.isna(x):
+                x = 'Extended'
+            sample_dict[k] = [v, x]
+
         Destroying()
-        return EXTRA_INFO_PATH
+        return EXTRA_INFO_PATH, sample_dict
 
 
 def getRunName(master, bam_path, illegal = False):

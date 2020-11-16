@@ -71,10 +71,13 @@ def adjust_df(df, paths):
     for col in change:
         cols.pop(cols.index(col))
     df = df[cols + change]
+    df.drop(columns=['Genotype'], inplace=True)
     df.rename(columns={"Sex": "Analyzed Gender", "Gender": "Reported Gender",
                        "N.comp": "N comp", "Custom.first": "Custom First",
                        "Custom.last": "Custom Last", "Reads.expected": "Reads Expected",
-                       "Reads.observed": "Reads Observed", "Reads.ratio": "Reads Ratio"}, inplace=True)
+                       "Reads.observed": "Reads Observed", "Reads.ratio": "Reads Ratio",
+                       "Classification" : "Genotype"}, inplace=True)
+    df["Classification"] = np.nan
 
     D = {name : code for name, code in cfg.Panels}
     for index, row in df.iterrows():
@@ -84,13 +87,13 @@ def adjust_df(df, paths):
         df['Test Name'] = panel
 
     df = df[['Sample', 'S', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
-            'MOH', 'Ethnicity', 'Classification',
-            'Clalit Disease Makat', 'Clalit Mutation Makat', 'Genotype', 'GQX',
-            'Alt Variant Freq', 'Read Depth', 'Alt Read Depth', 'Allelic Depths',
-            'Correlation', 'N comp', 'Custom First', 'Custom Last', 'BF',
-            'Reads Expected', 'Reads Observed', 'Reads Ratio', 'Analyzed Gender',
-            'Reported Gender', 'Sample Source', 'Mother Ethnicity', 'Father Ethnicity',
-            'Partner Sample', 'AGID', 'IGV Link (open IGV before)']]
+            'MOH', 'Ethnicity', 'Classification', 'Clalit Disease Makat',
+            'Clalit Mutation Makat', 'Genotype', 'GQX', 'Alt Variant Freq',
+            'Read Depth', 'Alt Read Depth', 'Allelic Depths', 'Correlation',
+            'N comp', 'Custom First', 'Custom Last', 'BF', 'Reads Expected',
+            'Reads Observed', 'Reads Ratio', 'Analyzed Gender', 'Reported Gender',
+            'Sample Source', 'Mother Ethnicity', 'Father Ethnicity', 'Partner Sample',
+            'AGID', 'IGV Link (open IGV before)']]
     return df, run
 
 
@@ -148,20 +151,20 @@ def excel_formatter(df, paths, Analysis_Version):
                 pass
 
     ws.insert_rows(1, amount=4)
-    ws.merge_cells('D2:E2')
-    ws.merge_cells('D3:E3')
+    ws.merge_cells('B2:D2')
+    ws.merge_cells('B3:D3')
     ws.merge_cells('F2:G2')
     ws.merge_cells('F3:G3')
 
-    ws['C2'] = "Data Analysis Version"
-    ws['D2'] = "Run Name"
+    ws['B2'] = "Data Analysis Version"
+    ws['E2'] = "Run Name"
     ws['F2'] = "Analysis Date"
-    ws['C3'] = Analysis_Version
-    ws['D3'] = "{}".format(run)
+    ws['B3'] = Analysis_Version
+    ws['E3'] = "{}".format(run)
     ws['F3'] = time.strftime("%d-%B-%Y")
 
-    header_cells = ['G2', 'C2', 'D2', 'E2', 'F2']
-    info_cells = ['G3', 'C3', 'D3', 'F3', 'E3']
+    header_cells = ['G2', 'B2', 'C2', 'D2', 'E2', 'F2']
+    info_cells = ['G3', 'B3', 'C3', 'D3', 'F3', 'E3']
     for cell in header_cells:
         header(ws[cell], True)
     for cell in info_cells:
@@ -178,15 +181,16 @@ def excel_formatter(df, paths, Analysis_Version):
     for i in letters:
         ws.column_dimensions[i].width = 6
     ws.column_dimensions['B'].width = 3
+    ws.column_dimensions['D'].width = 10
     ws.column_dimensions['E'].width = 40
     ws.column_dimensions['F'].width = 10
     ws.column_dimensions['G'].width = 40
     ws.column_dimensions['H'].width = 30
     ws.column_dimensions['I'].width = 20
-    ws.column_dimensions['J'].width = 20
+    ws.column_dimensions['J'].width = 10
     ws.column_dimensions['K'].width = 10
     ws.column_dimensions['L'].width = 10
-    ws.column_dimensions['M'].width = 10
+    ws.column_dimensions['M'].width = 20
     ws.column_dimensions['R'].width = 8
     ws.column_dimensions['S'].width = 10
     ws.column_dimensions['AA'].width = 8
@@ -207,8 +211,17 @@ def excel_formatter(df, paths, Analysis_Version):
         gqx = cells[13]
         altVar = cells[14]
         mut = cells[15]
+
+        bf = cells[22]
+        Reads_Observed = cells[25]
+
         ints = [cells[10], cells[11], cells[19], cells[20], cells[21], cells[22],
                 cells[23], cells[24]]
+
+        Analyzed_Gender = cells[26]
+        Reported_Gender = cells[27]
+
+        igv = cells[33]
 
         mut.alignment = Alignment(wrap_text=True)
         for i in range(2, 8):
@@ -232,33 +245,48 @@ def excel_formatter(df, paths, Analysis_Version):
             except:
                 pass
 
-        if cells[29].row != 5:  # don't color the header
-            cells[29].font = Font(u='single', color=colors.BLUE)  # add blue color to the link
+        if igv.row != 5:  # don't color the header
+            igv.font = Font(u='single', color=colors.BLUE)  # add blue color to the link
 
-        if ' - With soft-clipped reads' in clas.value:
-            fill(clas, purple_softclipped)
+        if ' - With soft-clipped reads' in geno.value:
+            fill(geno, purple_softclipped)
 
-        if clas.value in problems:
+        if Reported_Gender.value != Analyzed_Gender.value and Reported_Gender.value != None:
+            fill(Reported_Gender, yellow)
+
+        if geno.value in problems:
             fill(clas, yellow)
-        elif clas.value in problems_cnv:
+            fill(geno, yellow)
+        elif geno.value in problems_cnv:
             fill(clas, yellow)
+            fill(geno, yellow)
             try:
-                if int(cells[20].value) < 15:
-                    fill(cells[20], yellow)
+                if int(bf.value) < 15:
+                    fill(bf, yellow)
                 else:
-                    fill(cells[23], yellow)
+                    fill(Reads_Observed, yellow)
             except:
                 pass
-        elif clas.value in warnings:
+        elif geno.value in warnings:
             fill(clas, orange)
-        elif clas.value in georgian_druze:
+            fill(geno, orange)
+        elif geno.value in georgian_druze:
             fill(clas, magneta)
-        elif clas.value == non_reported_wt:
+            fill(geno, magneta)
+        elif geno.value == non_reported_wt:
             fill(clas, green)
+            fill(geno, green)
+            clas.value = 'WT'
             continue
 
-        if geno.value == 'hom':
+        for k,v in cfg.Classifictions.items():
+            if geno.value in v:
+                clas.value = k
+                break
+
+        if clas.value == 'HOM':
             fill(geno, yellow)
+            fill(clas, yellow)
 
         try:
             if int(gqx.value) < 15:
@@ -281,7 +309,7 @@ def excel_formatter(df, paths, Analysis_Version):
     ws.move_range("C2:C2", cols=-1, rows=-1)
     ws.move_range("A5:AH{}".format(r), rows=2)
     ws['D1'] = 'Run Name'
-    ws['B1'] = 'Data Analysis Version'
+    # ws['B1'] = 'Data Analysis Version'
     with open("{}.csv".format(out_file.split('.xlsx')[0]), 'w', newline='') as f:
         c = csv.writer(f)
         for r in ws.rows:

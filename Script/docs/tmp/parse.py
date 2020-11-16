@@ -59,11 +59,31 @@ def decompress_pickle(file):
 # compressed_pickle('Bedouin.AGID', agids)
 # Bedouin = pd.DataFrame(agids, columns =['AGID'])
 # Bedouin.to_csv('Bedouin.Panel', index=False)
-bedouin = pd.read_csv('Bedouin.Panel')
-print(bedouin)
+
+# for file in ['Bedouin.Panel', 'Clalit.Panel']:
+#     bedouin = pd.read_csv(file)
+#     print(bedouin)
+#     bedouin['AGID2'] = bedouin.AGID.str.split('/')
+#     bedouin = bedouin.explode('AGID2')
+#     merged_df = pd.DataFrame(list(bedouin.AGID2) + list(set(list(bedouin.AGID)) - set(list(bedouin.AGID2))), columns=['AGID'])
+#     merged_df.drop_duplicates(inplace=True)
+#     merged_df.to_csv(file, index=False)
+#     print(merged_df)
+#     s = list(merged_df.AGID)
+#     compressed_pickle(file, s)
+#     with open(file + '.txt', 'w') as filehandle:
+#         for listitem in s:
+#             filehandle.write('%s\n' % listitem)
+    # print(s)
+bedouin = decompress_pickle('Bedouin.Panel.pbz2')
+clalit = decompress_pickle('Clalit.Panel.pbz2')
+
 for file in os.listdir():
-    if file.endswith('.pbz2'):
+    if file.endswith('.pbz2') and "Panel" not in file:
         print(file)
         df = decompress_pickle(file)
-        print(df)
-    
+        samples = set(list(df.Sample))
+        for sample in samples:
+            tmp = df.groupby(['Sample'])
+            print(tmp)
+        # print(df)

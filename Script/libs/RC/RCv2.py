@@ -133,7 +133,8 @@ def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen
         except Exception as e:
             print ("\tERROR: Could not update DB_statistics file with sample summary data.")
             rc_logger.error("\tERROR: Could not update DB_statistics file with sample summary data.\n{}".format(e))
-            sys.exit(2)
+            # sys.exit(2)
+            raise
         folder_name = Results_Folder
         output_path = os.path.join(out_dir, folder_name)
         # Create user full run statistics excel file:

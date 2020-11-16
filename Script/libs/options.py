@@ -20,6 +20,7 @@ def choose(root):
         app_note.destroy()
         mutlist.destroy()
         main_label.destroy()
+        reports.destroy()
         try:
             warning.destroy()
         except:
@@ -38,38 +39,43 @@ def choose(root):
                                   style='B1.TButton', padding=12)
         but_analysis.place(relx=.5, rely=.5, anchor="c")
 
+        reports = ttk.Style()
+        reports.configure('B1.TButton', foreground='blue', background='blue')
+        reports = ttk.Button(text="Create Summaries", command=lambda: var.set(5),
+                                  style='B1.TButton', padding=12)
+        reports.place(relx=.5, rely=.63, anchor="c")
+
         postive = ttk.Style()
         postive.configure('B2.TButton', background='blue')
         postive = ttk.Button(text="MyScreen VALIDATED\n            Postive",
                              command=lambda: var.set(2),
                              style='B2.TButton', padding=6)
-        postive.place(relx=.25, rely=.65, anchor="c")
+        postive.place(relx=.25, rely=.75, anchor="c")
 
         app_note = ttk.Style()
         app_note.configure('B2.TButton', background='blue')
         app_note = ttk.Button(text="Application Note", command=lambda: var.set(3),
                               style='B2.TButton', padding=6)
-        app_note.place(relx=.5, rely=.65, anchor="c")
+        app_note.place(relx=.5, rely=.75, anchor="c")
 
         mutlist = ttk.Style()
         mutlist.configure('B2.TButton', background='blue')
         mutlist = ttk.Button(text="Disease and Mutation\n\tList",
                              command=lambda: var.set(4),
                              style='B2.TButton', padding=6)
-        mutlist.place(relx=.75, rely=.65, anchor="c")
+        mutlist.place(relx=.75, rely=.75 , anchor="c")
 
         but_analysis.wait_variable(var)
 
         var_set = var.get()
+        Destroying()
         if var_set == 4:
             os.startfile(cfg.mut_list)
-            Destroying()
         elif var_set == 3:
             os.startfile(cfg.appnote)
-            Destroying()
         elif var_set == 2:
             os.startfile(cfg.vald_pos)
-            Destroying()
+        elif var_set == 5:
+            return True
         else:
-            Destroying()
-            return
+            return False

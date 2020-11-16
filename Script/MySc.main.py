@@ -82,7 +82,7 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     quit.pack(side=BOTTOM)
 
     # Choose what operation to Run
-    options.choose(root)
+    PATHS["SUMMARY"] = options.choose(root)
 
     #Importing Bam Directory path and validating bam & bai
     PATHS["BAM_PATH"], PATHS["SAMPLE_DICT"] = inputVald.validate_bams(root)
@@ -92,7 +92,7 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     PATHS["DIR_TREE"] = DIR_TREE
 
     log = tools.setup_logger('stdout', '{}/.out.log'.format(DIR_TREE[1], curDate), logging.DEBUG)
-    # sys.stdout = tools.LoggerWriter(log.debug)
+    sys.stdout = tools.LoggerWriter(log.debug)
     # sys.stderr = tools.ProcessError("Unexpected error occured")
 
     main_logger = tools.setup_logger('main', '{}/MyScreen_Analysis-{}.log'.format(DIR_TREE[1], curDate))
@@ -100,20 +100,22 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     main_logger.info("Working Directory: {}".format(curdir))
     main_logger.info("Bam Directory: {}".format(PATHS["BAM_PATH"]))
     main_logger.info("Directory Tree: {}".format(PATHS["DIR_TREE"]))
+    main_logger.info("Summary only: {}".format(PATHS["SUMMARY"]))
 
     #Importing SampleSheet.csv getting RUN_NAME and extra info validating
     # against sample's bam bai
     # SAMPLE_SHEET_PATH, RUN_NAME = inputVald.validate_sampleSheet(root)
     # main_logger.info("SampleSheet.csv: {}".format(SAMPLE_SHEET_PATH))
 
-    # Panel Specs
-    PATHS["SAMPLE_DICT"] = inputVald.panel(root, PATHS["SAMPLE_DICT"], cfg.AG_logo)
-    main_logger.info("Sample Dictionary: {}".format(PATHS["SAMPLE_DICT"]))
+    # # Panel Specs
+    # PATHS["SAMPLE_DICT"] = inputVald.panel(root, PATHS["SAMPLE_DICT"], cfg.AG_logo)
+    # main_logger.info("Sample Dictionary: {}".format(PATHS["SAMPLE_DICT"]))
 
     # Importing additional information to incoorpate in sample_summary
     # validating samples
-    PATHS["EXTRA_INFO_PATH"] = inputVald.validate_extraInfo(root)
+    PATHS["EXTRA_INFO_PATH"], PATHS["SAMPLE_DICT"] = inputVald.validate_extraInfo(root, PATHS["SAMPLE_DICT"])
     main_logger.info("Extra info: {}".format(PATHS["EXTRA_INFO_PATH"]))
+    main_logger.info("Sample Dictionary: {}".format(PATHS["SAMPLE_DICT"]))
 
     PATHS["RUN_NAME"] = inputVald.getRunName(root, PATHS["BAM_PATH"])
     main_logger.info("Run Name: {}".format(PATHS["RUN_NAME"]))
