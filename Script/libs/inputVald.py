@@ -231,12 +231,15 @@ def getRunName(master, bam_path, illegal = False):
     s = e.get()
     Destroying()
 
-    res = [i for i in s.split('_') if 'M' in i][0]
     dict_hos = {}
     for k,v in cfg.HospitalCode.items():
         for i in v:
             dict_hos[i] = k
-
+    try:
+        res = [i for i in s.split('_') if 'M' in i][0]
+    except:
+        return getRunName(master, bam_path, illegal = True)
+        
     if res == None or res not in list(dict_hos.keys()):
         return getRunName(master, bam_path, illegal = True)
     else:
