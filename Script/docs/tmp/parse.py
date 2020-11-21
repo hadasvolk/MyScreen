@@ -14,6 +14,20 @@ def decompress_pickle(file):
     data = cPickle.load(data)
     return data
 
+HospitalCode = {
+'Zer':['MN00742', 'M05987'],
+'Soroka':['M05987'],
+'Belinson':['MN00937', 'M04441'],
+'Carmel':['MN00885'],
+'Maccabi':['M06216'],
+'Meir':['MN01010', 'MN01026'],
+'Meuhedet':['MN01006']
+}
+
+hospitalCodes_list=list(HospitalCode.values())
+hospitalCodes_list = [item for sublist in list(HospitalCode.values()) for item in sublist]
+# flatten = lambda t: [item for sublist in t for item in hospitalCodes_list]
+print(flat_list)
 # df = pd.read_excel(open('ver2.xlsx', 'rb'), sheet_name='Sheet1')
 # print(df)
 # last_vcf = None
@@ -75,15 +89,15 @@ def decompress_pickle(file):
 #         for listitem in s:
 #             filehandle.write('%s\n' % listitem)
     # print(s)
-bedouin = decompress_pickle('Bedouin.Panel.pbz2')
-clalit = decompress_pickle('Clalit.Panel.pbz2')
-
-for file in os.listdir():
-    if file.endswith('.pbz2') and "Panel" not in file:
-        print(file)
-        df = decompress_pickle(file)
-        samples = set(list(df.Sample))
-        for sample in samples:
-            tmp = df.groupby(['Sample'])
-            print(tmp)
-        # print(df)
+# bedouin = decompress_pickle('Bedouin.Panel.pbz2')
+# clalit = decompress_pickle('Clalit.Panel.pbz2')
+#
+# for file in os.listdir():
+#     if file.endswith('.pbz2') and "Panel" not in file:
+#         print(file)
+#         df = decompress_pickle(file)
+#         samples = set(list(df.Sample))
+#         for sample in samples:
+#             tmp = df.groupby(['Sample'])
+#             print(tmp)
+#         # print(df)

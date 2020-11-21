@@ -247,6 +247,9 @@ def DECoNparser(PATHS, logger_name, q, txt):
         subset = annotation.where(annotation.Gene == row.Gene)
         subset.dropna(inplace=True, how='all')
         subset.reset_index(drop=True, inplace=True)
+        if subset.empty:
+            del_notDMD.drop(index, inplace=True)
+            continue
         if subset.shape[0] > 1:
             first = int(subset.loc[0,'Custom.first']), int(subset.loc[0,'Custom.last'])
             second = int(subset.loc[1,'Custom.first']), int(subset.loc[1,'Custom.last'])

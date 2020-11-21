@@ -10,15 +10,25 @@ n_workrs = 3
 MyScreen_Ver = "MyScreen_Analysis_v2.1"
 Label = "MyScreen Analysis v2.1 - Gamidor AppliedGenomics"
 Main_Dir = "{}_RESULTS".format(MyScreen_Ver)
-Hospitals = '{}/docs/word_templates'.format(curdir)
 MutPDF = "Ver-{}[November2020]".format(MyScreen_Ver.split('v')[-1]) #Mutation PDF update date
 AG_DB = "C:/Gamidor/Appendix/AG_DB"
 AG_DB_excel = 'C:/Gamidor/Appendix/db_statistics-v2.xlsx'
 
+# Hospitals
+Hospitals = '{}/docs/word_templates'.format(curdir)
+HospitalCode = {
+'Zer':['MN00742', 'M05987'],
+'Soroka':['M05987'],
+'Belinson':['MN00937', 'M04441'],
+'Carmel':['MN00885'],
+'Maccabi':['M06216'],
+'Meir':['MN01010', 'MN01026'],
+'Meuhedet':['MN01006']
+}
 # נספחים ופרוטוקולים
 vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive_(2020-11-08)Ver2.1.xlsx'.format(curdir)
 appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.1_App.Note.pdf'.format(curdir)
-mut_list = '{}/../נספחים ופרוטוקולים/mut.pdf'.format(curdir)
+mut_list = '{}/../נספחים ופרוטוקולים/'.format(curdir)
 
 # Avilable panels
 Panels = [['Extended', '0001'], ['Clalit', '0002'], ['Bedouin', '0003']]

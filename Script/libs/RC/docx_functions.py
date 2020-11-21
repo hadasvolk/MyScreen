@@ -93,12 +93,19 @@ def update_Table(row_cells, status, mutation, gene, CA, problem=False):
         8) MyScreen_version - the program version and version date.
     *NO OUTPUT - creates the reports*
 """
-def createReports(sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital):
+def createReports(sample, sampleStatus, posResFiltered, decon_filtered,
+        sampleInfoTable, office, output_folder, MyScreen_version, logger_name,
+        hospital, paths):
 
     template_sick = cfg.template_sick.format(hospital)
     template_norm = cfg.template_norm.format(hospital)
     template_carrier = cfg.template_carrier.format(hospital)
     template_carrier_and_sick = cfg.template_carrier_and_sick.format(hospital)
+
+    D = {name : code for name, code in cfg.Panels}
+    p = paths[sample][1]
+    c = D.get(p)
+    MyScreen_version = "{} \nTest Name:{} Test Code:{}".format(MyScreen_version, p, c)
 
     ### ------------- Pre-processing ------------- ###
     now = datetime.datetime.now()

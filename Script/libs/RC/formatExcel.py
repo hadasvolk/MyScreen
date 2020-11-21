@@ -78,13 +78,15 @@ def adjust_df(df, paths):
                        "Reads.observed": "Reads Observed", "Reads.ratio": "Reads Ratio",
                        "Classification" : "Genotype"}, inplace=True)
     df["Classification"] = np.nan
+    df["Test Code"] = np.nan
+    df["Test Name"] = np.nan
 
     D = {name : code for name, code in cfg.Panels}
     for index, row in df.iterrows():
         s = 'S{}'.format(row.S)
         panel = paths['SAMPLE_DICT'][s][1]
-        df['Test Code'] = D.get(panel)
-        df['Test Name'] = panel
+        df.loc[index, "Test Code"] = D.get(panel)
+        df.loc[index, "Test Name"] = panel
 
     df = df[['Sample', 'S', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
             'MOH', 'Ethnicity', 'Classification', 'Clalit Disease Makat',

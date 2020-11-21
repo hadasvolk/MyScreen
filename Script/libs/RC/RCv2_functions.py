@@ -260,7 +260,7 @@ def update_samplesummary(sample_summary, sample, run_name, sampleStatus, posResF
         2) cnv - pd dataframe of CNV results (DECoN_results.tsv).
         3) run_name - name of run after CheckRunName() function.
 """
-def createResultSummaries(output, office_version, MyScreen_version, logger_name, Results_Folder, hospital, run_name = None, geno_file = None,
+def createResultSummaries(output, office_version, MyScreen_version, logger_name, Results_Folder, hospital, paths, run_name = None, geno_file = None,
                   cnv_file = None, extraInfo_file = None):
     office = bool(int(office_version) < 2016)
     run_name = CheckRunName(run_name)
@@ -408,7 +408,7 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
             rc_logger.info("\tIn sample " + cur_sample + "...")
             # createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
             try:
-                createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
+                createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital, paths)
             except Exception as e:
                 print("Error when trying to create report for sample " + cur_sample + ".")
                 rc_logger.error("ERROR: when running createReports() function.\n{}".format(e))

@@ -70,7 +70,10 @@ def choose(root):
         var_set = var.get()
         Destroying()
         if var_set == 4:
-            os.startfile(cfg.mut_list)
+            for file in os.listdir(cfg.mut_list):
+                f_file = os.path.join(cfg.mut_list, file)
+                if file.endswith(".pdf") and f_file != cfg.appnote:
+                    os.startfile(f_file)
         elif var_set == 3:
             os.startfile(cfg.appnote)
         elif var_set == 2:

@@ -160,12 +160,16 @@ def createDBstatistics(summary_table, out_dir, run_name, output_folder, MyScreen
 """
     Wrapper for all functions. Allows to call externally and not run MAIN.
 """
-def MAIN_RCv2wrapper(output_dir, office_version, bam_dir, hospital, MyScreen_version, logger_name, run_name, geno_file, cnv_file, extraInfo_file):
+def MAIN_RCv2wrapper(output_dir, office_version, bam_dir, hospital, paths,
+        MyScreen_version, logger_name, run_name, geno_file, cnv_file, extraInfo_file):
 
+    paths_rev = {}
+    for k, v in paths.items():
+        paths_rev[v[0]] = [k,v[1]]
     # Results_Folder = 'MyScreen_Analysis_' + MyScreen_version + '_RESULTS' # Folder for output.
     Results_Folder = output_dir
     sample_summary, decon_positive, run_name, output_folder = createResultSummaries(output_dir, office_version, MyScreen_version, logger_name, Results_Folder,
-           hospital, run_name, geno_file, cnv_file, extraInfo_file)
+           hospital, paths_rev, run_name, geno_file, cnv_file, extraInfo_file)
 
     sample_table = formatSampleSummary(sample_summary, decon_positive, output_dir, bam_dir, MyScreen_version, Results_Folder, logger_name)
 

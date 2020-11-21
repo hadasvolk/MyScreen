@@ -214,10 +214,13 @@ def getRunName(master, bam_path, illegal = False):
             pass
 
     var = IntVar()
-    illegal_label = Label(master, text = 'Illegal run name, e.g: 190504_MNXXXXX_YYYY_ZZZZZZZ', font=('calibre', 12, 'bold'))
+    illegal_label = Label(master,
+        text = 'Illegal run name, e.g: 190504_MNXXXXX_YYYY_ZZZZZZZ\n or unknown MiSeq\Miniseq code',
+        font=('calibre', 12, 'bold'))
     if illegal:
         illegal_label.place(relx=.5, rely=.35, anchor="c")
-    run = Label(master, text="Insert the name of the run library, including the date", font=('calibre', 12, 'bold'))
+    run = Label(master, text="Insert the name of the run library, including the date",
+        font=('calibre', 12, 'bold'))
     run.place(relx=.5, rely=.45, anchor="c")
     v = StringVar(master, value=bam_path.split('/')[-1])
     e = Entry(master, textvariable=v, width=50)
@@ -227,14 +230,20 @@ def getRunName(master, bam_path, illegal = False):
     sub_btn.wait_variable(var)
     s = e.get()
     Destroying()
-    if s == None or "_M" not in s:
+
+    res = [i for i in s.split('_') if 'M' in i][0]
+    dict_hos = {}
+    for k,v in cfg.HospitalCode.items():
+        for i in v:
+            dict_hos[i] = k
+
+    if res == None or res not in list(dict_hos.keys()):
         return getRunName(master, bam_path, illegal = True)
     else:
-        return s
-    return s
+        return s, dict_hos[res]
 
 
-def getHospital_Panel(root, x):
+def getHospital_Panel(root, x, PATHS):
     lab_hospital = "Choose hospital name"
 
     if x == 'dir':
@@ -284,7 +293,8 @@ def getHospital_Panel(root, x):
             j = 0
             Destroying()
             if x == 'dir':
-                label = Label(root, text=lab_hospital,  font=('calibre', 12, 'bold'))
+                return PATHS["Hospital"]
+                # label = Label(root, text=lab_hospital,  font=('calibre', 12, 'bold'))
             else:
                 label = Label(root, text=panel_d,  font=('calibre', 12, 'bold'))
             label.place(relx=.5, rely=.4, anchor="c")

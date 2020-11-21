@@ -54,15 +54,15 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     combained = pd.concat([geno, cnv], ignore_index=True, sort=False)
     combained.insert(0, 'Analysis Date', curDate)
     combained.insert(0, 'Run Name', PATHS["RUN_NAME"])
-    #
-    # if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
-    #     ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
-    #     ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
-    #     ag_db.drop_duplicates(keep='last', inplace=True)
-    # else:
-    #     ag_db = combained
-    # tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
-    # tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
+
+    if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
+        ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
+        ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
+        ag_db.drop_duplicates(keep='last', inplace=True)
+    else:
+        ag_db = combained
+    tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
+    tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
 
     panels = {}
     for panel in cfg.Panels_names[:-1]:
@@ -113,10 +113,11 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     except Exception as e:
         main_logger.info("Unable to get word version. Assuming 2016\n{}".format(e))
         tools.put_text("Unable to get word version. Assuming 2016", q, txt)
-    
+
     try:
         sample_summary = RCv2.MAIN_RCv2wrapper(PATHS["DIR_TREE"][0], wordVer,
-                PATHS["BAM_PATH"], PATHS["Hospital"], cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
+                PATHS["BAM_PATH"], PATHS["Hospital"], PATHS['SAMPLE_DICT'],
+                cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
                 PATHS["EXTRA_INFO_PATH"])
     except Exception as e:
         main_logger.error("Failed to exceute MAIN_RCv2wrapper\n{}".format(e))
