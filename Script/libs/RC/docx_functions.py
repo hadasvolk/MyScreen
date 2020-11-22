@@ -11,7 +11,8 @@ from getInfo_functions import get_INFO_posRes, get_INFO_decon
 import cfg
 
 genotypes = ['CARRIER', 'CARRIER-Georgian', 'CARRIER-Georgian-Problem',
-             'CARRIER-Druze', 'CARRIER-Druze-Problem', 'CARRIER-Problem', 'HOM'] # For createReports().
+            'CARRIER - With soft-clipped reads', 'CARRIER-Problem - With soft-clipped reads',
+            'CARRIER-Druze', 'CARRIER-Druze-Problem', 'CARRIER-Problem', 'HOM'] # For createReports().
 cnvs = ['CNV', 'CNV Big Del Boundaries Different as Reported', 'CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 cnvs_problem = ['CNV-Problem', 'CNV-Problem Big Del Boundaries Different as Reported'] # For createReports().
 

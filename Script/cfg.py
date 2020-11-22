@@ -17,13 +17,13 @@ AG_DB_excel = 'C:/Gamidor/Appendix/db_statistics-v2.xlsx'
 # Hospitals
 Hospitals = '{}/docs/word_templates'.format(curdir)
 HospitalCode = {
-'Zer':['MN00742', 'M05987'],
+'Zer':['MN00742'],
 'Soroka':['M05987'],
 'Belinson':['MN00937', 'M04441'],
 'Carmel':['MN00885'],
 'Maccabi':['M06216'],
-'Meir':['MN01010', 'MN01026'],
-'Meuhedet':['MN01006']
+'Meir':['MN01010'],
+'Bnei-Zion':['MN02633']
 }
 # נספחים ופרוטוקולים
 vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive_(2020-11-08)Ver2.1.xlsx'.format(curdir)
