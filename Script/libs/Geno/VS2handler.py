@@ -10,6 +10,8 @@ import VCF
 import verifyAGID
 import cfg
 import tools
+import warnings
+warnings.filterwarnings("ignore")
 
 date = datetime.datetime.now().strftime("%d-%m-%Y")
 
@@ -18,6 +20,39 @@ anno_pkl = cfg.anno_pkl
 bed_pkl = cfg.bed_pkl
 anno_excel = cfg.anno_excel
 
+
+def convergeComplexedMutations(df, type, anno):
+    dict = {}
+    targetRowAnno = anno.loc[(anno.AGID == 'AG5316')]
+    for row in df.itertuples():
+        sample = row.Sample
+        if sample in dict:
+            dict[sample].add(row.AGID)
+        else:
+            dict[sample] = {row.AGID}
+    for item in dict.items():
+        if 'AG3373' in item[1] and 'AG3379' in item[1]:
+            targetRowPositive = df[(df['Sample'] == item[0]) & (df['AGID'] == 'AG3373')]
+            targetRowPositive_index = targetRowPositive.index[0]
+            oldVariant = targetRowPositive['Variant'].get(targetRowPositive_index)
+            newVariant = oldVariant.replace('CTCAGCCACTTAGAAT','CTCAGCCACTTAGAATTAACAGT').replace('>C/','>CTAAAAG/').replace('/C\b','/CTAAAAG')
+            targetRowPositive['AGID'] = targetRowAnno['AGID'].iloc[0]
+            targetRowPositive['Chr'] = targetRowAnno['Chr'].iloc[0]
+            targetRowPositive['Coordinate'] = targetRowAnno['Position'].iloc[0]
+            targetRowPositive['Gene'] = targetRowAnno['annotation1'].iloc[0].split(':')[0]
+            targetRowPositive['Variant'] = newVariant
+            targetRowPositive['Custom Annotation'] = targetRowAnno['annotation1'].iloc[0]
+            targetRowPositive['Custom Annotation 2'] = targetRowAnno['annotation2'].iloc[0]
+            targetRowPositive['Custom Annotation 3'] = targetRowAnno['annotation3'].iloc[0]
+            targetRowPositive['Custom Annotation 4'] = targetRowAnno['annotation4'].iloc[0]
+            targetRowPositive['gdna'] = targetRowAnno['gdna'].iloc[0]
+            smallMutationindexNames = df[(df['Sample'] == item[0]) & ((df['AGID'] == 'AG3373') | (df['AGID'] == 'AG3379'))].index
+            largeMutationindexNames = df[(df['Sample'] == item[0]) & (df['AGID'] == 'AG5316')].index
+            if type == 'positive':
+                df.drop(smallMutationindexNames, inplace=True)
+            df.drop(largeMutationindexNames, inplace=True)
+            df = df.append(targetRowPositive, ignore_index=True)
+    return df
 
 def CYBA_HEXB_AGXT_cor(positive, complete):
     if positive.empty:
@@ -345,6 +380,11 @@ def VS2parser(input_path, main_out, extra_info, logger_name):
     # vcf_gender.to_excel(writer, sheet_name='Gender', index=False)
     # vcf_non.to_excel(writer, sheet_name='Non Reported', index=False)
     # writer.save()
+
+    vcf_bed = convergeComplexedMutations(vcf_bed, 'all', anno)
+    vcf_bed = vcf_bed.sort_values(by=['Sample', 'Chr', 'Coordinate'])
+    vcf_positive = convergeComplexedMutations(vcf_positive, 'positive', anno)
+    vcf_positive = vcf_positive.sort_values(by=['Sample', 'Chr', 'Coordinate'])
 
     pickles = cfg.GenoPickles
     dfs = {pickles[0]: vcf_bed, pickles[1]: vcf_positive, pickles[2]: vcf_wt,
