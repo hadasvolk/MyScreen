@@ -85,12 +85,13 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     PATHS["SUMMARY"] = options.choose(root)
 
     #Importing Bam Directory path and validating bam & bai
-    PATHS["BAM_PATH"], PATHS["SAMPLE_DICT"] = inputVald.validate_bams(root)
+    PATHS["BAM_PATH"],  PATHS["SAMPLE_DICT"] = inputVald.validate_bams(root, PATHS["SUMMARY"])
 
     # Building directory tree
     DIR_TREE = inputVald.build_dir_tree(root, cfg.Main_Dir)
     PATHS["DIR_TREE"] = DIR_TREE
-
+    tools.compressed_pickle("{}/sample_dict".format(DIR_TREE[1]), PATHS["SAMPLE_DICT"])
+    
     log = tools.setup_logger('stdout', '{}/.out.log'.format(DIR_TREE[1], curDate), logging.DEBUG)
     sys.stdout = tools.LoggerWriter(log.debug)
     # sys.stderr = tools.ProcessError("Unexpected error occured")

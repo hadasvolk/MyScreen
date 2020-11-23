@@ -9,6 +9,7 @@ import copy
 
 import combobox
 import cfg
+import tools
 
 
 """
@@ -16,6 +17,7 @@ Function to handle user input files
 """
 
 bam_d = "Click to choose run directory \n(where bam, bai files)"
+results_d = "Click to choose results directory \n(where analysis files are)"
 samplesheet_d = "Click to import SampleSheet.csv"
 extraInfo_d = "Do you wish to add extra information? Optinal Excel file\nIf not chosen all samples will be analyzed for Extended panel"
 panel_d = 'Choose panel for ALL samples?'
@@ -27,7 +29,7 @@ def popupmsg(root, msg):
     label.place(relx=.5, rely=.35, anchor="c")
 
 
-def validate_bams(root):
+def validate_bams(root, summary):
     global BAM_PATH
     global SAMPLE_DICT
     SAMPLE_DICT = {}
@@ -44,7 +46,8 @@ def validate_bams(root):
 
     while True:
         #GUI Message
-        click_label = Label(root, text=bam_d,  font=('calibre', 12, 'bold'))
+        t = results_d if summary else bam_d
+        click_label = Label(root, text=t,  font=('calibre', 12, 'bold'))
         click_label.place(relx=.5, rely=.45, anchor="c")
         var_bam = IntVar()
         button_bam = Button(root, text="Click", command=lambda: var_bam.set(1))
@@ -55,29 +58,39 @@ def validate_bams(root):
             Destroying()
             continue
         #Validation of bam and bai
-        for filename in os.listdir(BAM_PATH):
-            if filename.endswith(".bam"):
-                sample = (filename.split(".")[0]).split("_")
-                SAMPLE_DICT[sample[1]] = sample[0]
-            elif filename.endswith(".bai"):
-                sample = (filename.split(".")[0]).split("_")
-                sample_dict_bai[sample[1]] = sample[0]
-        diff1 = SAMPLE_DICT.keys() - sample_dict_bai.keys()
-        diff2 = sample_dict_bai.keys() - SAMPLE_DICT.keys()
-        button_bam.destroy()
-        if len(diff1) or len(diff2):
-            msg = "Direcotry does not contain bam or bai for sample(s): {}".format(diff1.union(diff2))
-            Destroying()
-            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
-            warning.place(relx=.5, rely=.35, anchor="c")
-            continue
-        elif len(SAMPLE_DICT) == 0:
-            msg = "No bam files in choosen directory"
-            Destroying()
-            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
-            warning.place(relx=.5, rely=.35, anchor="c")
-            continue
-        SAMPLE_DICT = {key:value for (key,value) in SAMPLE_DICT.items()}
+        if not summary:
+            for filename in os.listdir(BAM_PATH):
+                if filename.endswith(".bam"):
+                    sample = (filename.split(".")[0]).split("_")
+                    SAMPLE_DICT[sample[1]] = sample[0]
+                elif filename.endswith(".bai"):
+                    sample = (filename.split(".")[0]).split("_")
+                    sample_dict_bai[sample[1]] = sample[0]
+            diff1 = SAMPLE_DICT.keys() - sample_dict_bai.keys()
+            diff2 = sample_dict_bai.keys() - SAMPLE_DICT.keys()
+            button_bam.destroy()
+            if len(diff1) or len(diff2):
+                msg = "Direcotry does not contain bam or bai for sample(s): {}".format(diff1.union(diff2))
+                Destroying()
+                warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+                warning.place(relx=.5, rely=.35, anchor="c")
+                continue
+            elif len(SAMPLE_DICT) == 0:
+                msg = "No bam files in choosen directory"
+                Destroying()
+                warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+                warning.place(relx=.5, rely=.35, anchor="c")
+                continue
+            SAMPLE_DICT = {key:value for (key,value) in SAMPLE_DICT.items()}
+        else:
+            try:
+                SAMPLE_DICT = tools.decompress_pickle("/".join([BAM_PATH, "info/sample_dict.pbz2"]))
+            except:
+                msg = "No sample_dict.pbz2 file. Unable to determine analysis samples"
+                Destroying()
+                warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+                warning.place(relx=.5, rely=.35, anchor="c")
+                continue
         Destroying()
         return BAM_PATH, SAMPLE_DICT
 
@@ -239,7 +252,7 @@ def getRunName(master, bam_path, illegal = False):
         res = [i for i in s.split('_') if 'M' in i][0]
     except:
         return getRunName(master, bam_path, illegal = True)
-        
+
     if res == None or res not in list(dict_hos.keys()):
         return getRunName(master, bam_path, illegal = True)
     else:
@@ -319,6 +332,8 @@ def getHospital_Panel(root, x, PATHS):
 
 def build_dir_tree(root, ver):
     global BAM_PATH
+    if BAM_PATH.split("/")[-1] == ver:
+        BAM_PATH = "/".join(BAM_PATH.split("/")[:-1])
     folder_list_up = []
     folder_list = ["{}".format(ver),
                    "{}/Info".format(ver),
