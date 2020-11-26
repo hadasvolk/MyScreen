@@ -20,6 +20,7 @@ import subprocess  # for igv link
 import pickle  # for igv link
 
 import cfg
+import tools
 
 time = datetime.datetime.now()
 date = datetime.datetime.now().strftime("%d-%m-%Y")
@@ -81,7 +82,12 @@ def adjust_df(df, paths):
     df["Test Code"] = np.nan
     df["Test Name"] = np.nan
 
-    samples = [f.split('_')[0] for f in paths["FAILED_SAMPLES"]]
+    try:
+        failed = tools.decompress_pickle("{}/failed_samples.pbz2".format(paths["DIR_TREE"][6]))
+        samples = [f.split('_')[0] for f in failed]
+    except Exception as e:
+        raise e
+
     D = {name : code for name, code in cfg.Panels}
     for index, row in df.iterrows():
         s = 'S{}'.format(row.S)

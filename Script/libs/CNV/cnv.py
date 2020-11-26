@@ -99,6 +99,7 @@ def cnvThread(root, PATHS, ver, curDir, genoCompl, cnvCompl, q, txt):
         cnv_logger.info("Starting DECoNparser session")
         try:
             PATHS["FAILED_SAMPLES"] = DECoNoutput.DECoNparser(PATHS, 'CNV', q, txt)
+            tools.compressed_pickle("{}/failed_samples".format(PATHS["DIR_TREE"][6]), PATHS["FAILED_SAMPLES"])
         except Exception as e:
             main_logger.error("Failed to exceute DECoNparser\n{}".format(e))
             cnv_logger.error("Failed to exceute DECoNparser\n{}".format(e))
