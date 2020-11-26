@@ -162,12 +162,14 @@ def DECoNparser(PATHS, logger_name, q, txt):
     failures_sample = failures[~failed_exon_mask]
 
     # print(failures_sample)
+    failed_samples = []
     if not failures_sample.empty:
         for index, row in failures_sample.iterrows():
             with open("{}/errors.log".format(main_out), 'a+') as f:
                 f.write("Sample {} failed during CNV detection\n".format(row.Sample))
                 print("Sample {} failed during CNV detection".format(row.Sample))
                 tools.put_text("Sample {} failed during CNV detection".format(row.Sample), q, txt)
+                failed_samples.append(row.Sample)
 
     failures_exon.insert(len(failures_exon.columns),'FPKM',
         failures_exon.Info.apply(getFPKM))
@@ -390,7 +392,8 @@ def DECoNparser(PATHS, logger_name, q, txt):
     # cnv_logger.info('Generated excel')
     cnv_logger.info('Completed DECoNParser')
 
-    print("CNV detection completed!")
+    # print("CNV detection completed!")
+    return(failed_samples)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

@@ -81,12 +81,18 @@ def adjust_df(df, paths):
     df["Test Code"] = np.nan
     df["Test Name"] = np.nan
 
+    samples = [f.split('_')[0] for f in paths["FAILED_SAMPLES"]]
     D = {name : code for name, code in cfg.Panels}
     for index, row in df.iterrows():
         s = 'S{}'.format(row.S)
         panel = paths['SAMPLE_DICT'][s][1]
         df.loc[index, "Test Code"] = D.get(panel)
         df.loc[index, "Test Name"] = panel
+        if row.Sample in samples:
+            if row.Disease == "No mutations identified (WT).":
+                df.loc[index, "Disease"] = "FAILED SAMPLE"
+            df.loc[index, "Classification"] = "FAILED SAMPLE"
+            df.loc[index, "Genotype"] += " and FAILED SAMPLE in CNV analysis"
 
     df = df[['Sample', 'S', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
             'MOH', 'Ethnicity', 'Classification', 'Clalit Disease Makat',
@@ -189,7 +195,7 @@ def excel_formatter(df, paths, Analysis_Version):
     ws.column_dimensions['G'].width = 40
     ws.column_dimensions['H'].width = 30
     ws.column_dimensions['I'].width = 20
-    ws.column_dimensions['J'].width = 10
+    ws.column_dimensions['J'].width = 15
     ws.column_dimensions['K'].width = 10
     ws.column_dimensions['L'].width = 10
     ws.column_dimensions['M'].width = 20
@@ -286,7 +292,7 @@ def excel_formatter(df, paths, Analysis_Version):
                 clas.value = k
                 break
 
-        if clas.value == 'HOM':
+        if clas.value == 'HOM' or clas.value == 'FAILED SAMPLE':
             fill(geno, yellow)
             fill(clas, yellow)
 
