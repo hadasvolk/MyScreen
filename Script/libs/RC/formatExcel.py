@@ -1,3 +1,4 @@
+import sys
 import pandas as pd
 import csv
 import openpyxl
@@ -19,8 +20,14 @@ import os  # for igv link
 import subprocess  # for igv link
 import pickle  # for igv link
 
-import cfg
-import tools
+try:
+    import cfg
+    import tools
+except:
+    sys.path.append(r'c:\Gamidor\MyScreen\Script')
+    sys.path.append(r'c:\Gamidor\MyScreen\Script\libs')
+    import cfg
+    import tools
 
 time = datetime.datetime.now()
 date = datetime.datetime.now().strftime("%d-%m-%Y")
@@ -94,11 +101,15 @@ def adjust_df(df, paths):
         panel = paths['SAMPLE_DICT'][s][1]
         df.loc[index, "Test Code"] = D.get(panel)
         df.loc[index, "Test Name"] = panel
+        if row.Disease == "No mutations identified (WT).":
+            df.loc[index, "AGID"] = "AG0000"
+            df.loc[index, "Classification"] = "No mutations identified (WT)."
         if row.Sample in samples:
             if row.Disease == "No mutations identified (WT).":
-                df.loc[index, "Disease"] = "FAILED SAMPLE"
-            df.loc[index, "Classification"] = "FAILED SAMPLE"
-            df.loc[index, "Genotype"] += " and FAILED SAMPLE in CNV analysis"
+                df.loc[index, "Disease"] = "Sample Failed"
+                df.loc[index, "AGID"] = "999999"
+            df.loc[index, "Classification"] = "Sample Failed"
+            df.loc[index, "Genotype"] += " and Sample Failed in CNV analysis"
 
     df = df[['Sample', 'S', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
             'MOH', 'Ethnicity', 'Classification', 'Clalit Disease Makat',
@@ -120,6 +131,7 @@ def header(cell, to_bold):
 
 def excel_formatter(df, paths, Analysis_Version):
     write_path = paths["DIR_TREE"][0]
+    tools.compressed_pickle("{}/summary".format(paths["DIR_TREE"][1]), df)
     # print(paths)
     # wb = load_workbook(filename=write_path)
     # ws = wb.active
@@ -298,7 +310,7 @@ def excel_formatter(df, paths, Analysis_Version):
                 clas.value = k
                 break
 
-        if clas.value == 'HOM' or clas.value == 'FAILED SAMPLE':
+        if clas.value == 'HOM' or clas.value == 'Sample Failed':
             fill(geno, yellow)
             fill(clas, yellow)
 
@@ -315,6 +327,18 @@ def excel_formatter(df, paths, Analysis_Version):
     ws.sheet_view.zoomScale = 85
     wb.save(out_file)
 
+    ws.unmerge_cells('B2:D2')
+    ws.unmerge_cells('B3:D3')
+    ws.unmerge_cells('F2:G2')
+    ws.unmerge_cells('F3:G3')
+
+    ws['B2'] = None
+    ws['E2'] = None
+    ws['F2'] = None
+    ws['B3'] = None
+    ws['E3'] = None
+    ws['F3'] = None
+
     r = ws.max_row
     ws.move_range("C5:AH{}".format(r), cols=-1)
     ws.move_range("C3:C3", cols=-1)
@@ -322,8 +346,14 @@ def excel_formatter(df, paths, Analysis_Version):
     ws.move_range("F2:F2", rows=-1)
     ws.move_range("C2:C2", cols=-1, rows=-1)
     ws.move_range("A5:AH{}".format(r), rows=2)
-    ws['D1'] = 'Run Name'
-    # ws['B1'] = 'Data Analysis Version'
+
+    ws['B1'].value = 'Data Analysis Version'
+    ws['B3'].value = Analysis_Version
+    ws['D1'].value = 'Run Name'
+    ws['D3'].value = "{}".format(run)
+    ws['F1'].value = "Analysis Date"
+    ws['F3'].value = time.strftime("%d-%B-%Y")
+
     with open("{}.csv".format(out_file.split('.xlsx')[0]), 'w', newline='') as f:
         c = csv.writer(f)
         for r in ws.rows:
@@ -388,15 +418,9 @@ if __name__ == "__main__":
     # df = pd.DataFrame()
 
     # shutil.copyfile(original, target)
-    paths = {'BAM_PATH': 'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY', 'SAMPLE_DICT': {'S12': ['10039-20', 'Bedouin'], 'S13': ['10040-20', 'Bedouin'], 'S14': ['10062-20', 'Bedouin'], 'S15': ['10063-20', 'Bedouin'], 'S38': ['10182-20', 'Bedouin'], 'S39': ['10183-20', 'Bedouin'], 'S16': ['10184-20', 'Bedouin'], 'S17': ['10185-20', 'Bedouin'], 'S18': ['10368-20', 'Bedouin'], 'S19': ['10369-20', 'Bedouin'], 'S20': ['10420-20', 'Bedouin'], 'S21': ['10421-20', 'Bedouin'], 'S22': ['10422-20', 'Bedouin'], 'S23': ['10423-20', 'Bedouin'], 'S24': ['10424-20', 'Bedouin'], 'S25': ['10425-20', 'Bedouin'], 'S26': ['10435-20', 'Bedouin'], 'S27': ['10436-20', 'Bedouin'], 'S28': ['10506-20', 'Bedouin'], 'S29': ['10507-20', 'Bedouin'], 'S30': ['10533-20', 'Bedouin'], 'S31': ['10618-20', 'Bedouin'], 'S32': ['10619-20', 'Bedouin'], 'S33': ['10626-20', 'Bedouin'], 'S34': ['10627-20', 'Bedouin'], 'S35': ['10632-20', 'Bedouin'], 'S36': ['10633-20', 'Bedouin'], 'S37': ['2309-ZER', 'Bedouin'], 'S1': ['9029-20', 'Bedouin'], 'S2': ['9030-20', 'Bedouin'], 'S3': ['9221-20', 'Bedouin'], 'S4': ['9234-20', 'Bedouin'], 'S5': ['9235-20', 'Bedouin'], 'S6': ['9615-20', 'Bedouin'], 'S7': ['9616-20', 'Bedouin'], 'S8': ['9960-20', 'Bedouin'], 'S9': ['9961-20', 'Bedouin'], 'S10': ['9976-20', 'Bedouin'], 'S11': ['9977-20', 'Bedouin']},
-    'DIR_TREE': ['C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs/PiscesLogs',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/CNV',
-    'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/Info/CNV/Logs'],
-    'EXTRA_INFO_PATH': False, 'RUN_NAME': '201013_MN00937_0047_A000H352JY', 'Hospital': 'Belinson'}
+    paths = {'BAM_PATH': r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW', 'SAMPLE_DICT': {'S1': ['2305', 'Bedouin'], 'S2': ['2306', 'Bedouin'], 'S3': ['2314', 'Bedouin'], 'S4': ['2315', 'Bedouin'], 'S5': ['2336', 'Bedouin'], 'S6': ['2337', 'Bedouin'], 'S7': ['2338', 'Bedouin'], 'S8': ['2339', 'Bedouin'], 'S9': ['2340', 'Bedouin'], 'S10': ['2341', 'Bedouin'], 'S11': ['2347', 'Bedouin'], 'S12': ['2348', 'Bedouin'], 'S13': ['2349', 'Bedouin'], 'S14': ['2350', 'Bedouin'], 'S15': ['2351', 'Bedouin'], 'S16': ['2353', 'Bedouin'], 'S17': ['2354', 'Bedouin'], 'S18': ['2355', 'Bedouin'], 'S19': ['2357', 'Bedouin'], 'S20': ['2358', 'Bedouin'], 'S21': ['2359', 'Bedouin'], 'S22': ['2363', 'Bedouin'], 'S23': ['2364', 'Bedouin'], 'S24': ['2365', 'Bedouin'], 'S25': ['2367', 'Bedouin'], 'S26': ['2368', 'Bedouin'], 'S27': ['2369', 'Bedouin'], 'S28': ['2370', 'Bedouin'], 'S29': ['2371', 'Bedouin'], 'S30': ['2374', 'Bedouin'], 'S31': ['2375', 'Bedouin'], 'S32': ['2381', 'Bedouin'], 'S33': ['2382', 'Bedouin'], 'S34': ['2383', 'Bedouin'], 'S35': ['2389', 'Bedouin'], 'S36': ['2390', 'Bedouin'], 'S37': ['2398', 'Bedouin'], 'S38': ['2399', 'Bedouin'], 'S39': ['2400', 'Bedouin'], 'S40': ['2436', 'Bedouin']},
+    'DIR_TREE': [r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info/Genotyping/Logs/PiscesLogs', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info/CNV', r'C:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Zer/201101_MN00742_0104_A000H37LNW/MyScreen_Analysis_v2.1_RESULTS/Info/CNV/Logs'],
+    'EXTRA_INFO_PATH': False, 'RUN_NAME': '201013_MN00937_0047_A000H352JY', 'Hospital': 'Zer'}
 
-    df = pd.read_pickle('c:/Users/hadas/AGcloud/AGshared/Gamidor/Capture_Panel/HospitalRuns/Belinson/201013_MN00937_0047_A000H352JY/MyScreen_Analysis_v2.1_RESULTS/tmp.pkl')
+    df = tools.decompress_pickle(r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Zer\201101_MN00742_0104_A000H37LNW\MyScreen_Analysis_v2.1_RESULTS\Info\summary.pbz2')
     excel_formatter(df, paths, "MyScreen_Analysis_v2.1")
