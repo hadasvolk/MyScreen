@@ -4,7 +4,7 @@ curdir = os.path.dirname(os.path.realpath(__file__))
 date = datetime.datetime.now().strftime("%d-%m-%Y")
 
 # Number of working threads
-n_workrs = 3
+n_workrs = 5
 
 #Global Strings to incoopraite in GUI and to change in version update
 MyScreen_Ver = "MyScreen_Analysis_v2.1"

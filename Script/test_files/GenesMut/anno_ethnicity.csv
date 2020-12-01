@@ -1,509 +1,514 @@
-Gene,Disease,Ethnicity,
-COLEC11, 3MC syndrome 2,"Non Jewish, Bedouin", 3MC syndrome 2
-SERAC1," 3-methylglutaconic aciduria with deafness, encephalopathy, and Leigh-like syndrome","Muslim, Palestinian"," 3-methylglutaconic aciduria with deafness, encephalopathy, and Leigh-like syndrome"
-OPA3," 3-methylglutaconic aciduria, type III - Costeff","Jewish, Iraqi, MOH: Jewish - Iraqi"," 3-methylglutaconic aciduria, type III - Costeff"
-TIMM50," 3-methylglutaconic aciduria, type IX","Israeli Arab, Palestinian, Bedouin, Muslim"," 3-methylglutaconic aciduria, type IX"
-MTTP, Abetalipoproteinemia ABL,"Jewish, North African, Ashkenazi, Iranian", Abetalipoproteinemia ABL
-CNGA3, Achromatopsia-2 - total color blindness,"Jewish, Muslim, MOH: Israeli Arab - Bedouin (Negev), Muslim, Yemeni, Israeli Arab, Jewish, Israeli Arab, Iranian, Iraqi, Kurd, Muslim, Druze, Bedouin, Ashkenazi", Achromatopsia-2 - total color blindness
-CNGB3," Achromatopsia-3,macular degeneration, juvenile","Jewish, Muslim, North African, Israeli Arab, Ashkenazi, Kavkazi, Ashkenazi"," Achromatopsia-3,macular degeneration, juvenile"
-SLC39A4, Acrodermatitis enteropathica,"Muslim, Israeli Arab", Acrodermatitis enteropathica
-ACADVL," Acyl-CoA dehydrogenase, very long-chain, VLCAD deficiency","Muslim, Jewish, MOH: Israeli Arab - Bedouin (Negev), Bedouin, unknown, Bukharian, MOH: Non Jewish - Bedouin (Negev), Israeli Arab, Jewish, Non Jewish, Bedouin, Non Jewish, Bedouin, Iraqi"," Acyl-CoA dehydrogenase, very long-chain, VLCAD deficiency"
-EOGT, Adams-Oliver syndrome 4,"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Adams-Oliver syndrome 4
-CECR1, Adenosine deaminase 2 deficency,Palestinian, Adenosine deaminase 2 deficency
-CYP11A1," Adrenal insufficiency, congenital, with 46XY sex reversal, partial or complete","Bedouin, Israeli Arab"," Adrenal insufficiency, congenital, with 46XY sex reversal, partial or complete"
-TBX19, Adrenocorticotropic hormone deficiency,"MOH: Druze - Druze (Jat); Israeli Arab - Christian (Jish), Druze, Israeli Arab, Christian, Druze, Muslim", Adrenocorticotropic hormone deficiency
-FGB, Afibrinogenemia congenital,"Non Jewish, Muslim", Afibrinogenemia congenital
-SAMHD1, Aicardi Goutieres syndrome,Jewish, Aicardi Goutieres syndrome
-RNASEH2B, Aicardi-Goutieres syndrome 2,"Muslim, Israeli Arab", Aicardi-Goutieres syndrome 2
-CDK10, Al Kaissi syndrome,"Ashkenazi, Jewish", Al Kaissi syndrome
-GMPPA," Alacrima, achalasia, and mental retardation syndrome","Muslim, Israeli Arab"," Alacrima, achalasia, and mental retardation syndrome"
-TYR," Albinism, oculocutaneous, type IA (OCA1A)","MOH: Druze - Druze (Abu Snan), Druze"," Albinism, oculocutaneous, type IA (OCA1A)"
-OCA2," Albinism, oculocutaneous, type II","Ashkenazi, Jewish"," Albinism, oculocutaneous, type II"
-SLC45A2," Albinism, oculocutaneous, type IV",Jewish," Albinism, oculocutaneous, type IV"
-HGD, Alkaptonuria,"Israeli Arab, MOH: Israeli Arab - Bedouin (Manshit Zabeda)", Alkaptonuria
-COL4A3," Alport Syndrome, COL4A3-Related","Ashkenazi, Jewish"," Alport Syndrome, COL4A3-Related"
-COL4A4," Alport syndrome, COL4A4-Related","Iraqi, Jewish, Tunisian"," Alport syndrome, COL4A4-Related"
-COL4A5," Alport syndrome, COL4A5-Related","Jewish, Iraqi, Ashkenazi, Moroccan"," Alport syndrome, COL4A5-Related"
-ALMS1, Alstrom syndrome,"Muslim, Israeli Arab", Alstrom syndrome
-FAM20A," Amelogenesis imperfecta, type IG (enamel-renal syndrome)","Bedouin, Israeli Arab"," Amelogenesis imperfecta, type IG (enamel-renal syndrome)"
-POR, Antley-Bixler syndrome with genital anomalies and disordered steroidogenesis,"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Antley-Bixler syndrome with genital anomalies and disordered steroidogenesis
-ASL, Argininosuccinic aciduria,"Non Jewish, Druze, MOH: Non Jewish - Druze (Yarka)", Argininosuccinic aciduria
-VPS33B, Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome,"Muslim, Israeli Arab, Druze", Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome
-VIPAS39, Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome 2,"Muslim, Israeli Arab", Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome 2
-SLC35A3," Arthrogryposis, mental retardation, and seizures","Ashkenazi, Jewish"," Arthrogryposis, mental retardation, and seizures"
-WISP3," Arthropathy, progressive pseudorheumatoid, of childhood","Kurd, Jewish"," Arthropathy, progressive pseudorheumatoid, of childhood"
-ASNS, Asparagine synthetase deficiency,"Jewish, Iranian", Asparagine synthetase deficiency
-AGA, Aspartylglucosaminuria,"Muslim, Israeli Arab", Aspartylglucosaminuria
-MRE11A, Ataxia Telangiectasia like disorder,"Israeli Arab, Non Jewish, MOH: Israeli Arab - Bedouin (Negev), Bedouin, Christian", Ataxia Telangiectasia like disorder
-APTX," Ataxia, early-onset, with oculomotor apraxia and hypoalbuminemia","Muslim, Israeli Arab"," Ataxia, early-onset, with oculomotor apraxia and hypoalbuminemia"
-ATM, Ataxia-tyelangiectasia,"MOH: Israeli Arab - Muslim (Romane, Turan, Uzeir), Israeli Arab, Non Jewish", Ataxia-tyelangiectasia
-TMEM70," ATPase deficiency, nuclear encoded","Muslim, Israeli Arab, Bedouin, Non Jewish"," ATPase deficiency, nuclear encoded"
-AIRE," Autoimmune polyendocrinopathy syndrome , type I (APS-1) with or without reversible metaphyseal dysplasia","Jewish, Muslim, MOH: Israeli Arab - Christian (Kfar Kana, Kisra-Sumei), Israeli Arab, Christian, Iranian, Iraqi"," Autoimmune polyendocrinopathy syndrome , type I (APS-1) with or without reversible metaphyseal dysplasia"
-PSMB8," Autoinflammation, lipodystrophy, and dermatosis syndrome","Ashkenazi, Jewish"," Autoinflammation, lipodystrophy, and dermatosis syndrome"
-FLT4, Autosomal Recessive Hereditary Lymphedema,"Muslim, Israeli Arab", Autosomal Recessive Hereditary Lymphedema
-BBS1, Bardet-Biedl syndrome 1,"Muslim, Jewish, Israeli Arab", Bardet-Biedl syndrome 1
-BBS10, Bardet-Biedl syndrome 10,"Jewish, Israeli Arab, Bedouin", Bardet-Biedl syndrome 10
-TRIM32, Bardet-Biedl syndrome 11,"Bedouin, Israeli Arab", Bardet-Biedl syndrome 11
-BBS2, Bardet-Biedl syndrome 2,"Jewish, MOH: Israeli Arab - Bedouin (Negev), Israeli Arab, Bedouin, Ashkenazi, Moroccan", Bardet-Biedl syndrome 2
-ARL6, Bardet-Biedl syndrome 3,"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Bardet-Biedl syndrome 3
-BBS4, Bardet-Biedl syndrome 4,"MOH: Non Jewish - Bedouin, Non Jewish", Bardet-Biedl syndrome 4
-BBS7, Bardet-Biedl syndrome 7,"Muslim, Israeli Arab", Bardet-Biedl syndrome 7
-BBS9, Bardet-Biedl syndrome 9,Druze, Bardet-Biedl syndrome 9
-RFX5," Bare lymphocyte syndrome, type II (SCID)","Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)"," Bare lymphocyte syndrome, type II (SCID)"
-SLC12A3," Bartter Syndrome, Gitelman Variant","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin"," Bartter Syndrome, Gitelman Variant"
-CLCNKB," Bartter syndrome, type 3 and Gitelman syndrome","Jewish, MOH: Israeli Arab - Bedouin (Basmat Tabun), Bedouin, Ashkenazi, Israeli Arab, Non Jewish"," Bartter syndrome, type 3 and Gitelman syndrome"
-BSND," Bartter syndrome, type 4a infantile variant with sensorineuronal deafness","Jewish, MOH: Israeli Arab - Bedouin (Negev), Bukharian, Israeli Arab, Bedouin"," Bartter syndrome, type 4a infantile variant with sensorineuronal deafness"
-MED25, Basel-Vanagaite-Smirin-Yosef syndrome,"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Jisser el Zarka)", Basel-Vanagaite-Smirin-Yosef syndrome
-UPB1, Beta-ureidopropionase deficiency,"Ashkenazi, Jewish", Beta-ureidopropionase deficiency
-CYP4V2, Bietti crystalline corneoretinal dystrophy,"Jewish, Yemeni", Bietti crystalline corneoretinal dystrophy
-ADGRG1, Bilateral Frontoparietal Polymicrogyria (BFPP),"Muslim, Jewish, Israeli Arab, Karaite, Israeli Arab, Palestinian, MOH: Israeli Arab - Muslim (Kfar Kassem)", Bilateral Frontoparietal Polymicrogyria (BFPP)
-BTD, Biotinidase deficiency,"Muslim, Israeli Arab", Biotinidase deficiency
-CCDC174, Birk Volodarsky PMR Synderome Hypotonia and psychomotor developmental delay,"Bedouin, Ethiopian, Israeli Arab, Jewish, MOH: Israeli Arab - Bedouin (Negev); Jewish - Ethiopian", Birk Volodarsky PMR Synderome Hypotonia and psychomotor developmental delay
-SLC30A9, Birk-Landau-Perez cerebro-renal syndrome,"Bedouin, Israeli Arab, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Birk-Landau-Perez cerebro-renal syndrome
-BLM, Bloom syndrome,"Russian, Jewish", Bloom syndrome
-BMPR1B, Brachydactyly type A2,"Non Jewish, Bedouin", Brachydactyly type A2
-ZNF469, Brittle cornea syndrome 1,"Muslim, Jewish, Israeli Arab, Tunisian", Brittle cornea syndrome 1
-ASPA, Canavan Disease,, Canavan Disease
-CPS1, Carbamoylphosphate synthetase I deficiency,"MOH: Israeli Arab - Christian, Ashkenazi, Bedouin, Christian, Israeli Arab, Jewish", Carbamoylphosphate synthetase I deficiency
-PPP1R13L, Cardio-Cutaneous Syndrome DCM,"MOH: Non Jewish - Christian (Majar), Christian, Israeli Arab, Non Jewish", Cardio-Cutaneous Syndrome DCM
-TTN," Cardiomyopathy, dilated - Lethal Congenital Arthrogryposis","Israeli Arab, MOH: Israeli Arab - Muslim (Bueine Nujeidat), Bedouin, Muslim"," Cardiomyopathy, dilated - Lethal Congenital Arthrogryposis"
-SDHA," Cardiomyopathy, dilated , 1GG neonatal isolated","Jewish, MOH: Israeli Arab - Bedouin (Negev), Israeli Arab, Bedouin, Ashkenazi"," Cardiomyopathy, dilated , 1GG neonatal isolated"
-SLC22A5," Carnitine deficiency, systemic primary","Jewish, Iranian"," Carnitine deficiency, systemic primary"
-CPT1A, Carnitine palmitoyltransferase 1 deficiency,, Carnitine palmitoyltransferase 1 deficiency
-SLC25A20, Carnitine-acylcarnitine translocase deficiency - CACT,"MOH: Israeli Arab - Bedouin (Negev), Non Jewish, Palestinian, Israeli Arab, Bedouin, Muslim, unknown", Carnitine-acylcarnitine translocase deficiency - CACT
-THG1L, Cerebellar ataxia and developmental delay,"Ashkenazi, Jewish", Cerebellar ataxia and developmental delay
-GATM, Cerebral creatine deficiency syndrome 3,"Jewish, Yemeni", Cerebral creatine deficiency syndrome 3
-SNAP29," Cerebral dysgenesis, neuropathy, ichthyosis, and palmoplantar keratoderma syndrome - CEDNIK Syndrome","Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Daburie, Mashad)"," Cerebral dysgenesis, neuropathy, ichthyosis, and palmoplantar keratoderma syndrome - CEDNIK Syndrome"
-CYP27A1, Cerebrotendinous xanthomatosis,"Jewish, Algerian, Druze, Moroccan, Tunisian, Non Jewish, MOH: Druze - Druze (Yarka), Jewish, Non Jewish, Druze, Ashkenazi, Moroccan, Ashkenazi, Moroccan", Cerebrotendinous xanthomatosis
-PPT1," Ceroid lipofuscinosis, neuronal, 1","Ashkenazi, Jewish"," Ceroid lipofuscinosis, neuronal, 1"
-TPP1," Ceroid lipofuscinosis, neuronal, 2","Muslim, Israeli Arab"," Ceroid lipofuscinosis, neuronal, 2"
-CLN5," Ceroid lipofuscinosis, neuronal, 5","Muslim, Israeli Arab, Palestinian"," Ceroid lipofuscinosis, neuronal, 5"
-CLN6," Ceroid lipofuscinosis, neuronal, 6",," Ceroid lipofuscinosis, neuronal, 6"
-MFSD8," Ceroid lipofuscinosis, neuronal, 7",Palestinian," Ceroid lipofuscinosis, neuronal, 7"
-ABHD5, Chanarin-Dorfman syndrome,"Iraqi, Jewish, Muslim, Israeli Arab", Chanarin-Dorfman syndrome
-ABCB11," Cholestasis, progressive familial intrahepatic type 2","Muslim, Palestinian"," Cholestasis, progressive familial intrahepatic type 2"
-VPS13A, Choreoacanthocytosis,Jewish, Choreoacanthocytosis
-NCF1, Chronic granulomatous disease due to deficiency of NCF-1,"Jewish, All, Israeli Arab, Jewish, MOH: Jewish - Ashkenazi, Ethiopian, Georgian, Kavkazi, Kavkazi, Bedouin, Kavkazi, unknown, Jewish, Palestinian, Ashkenazi, Ethiopian, Georgian, Kavkazi, unknown", Chronic granulomatous disease due to deficiency of NCF-1
-NCF2, Chronic granulomatous disease due to deficiency of NCF-2,Palestinian, Chronic granulomatous disease due to deficiency of NCF-2
-CYBB," Chronic granulomatous disease, X-linked",," Chronic granulomatous disease, X-linked"
-CYBA," Chronic granulomatous disease,autosomal, due to deficiency of CYBA",," Chronic granulomatous disease,autosomal, due to deficiency of CYBA"
-GPSM2, Chudley-McCullough syndrome,"Muslim, unknown, Non Jewish, Palestinian", Chudley-McCullough syndrome
-DNAI1," Ciliary dyskinesia, primary, 1, with or without situs inversus","Ashkenazi, Jewish"," Ciliary dyskinesia, primary, 1, with or without situs inversus"
-RSPH9," Ciliary dyskinesia, primary, 12","Bedouin, Israeli Arab"," Ciliary dyskinesia, primary, 12"
-DNAL1," Ciliary dyskinesia, primary, 16","Bedouin, Israeli Arab"," Ciliary dyskinesia, primary, 16"
-CCDC114," Ciliary dyskinesia, primary, 20","Ashkenazi, Jewish"," Ciliary dyskinesia, primary, 20"
-C21orf59," Ciliary dyskinesia, primary, 26","Ashkenazi, Jewish"," Ciliary dyskinesia, primary, 26"
-CCDC65," Ciliary dyskinesia, primary, 27","Ashkenazi, Jewish"," Ciliary dyskinesia, primary, 27"
-CCNO," Ciliary dyskinesia, primary, 29","Jewish, Moroccan, Yemeni, Ashkenazi, Christian, Muslim, Israeli Arab, Jewish, Israeli Arab, Ashkenazi, Christian"," Ciliary dyskinesia, primary, 29"
-CD55," Ciliary dyskinesia, primary, 29","Muslim, Israeli Arab"," Ciliary dyskinesia, primary, 29"
-DNAH5," Ciliary dyskinesia, primary, 3, with or without situs inversus (CILD3/PCD)","MOH: Druze - Druze (Majdal Shams), Druze"," Ciliary dyskinesia, primary, 3, with or without situs inversus (CILD3/PCD)"
-DNAH11," Ciliary dyskinesia, primary, 7, with or without situs inversus","Ashkenazi, Jewish, Ethiopian"," Ciliary dyskinesia, primary, 7, with or without situs inversus"
-DNAI2," Ciliary dyskinesia, primary, 9, with or without situs inversus","Ashkenazi, Jewish, Iranian"," Ciliary dyskinesia, primary, 9, with or without situs inversus"
-ASS1," Citrullinemia,classic","Muslim, Israeli Arab"," Citrullinemia,classic"
-NECTIN1," Cleft lip/palate ectodermal dysplasia, CLPED1 (Zlotogora-Ogur syndrome)","Muslim, Israeli Arab"," Cleft lip/palate ectodermal dysplasia, CLPED1 (Zlotogora-Ogur syndrome)"
-ERCC8," Cockayne syndrome, type A","Bedouin, Israeli Arab"," Cockayne syndrome, type A"
-ERCC6," Cockayne syndrome, type B","MOH: Druze - Druze (Kissra, Majdal Shams, Buqata, Masade, Ein Qiniyye); Non Jewish - Druze (Kfar Yanuch), Druze, Druze, Non Jewish"," Cockayne syndrome, type B"
-COQ4," Coenzyme Q10 deficiency, primary, 7","Ashkenazi, Jewish"," Coenzyme Q10 deficiency, primary, 7"
-VPS13B, Cohen syndrome,Palestinian, Cohen syndrome
-SLC25A1, Combined D-2- and L-2-hydroxyglutaric aciduria,"Ashkenazi, Jewish", Combined D-2- and L-2-hydroxyglutaric aciduria
-ACSF3, Combined malonic and methylmalonic aciduria,"Ashkenazi, Jewish", Combined malonic and methylmalonic aciduria
-NARS2, Combined oxidative phosphorylation deficiency 24 (COXPD24),"Jewish, Non Jewish, MOH: Non Jewish - Druze (Hurfech, Daliyat al-Karmel), Ashkenazi, Druze", Combined oxidative phosphorylation deficiency 24 (COXPD24)
-RPGRIP1, Cone-rod dystrophy 13,"Non Jewish, Christian", Cone-rod dystrophy 13
-RAB28, Cone-rod dystrophy 18,"Jewish, Moroccan", Cone-rod dystrophy 18
-ABCA4, Cone-rod dystrophy 3,, Cone-rod dystrophy 3
-ADAM9, cone-rod dystrophy 9,"Iraqi, Jewish", cone-rod dystrophy 9
-SLC26A3, Congenital chloride diarhhea (CLD),"Muslim, Israeli Arab", Congenital chloride diarhhea (CLD)
-NGLY1, Congenital disorder of deglycosylation,"Druze, MOH: Druze - Druze (Julis)", Congenital disorder of deglycosylation
-TMEM165, Congenital disorder of glycosylation,"Jewish, Georgian", Congenital disorder of glycosylation
-PMM2, Congenital disorder of glycosylation Ia,"Ashkenazi, Jewish", Congenital disorder of glycosylation Ia
-MPDU1," Congenital disorder of glycosylation, type If","Muslim, Non Jewish, Palestinian, Non Jewish, Muslim, unknown"," Congenital disorder of glycosylation, type If"
-SLC35C1," Congenital disorder of glycosylation, type IIc","Muslim, Israeli Arab"," Congenital disorder of glycosylation, type IIc"
-B4GALT1," Congenital disorder of glycosylation, type IId","Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)"," Congenital disorder of glycosylation, type IId"
-DOLK," Congenital disorder of glycosylation, type Im","Israeli Arab, Druze, Bedouin, MOH: Israeli Arab - Bedouin (Aramshe)"," Congenital disorder of glycosylation, type Im"
-PGM1," Congenital disorder of glycosylation, type It","Bedouin, Israeli Arab"," Congenital disorder of glycosylation, type It"
-HACD1, Congenital myopathy,"Bedouin, Israeli Arab", Congenital myopathy
-CYP4F22, Congenital recessive ichthyoses (CRI),"Ashkenazi, Jewish", Congenital recessive ichthyoses (CRI)
-ABCA3," Congenital surfactant deficiency (Surfactant metabolism dysfunction, pulmonary, 3)","Ashkenazi, Jewish"," Congenital surfactant deficiency (Surfactant metabolism dysfunction, pulmonary, 3)"
-CPT2," CPT deficiency, hepatic, type II","Ashkenazi, Jewish"," CPT deficiency, hepatic, type II"
-ATP6V0A2," Cutis laxa, Autosomal Recessive, type IIA","Bedouin, Israeli Arab"," Cutis laxa, Autosomal Recessive, type IIA"
-CFTR, Cystic fibrosis,"Jewish, MOH: Jewish - Ashkenazi, Israeli Arab, Jewish, Non Jewish, Israeli Arab, Non Jewish, MOH: Israeli Arab - Bedouin; Jewish - unknown", Cystic fibrosis
-CTNS," Cystinosis,CTNS-related","Muslim, Palestinian"," Cystinosis,CTNS-related"
-CEACAM16," Deafness, autosomal recessive","Jewish, Iranian"," Deafness, autosomal recessive"
-GIPC3," Deafness, autosomal recessive 15","Muslim, Israeli Arab"," Deafness, autosomal recessive 15"
-STRC," Deafness, Autosomal Recessive 16",Jewish," Deafness, Autosomal Recessive 16"
-GJB2," Deafness, autosomal recessive 1A","Muslim, Jewish, Palestinian, Israeli Arab, Jewish, Palestinian, Ashkenazi, Bukharian, Muslim, Ashkenazi, Muslim, unknown, Druze, Jewish, Non Jewish, Palestinian, Georgian, Druze, Iraqi, Muslim, unknown, Ashkenazi, Jewish, MOH: Non Jewish - Muslim (Ein Mahel), Iraqi, unknown, Non Jewish, Palestinian, Israeli Arab, Jewish, Israeli Arab, MOH: Israeli Arab - Muslim (Ein Mahel), Jewish, Non Jewish, Palestinian, Non Jewish, Muslim, unknown, Ashkenazi, Bedouin, Muslim, unknown, Bukharian, Ashkenazi, Muslim"," Deafness, autosomal recessive 1A"
-GJB6," Deafness, Autosomal Recessive 1B",Jewish," Deafness, Autosomal Recessive 1B"
-OTOA," Deafness, Autosomal Recessive 22",Jewish," Deafness, Autosomal Recessive 22"
-TRIOBP," Deafness, Autosomal Recessive 28","Muslim, unknown, Non Jewish, Palestinian"," Deafness, Autosomal Recessive 28"
-MYO15A," Deafness, Autosomal Recessive 3","Ashkenazi, Jewish"," Deafness, Autosomal Recessive 3"
-PJVK," Deafness, Autosomal Recessive 59","Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Jisser el Zarka)"," Deafness, Autosomal Recessive 59"
-TMC1," Deafness, Autosomal Recessive 7","Jewish, MOH: Israeli Arab - Bedouin; Non Jewish - Bedouin (Negev), Bedouin, Israeli Arab, Non Jewish, Moroccan"," Deafness, Autosomal Recessive 7"
-SYNE4," Deafness, Autosomal Recessive 76","Iraqi, Jewish"," Deafness, Autosomal Recessive 76"
-LOXHD1," Deafness, Autosomal Recessive 77",," Deafness, Autosomal Recessive 77"
-TMPRSS3," Deafness, Autosomal Recessive 8/10","Muslim, Israeli Arab, Non Jewish"," Deafness, Autosomal Recessive 8/10"
-OTOF," Deafness, Autosomal Recessive 9","Jewish, Syrian"," Deafness, Autosomal Recessive 9"
-DHCR24, Desmosterolosis,"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Desmosterolosis
-PTPN23," Developmental delay, cognitive impairment, and atopic atrophy","Ashkenazi, Jewish"," Developmental delay, cognitive impairment, and atopic atrophy"
-AQP2," Diabetes insipidus, nephrogenic","MOH: Non Jewish - Bedouin (Negev), Israeli Arab, MOH: Israeli Arab - Bedouin, Bedouin, Non Jewish"," Diabetes insipidus, nephrogenic"
-BMPER, Diaphanospondylodysostosis,"Muslim, Israeli Arab", Diaphanospondylodysostosis
-DGAT1," Diarrhea 7, congenital","Ashkenazi, Jewish"," Diarrhea 7, congenital"
-DLD, Dihydrolipoamide Dehydrogenase Deficiency,"Ashkenazi, Jewish", Dihydrolipoamide Dehydrogenase Deficiency
-ELP1," Dysautonomia, familial","Jewish, MOH: Jewish - Ashkenazi, Ashkenazi"," Dysautonomia, familial"
-CDAN1," Dyserythropoietic anemia, congenital, type Ia","Non Jewish, Bedouin"," Dyserythropoietic anemia, congenital, type Ia"
-SEC23B," Dyserythropoietic anemia, congenital, type II","Jewish, Moroccan"," Dyserythropoietic anemia, congenital, type II"
-RTEL1, Dyskeratosis congenita,"Ashkenazi, Jewish", Dyskeratosis congenita
-MECR," Dystonia, childhood-onset, with optic atrophy and basal ganglia abnormalities","Ashkenazi, Jewish"," Dystonia, childhood-onset, with optic atrophy and basal ganglia abnormalities"
-COL7A1," Dystrophic epidermolysis bullosa, Autosomal Recessive,COL7A1-Related","Muslim, Israeli Arab"," Dystrophic epidermolysis bullosa, Autosomal Recessive,COL7A1-Related"
-ST3GAL3, Early infantile epileptic encephalopathy 15,"Muslim, Palestinian", Early infantile epileptic encephalopathy 15
-KREMEN1, Ectodermal dysplasia,Palestinian, Ectodermal dysplasia
-EDAR," Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, Autosomal Recessive","Non Jewish, Druze"," Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, Autosomal Recessive"
-ADAMTS2," Ehlers Danlos syndrome, type VIIC","Ashkenazi, Jewish"," Ehlers Danlos syndrome, type VIIC"
-TRAK1," Encephalopathy, fatal","Muslim, Palestinian"," Encephalopathy, fatal"
-KRT14, Epidermolysis bullosa simplex,"Israeli Arab, Jewish, MOH: Non Jewish - Bedouin (Negev), Israeli Arab, Non Jewish, Palestinian, Ashkenazi, Muslim, Bedouin, Muslim", Epidermolysis bullosa simplex
-DST," Epidermolysis bullosa simplex, Autosomal Recessive 2","Ashkenazi, Jewish"," Epidermolysis bullosa simplex, Autosomal Recessive 2"
-COL17A1," Epidermolysis bullosa, junctional,","Muslim, Israeli Arab"," Epidermolysis bullosa, junctional,"
-LAMC2," Epidermolysis bullosa, junctional, Herlitz type","Muslim, Israeli Arab"," Epidermolysis bullosa, junctional, Herlitz type"
-LAMB3," Epidermolysis bullosa, junctional, non-Herlitz type","Muslim, Israeli Arab"," Epidermolysis bullosa, junctional, non-Herlitz type"
-ITGB4," Epidermolysis bullosa, junctional, with pyloric atresia - Carmi syndrome","Non Jewish, MOH: Non Jewish - Bedouin (Negev)"," Epidermolysis bullosa, junctional, with pyloric atresia - Carmi syndrome"
-PRICKLE1," Epilepsy, progressive myoclonic 1B","Muslim, Israeli Arab"," Epilepsy, progressive myoclonic 1B"
-EPM2A," Epilepsy, progressive myoclonic 2A (Lafora)","Israeli Arab, Palestinian"," Epilepsy, progressive myoclonic 2A (Lafora)"
-ALDH7A1," Epilepsy, pyridoxine-dependent","Jewish, Georgian"," Epilepsy, pyridoxine-dependent"
-SZT2," Epileptic encephalopathy, early infantile, 18","Iraqi, Jewish"," Epileptic encephalopathy, early infantile, 18"
-DSG1," Erythroderma, congenital, with palmoplantar keratoderma, hypotrichosis, and hyper IgE","Jewish, Druze, Iranian, Syrian"," Erythroderma, congenital, with palmoplantar keratoderma, hypotrichosis, and hyper IgE"
-CSTA," Exfoliative ichthyosis, Autosomal Recessive, ichthyosis bullosa of Siemens-like","Bedouin, Israeli Arab"," Exfoliative ichthyosis, Autosomal Recessive, ichthyosis bullosa of Siemens-like"
-F7, Factor VII deficiency,"Arab, Muslim, Druze, Israeli Arab, Non Jewish, MOH: Israeli Arab - Muslim (Majd el Kroum)", Factor VII deficiency
-AVP, Familial neurohypophyseal diabetes insipidus,Palestinian, Familial neurohypophyseal diabetes insipidus
-XRCC2, Fanconi Anemia,"Muslim, Israeli Arab", Fanconi Anemia
-FANCG, Fanconi Anemia - complementation group G,"Muslim, Israeli Arab, Israeli Arab, Non Jewish", Fanconi Anemia - complementation group G
-FANCA," Fanconi anemia, complementation group A",Jewish," Fanconi anemia, complementation group A"
-FANCC," Fanconi anemia, complementation group C","Jewish, HMO: Jewish - Ashkenazi, Ashkenazi"," Fanconi anemia, complementation group C"
-SLC2A2, Fanconi-Bickel syndrome,"Jewish, Bedouin, Muslim, unknown, Israeli Arab, Palestinian, Druze", Fanconi-Bickel syndrome
-SLC46A1," Folate malabsorption, hereditary","Muslim, Israeli Arab"," Folate malabsorption, hereditary"
-ALDOB, Fructose intolerance,"Jewish, European or European, European, Ashkenazi, unknown or unknown", Fructose intolerance
-FH," Fumarase deficiency, leiomyomatosis and renal cell cancer","Jewish, Iranian"," Fumarase deficiency, leiomyomatosis and renal cell cancer"
-GALT, Galactosemia,Jewish, Galactosemia
-GBA," Gaucher disease, , type I","Jewish, Ashkenazi, Kurd, Israeli Arab, Jewish, Ashkenazi, unknown, Israeli Arab, Israeli Arab, Palestinian, Bedouin, Ashkenazi, Ashkenazi, Muslim, Muslim, unknown"," Gaucher disease, , type I"
-GAN, Giant axonal neuropathy 1,"Muslim, Israeli Arab", Giant axonal neuropathy 1
-ITGA2B," Glanzmann thrombasthenia, ITGA2B-related",Palestinian," Glanzmann thrombasthenia, ITGA2B-related"
-ITGB3," Glanzmann thrombasthenia, ITGB3-related",Jewish," Glanzmann thrombasthenia, ITGB3-related"
-CYP1B1," Glaucoma 3A, primary open angle, congenital, juvenile, or adult onset","Bedouin, Bedouin, Druze, Muslim, Non Jewish, Israeli Arab, Non Jewish, Druze, Israeli Arab, Non Jewish, Bedouin, Muslim"," Glaucoma 3A, primary open angle, congenital, juvenile, or adult onset"
-NNT, Glucocorticoid deficiency 4,"Muslim, Israeli Arab", Glucocorticoid deficiency 4
-ETFDH, Glutaric acidemia IIC,"Muslim, Arab, unknown, Israeli Arab, MOH: Israeli Arab - Muslim (Ein Mahel), Israeli Arab, Non Jewish", Glutaric acidemia IIC
-GCDH, Glutaricaciduria type I,"Jewish, Muslim, Iraqi, Arab, Kurd, unknown, Arab, unknown, MOH: Non Jewish - Bedouin (Negev), Israeli Arab, Non Jewish, Israeli Arab, Jewish, Non Jewish, Israeli Arab, Non Jewish, Bedouin, Muslim", Glutaricaciduria type I
-GLDC," Glycine encephalopathy and non-ketoic hyperglycinemia, GLDC-related","Muslim, MOH: Israeli Arab - Muslim (Jerusalem (Abu Tor)), MOH: Non Jewish - Bedouin (Negev), Israeli Arab, Bedouin, Non Jewish, Israeli Arab, Non Jewish"," Glycine encephalopathy and non-ketoic hyperglycinemia, GLDC-related"
-AMT," Glycine encephalopathy, AMT-related","Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Ilut)"," Glycine encephalopathy, AMT-related"
-G6PC, Glycogen storage disease Ia - GDS1a,"Jewish, Muslim, Israeli Arab, HMO: Jewish - Ashkenazi, Ashkenazi", Glycogen storage disease Ia - GDS1a
-SLC37A4, Glycogen storage disease Ib,Israeli Arab, Glycogen storage disease Ib
-AGL, Glycogen storage disease III,, Glycogen storage disease III
-PHKG2, Glycogen storage disease IXc,"Muslim, Israeli Arab", Glycogen storage disease IXc
-GLB1," GM1-gangliosidosis, type I","Jewish, Non Jewish, Palestinian, Arab, unknown, Arab, Muslim, Israeli Arab, Non Jewish, Moroccan, Muslim, unknown"," GM1-gangliosidosis, type I"
-KIAA1279, Goldberg-Shprintzen megacolon syndrome,"Ashkenazi, Jewish", Goldberg-Shprintzen megacolon syndrome
-NBEAL2, Gray platelet syndrome,"Jewish, MOH: Israeli Arab - Bedouin (Arab el Hould), Muslim (Arab el Hould), Israeli Arab, Ashkenazi, Bedouin, Muslim", Gray platelet syndrome
-RAB27A," Griscelli syndrome, type 2","Muslim, Israeli Arab"," Griscelli syndrome, type 2"
-MLPH," Griscelli syndrome, type 3","Muslim, Palestinian"," Griscelli syndrome, type 3"
-GH1," Growth hormone deficiency, isolated, type IA","Jewish, MOH: Israeli Arab - Bedouin (Negev), Israeli Arab, Bedouin, Ashkenazi"," Growth hormone deficiency, isolated, type IA"
-GHRHR," Growth hormone deficiency, isolated, type IB","Non Jewish, Muslim"," Growth hormone deficiency, isolated, type IB"
-FTO," Growth retardation, developmental delay, coarse facies, and early death","Muslim, Israeli Arab"," Growth retardation, developmental delay, coarse facies, and early death"
-OAT, Gyrate atrophy of choroid and retina with or without ornithinemia,"Iraqi, Syrian, Jewish", Gyrate atrophy of choroid and retina with or without ornithinemia
-CTSC, Haim-Munk syndrome,"Jewish, Cochin, Indian", Haim-Munk syndrome
-HBB," Hemoglobipathies (Including sickle-cell anemia and beta thalassemia, Hb C, D, E, O)","Israeli Arab, MOH: Israeli Arab - Bedouin (Negev)"," Hemoglobipathies (Including sickle-cell anemia and beta thalassemia, Hb C, D, E, O)"
-CD59," Hemolytic anemia & immune-mediated polyneuropathy, CD59-related","Egyptian, Libyan, Moroccan, Jewish"," Hemolytic anemia & immune-mediated polyneuropathy, CD59-related"
-CFH," Hemolytic uremic syndrome, complement factor H deficiency","Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)"," Hemolytic uremic syndrome, complement factor H deficiency"
-UNC13D," Hemophagocytic lymphohistiocytosis, familial, 3","Ashkenazi, Jewish"," Hemophagocytic lymphohistiocytosis, familial, 3"
-GNE, Hereditary inclusion body myopathy (HIBM),"Jewish, Non Jewish, Bedouin, Iranian, Karaite, Muslim", Hereditary inclusion body myopathy (HIBM)
-HPS1, Hermansky-Pudlak syndrome 1,"Ashkenazi, Jewish", Hermansky-Pudlak syndrome 1
-HPS3, Hermansky-Pudlak syndrome 3,Non Jewish, Hermansky-Pudlak syndrome 3
-HPS6, Hermansky-Pudlak syndrome 6,, Hermansky-Pudlak syndrome 6
-SLC29A3, Histiocytosis-lymphadenopathy plus syndrome,"Muslim, Israeli Arab", Histiocytosis-lymphadenopathy plus syndrome
-HMGCL, HMG-CoA lyase deficiency,"Muslim, Non Jewish, Palestinian, Israeli Arab, MOH: Israeli Arab - Muslim (Buene Nujidat), Muslim, unknown", HMG-CoA lyase deficiency
-MTHFR, Homocystinuria due to MTHFR deficiency,"Ashkenazi, Jewish", Homocystinuria due to MTHFR deficiency
-CBS," Homocystinuria, thrombosis, hyperhomocysteinemic","Ashkenazi, Jewish"," Homocystinuria, thrombosis, hyperhomocysteinemic"
-CCDC88C," Hydrocephalus, nonsyndromic, Autosomal Recessive","Ashkenazi, Jewish"," Hydrocephalus, nonsyndromic, Autosomal Recessive"
-GLRA1," Hyperekplexia, hereditary 1, autosomal dominant or recessive","Non Jewish, Druze"," Hyperekplexia, hereditary 1, autosomal dominant or recessive"
-MVK, Hyper-IgD syndrome,"Ashkenazi, Jewish", Hyper-IgD syndrome
-DOCK8," Hyper-IgE recurrent infection syndrome, autosomal recessive","Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)"," Hyper-IgE recurrent infection syndrome, autosomal recessive"
-ABCC8," Hyperinsulinemic hypoglycemia, familial, 1 (PHHI/HHF1)","Muslim, Jewish, Ashkenazi, Muslim, unknown, MOH: Israeli Arab - Bedouin (Negev), MOH: Jewish - Ashkenazi, Israeli Arab, MOH: Jewish - Ashkenazi; Non Jewish - Muslim, Ashkenazi, Jewish, Non Jewish, Palestinian, Bedouin, Non Jewish"," Hyperinsulinemic hypoglycemia, familial, 1 (PHHI/HHF1)"
-SLC25A15, Hyperornithinemia-hyperammonemia-homocitrullinemia syndrome,"Ashkenazi, Jewish", Hyperornithinemia-hyperammonemia-homocitrullinemia syndrome
-AGXT," Hyperoxaluria, primary, type I",," Hyperoxaluria, primary, type I"
-GRHPR," Hyperoxaluria, primary, type II","Jewish, Yemeni"," Hyperoxaluria, primary, type II"
-HOGA1," Hyperoxaluria, primary, type III","Jewish, Ashkenazi, Druze, Ashkenazi, Druze, Jewish, MOH: Druze - Druze (Bukata)"," Hyperoxaluria, primary, type III"
-PGAP3, Hyperphosphatasia with mental retardation syndrome 4,"Muslim, Israeli Arab", Hyperphosphatasia with mental retardation syndrome 4
-GATC, Hypertophic Cardiomyopathy,"Druze, Yemeni, MOH: Druze - Druze (Abu Sinan), Druze, Jewish", Hypertophic Cardiomyopathy
-SLCO2A1," Hypertrophic osteoarthropathy, primary, Autosomal Recessive 2","Ashkenazi, Jewish"," Hypertrophic osteoarthropathy, primary, Autosomal Recessive 2"
-SARS2," Hyperuricemia, pulmonary hypertension, renal failure, and alkalosis","Muslim, MOH: Israeli Arab - Muslim (Jerusalem (Tsur Bacher)), Israeli Arab, Non Jewish"," Hyperuricemia, pulmonary hypertension, renal failure, and alkalosis"
-CYP11B2," Hypoaldosteronism, congenital, due to CMO II deficiency","Jewish, Iranian"," Hypoaldosteronism, congenital, due to CMO II deficiency"
-TRPM6," Hypomagnesemia 1, intestinal","MOH: Israeli Arab - Bedouin (Negev), Arab, unknown, Israeli Arab, Bedouin, Israeli Arab, Non Jewish"," Hypomagnesemia 1, intestinal"
-VPS11, Hypomyelination and developmental delay,"Ashkenazi, Jewish", Hypomyelination and developmental delay
-TBCE, Hypoparathyroidism retardation dysmorphism syndrome,"MOH: Israeli Arab - Bedouin (Negev), MOH: Israeli Arab - Bedouin (Kamanneh, Ras al-Ein, Salame); Non Jewish - Bedouin (Negev), Israeli Arab, Palestinian, Bedouin, Israeli Arab, Non Jewish, Bedouin, Muslim", Hypoparathyroidism retardation dysmorphism syndrome
-ALPL," Hypophosphatasia, infantile","Muslim, Israeli Arab"," Hypophosphatasia, infantile"
-TSHR," Hypothyroidism, congenital, nongoitrous, 1","Muslim, Israeli Arab, Israeli Arab, Non Jewish, Bedouin, Muslim"," Hypothyroidism, congenital, nongoitrous, 1"
-UNC80," Hypotonia, infantile, with psychomotor retardation and characteristic facies 2 (HPFR2)","Muslim, Palestinian"," Hypotonia, infantile, with psychomotor retardation and characteristic facies 2 (HPFR2)"
-2p21, Hypotonia-cystinuria syndrome,"Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Hypotonia-cystinuria syndrome
-TGM1," Ichthyosis, congenital, Autosomal Recessive 1","Ashkenazi/muslim.Druze, Druze, Muslim, Druze, Israeli Arab, Jewish"," Ichthyosis, congenital, Autosomal Recessive 1"
-ABCA12," Ichthyosis, congenital, Autosomal Recessive 4A","Jewish, Muslim, Israeli Arab, Ashkenazi"," Ichthyosis, congenital, Autosomal Recessive 4A"
-LRBA," Immunodeficiency, common variable, 8, with autoimmunity","Muslim, Palestinian, Israeli Arab"," Immunodeficiency, common variable, 8, with autoimmunity"
-ZBTB24, Immunodeficiency-centromeric instability-facial anomalies syndrome-2,"Ashkenazi, Jewish", Immunodeficiency-centromeric instability-facial anomalies syndrome-2
-ACO2, Infantile cerebellar-retinal degeneration,"Muslim, Israeli Arab", Infantile cerebellar-retinal degeneration
-PLA2G6, Infantile neuroaxonal dystrophy 1 (INAD),Palestinian, Infantile neuroaxonal dystrophy 1 (INAD)
-TBCD, Infantile neurodegenerative disorder - Early onset progressive encephalopathy (PEBAT),"Jewish, Cochin, MOH: Jewish - Cochin", Infantile neurodegenerative disorder - Early onset progressive encephalopathy (PEBAT)
-IL10RA," Inflammatory bowel disease 28, early onset, autosomal recessive","MOH: Israeli Arab - Bedouin; Non Jewish - All, Israeli Arab, Non Jewish, All, Bedouin"," Inflammatory bowel disease 28, early onset, autosomal recessive"
-SCN9A," Insensitivity to pain, congenital, with anhidrosis (CIPA)","Jewish, MOH: Israeli Arab - Bedouin (Negev), Israeli Arab, Bedouin"," Insensitivity to pain, congenital, with anhidrosis (CIPA)"
-NTRK1," Insensitivity to pain, congenital, with anhidrosis (CIPA)",," Insensitivity to pain, congenital, with anhidrosis (CIPA)"
-IVD, Isovaleric academia,Jewish, Isovaleric academia
-CNNM4, Jalili syndrome,"Muslim, Palestinian", Jalili syndrome
-NPHP1, Joubert syndrome,Palestinian, Joubert syndrome
-CEP104, Joubert syndrome (JBTS),"Muslim, Israeli Arab", Joubert syndrome (JBTS)
-TMEM216, Joubert syndrome 2 (MKS2),"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Um el Fachem)", Joubert syndrome 2 (MKS2)
-TMEM67, Joubert syndrome type 6 (MSK3),"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Musherfe (Maale Iron), Um el Fahem)", Joubert syndrome type 6 (MSK3)
-AHI1, Joubert syndrome-3,"Muslim, unknown, Non Jewish, Palestinian", Joubert syndrome-3
-FERMT1, Kindler syndrome,"Druze, MOH: Druze - Druze (Kissra)", Kindler syndrome
-ROGDI, Kohlschutter-Tonz syndrome,"MOH: Druze - Druze (Julis, Kfar Yanuch, Kissra), Druze", Kohlschutter-Tonz syndrome
-GALC, Krabbe disease,"MOH: Druze - Druze, Druze", Krabbe disease
-GHR, Laron dwarfism,Jewish, Laron dwarfism
-LAMA3, Laryngoonychocutaneous Syndrome,"Jewish, Muslim, MOH: Israeli Arab - Muslim (Dir el Assad), Israeli Arab", Laryngoonychocutaneous Syndrome
-GUCY2D," Leber congenital amaurosis 1 , Cone-rod dystrophy 6","Muslim, Jewish, MOH: Israeli Arab - Bedouin (Negev), Muslim, North African, Israeli Arab, Jewish, Israeli Arab, Jewish, Non Jewish, Moroccan, Muslim, North African, Tunisian, Bedouin, Ashkenazi, Moroccan"," Leber congenital amaurosis 1 , Cone-rod dystrophy 6"
-RDH12, Leber congenital amaurosis 13,"Muslim, Jewish, Non Ashkenazi, Moroccan, Tunisian, Turkish, Israeli Arab, Christian, Bedouin, Muslim", Leber congenital amaurosis 13
-RPE65, Leber congenital amaurosis 2,, Leber congenital amaurosis 2
-AIPL1, Leber congenital amaurosis 4,"Jewish, Muslim, North African, Israeli Arab", Leber congenital amaurosis 4
-LCA5, Leber congenital amaurosis 5,"Jewish, Muslim, Israeli Arab, Ashkenazi", Leber congenital amaurosis 5
-CRB1, Leber congenital amaurosis 8,, Leber congenital amaurosis 8
-NDUFS4, Leigh syndrome,"Ashkenazi, Jewish", Leigh syndrome
-USMG5, Leigh syndrome realted to USMG5,"Ashkenazi, Jewish", Leigh syndrome realted to USMG5
-SURF1," Leigh syndrome, due to COX deficiency",Jewish," Leigh syndrome, due to COX deficiency"
-INSR," Leprechaunism, Donohue syndrome",Non Jewish," Leprechaunism, Donohue syndrome"
-ERBB3, Lethal congenital contractural syndrome 2,"Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Lethal congenital contractural syndrome 2
-PIP5K1C, Lethal congenital contractural syndrome 3,"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Lethal congenital contractural syndrome 3
-MYBPC1, Lethal congenital contracture syndrome 4,Druze, Lethal congenital contracture syndrome 4
-CNTNAP1, Lethal congenital contracture syndrome 7,"Muslim, Israeli Arab", Lethal congenital contracture syndrome 7
-PLEKHG2, Leukodystrophy and acquired microcephaly with or without dystonia,Arab, Leukodystrophy and acquired microcephaly with or without dystonia
-HIKESHI," Leukodystrophy, early onset spastic paraparesis,acquired microcephaly, optic atrophy and risk of early death","Ashkenazi, Jewish"," Leukodystrophy, early onset spastic paraparesis,acquired microcephaly, optic atrophy and risk of early death"
-AIMP1," Leukodystrophy, hypomyelinating, 3","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)"," Leukodystrophy, hypomyelinating, 3"
-HSPD1," Leukodystrophy, hypomyelinating, 4, HLD4 (HSP60)","Israeli Arab, MOH: Israeli Arab - Bedouin (Kamanneh, Negev, Ras al-Ein, Salame), Bedouin"," Leukodystrophy, hypomyelinating, 4, HLD4 (HSP60)"
-DARS2, Leukoencephalopathy with brain stem and spinal cord involvement and lactate elevation,"Ashkenazi, Jewish", Leukoencephalopathy with brain stem and spinal cord involvement and lactate elevation
-TRMU," LIFT, Liver failure infantile transient","Muslim, Jewish, Israeli Arab, Yemeni"," LIFT, Liver failure infantile transient"
-ANO5, Limb-girdle muscular dystrophy,"Ashkenazi, Jewish", Limb-girdle muscular dystrophy
-CDK5, Lissencephaly 7 with cerebellar hypoplasia,"Muslim, Israeli Arab", Lissencephaly 7 with cerebellar hypoplasia
-HADHA, Long-Chain hydroxylacyl-CoA dehydrogenase deficiency (LCHAD),Jewish, Long-Chain hydroxylacyl-CoA dehydrogenase deficiency (LCHAD)
-ITK, Lymphoproliferative syndrome,Arab, Lymphoproliferative syndrome
-RIN2," Macrocephaly, alopecia, cutis laxa, and scoliosis","Muslim, Israeli Arab"," Macrocephaly, alopecia, cutis laxa, and scoliosis"
-ZMPSTE24, Mandibuloacral dysplasia with type B lipodystrophy,"Ashkenazi, Jewish", Mandibuloacral dysplasia with type B lipodystrophy
-BCKDHA," Maple syrup urine disease, type Ia","Muslim, Jewish, unknown, Christian, MOH: Israeli Arab - Bedouin (Negev), Arab, unknown, Ashkenazi, unknown, Israeli Arab, Bedouin, Non Jewish, Israeli Arab, Non Jewish"," Maple syrup urine disease, type Ia"
-BCKDHB," Maple syrup urine disease, type Ib","Druze, Non Jewish, Jewish, Muslim, unknown, Druze, HMO: Jewish - Ashkenazi, Ashkenazi, Israeli Arab, Non Jewish, MOH: Druze - Druze (Pkyin); Non Jewish - Druze (Abu Sinan)"," Maple syrup urine disease, type Ib"
-DBT," Maple syrup urine disease, type II","Bedouin, Israeli Arab"," Maple syrup urine disease, type II"
-MKS1, Meckel syndrome 1,"Muslim, Israeli Arab", Meckel syndrome 1
-TMEM231, Meckel syndrome 11,"Muslim, Israeli Arab", Meckel syndrome 11
-CEP290, Meckel syndrome 4,"Muslim, Palestinian", Meckel syndrome 4
-RPGRIP1L, Meckel syndrome 5,"Bedouin, Israeli Arab", Meckel syndrome 5
-TCTN2, Meckel syndrome 8,"Jewish, Non Jewish, Muslim, Yemeni", Meckel syndrome 8
-ACADM, Medium-chain Acyl-CoA dehydrogenase deficiency,Jewish, Medium-chain Acyl-CoA dehydrogenase deficiency
-MLC1, Megalencephalic leukoencephalopathy with subcortical cysts,"Jewish, Libyan, Ashkenazi, HMO: Jewish - Libyan", Megalencephalic leukoencephalopathy with subcortical cysts
-TRAPPC9," Mental retardation, Autosomal Recessive 13","Muslim, Israeli Arab"," Mental retardation, Autosomal Recessive 13"
-MAN1B1," Mental retardation, Autosomal Recessive 15","MOH: Israeli Arab - Muslim (Jerusalem (Jabel el Moukaber)), Muslim, Israeli Arab, Non Jewish"," Mental retardation, Autosomal Recessive 15"
-CC2D2A," Mental retardation, Autosomal Recessive 3 - MRT3","Muslim, Israeli Arab"," Mental retardation, Autosomal Recessive 3 - MRT3"
-CC2D1A," Mental retardation, Autosomal Recessive 3 - MRT3","Non Jewish, MOH: Non Jewish - Muslim (Jisser el Zarka)"," Mental retardation, Autosomal Recessive 3 - MRT3"
-TAF2," Mental retardation, Autosomal Recessive 40","Bedouin, Israeli Arab"," Mental retardation, Autosomal Recessive 40"
-ARSA, Metachromatic leukodystrophy - MLD,"Ashkenazi, Jewish", Metachromatic leukodystrophy - MLD
-MUT," Methylmalonic acidemia, mut(0) type","Arab, unknown, Arab, Non Jewish, Israeli Arab, Non Jewish"," Methylmalonic acidemia, mut(0) type"
-MMACHC," Methylmalonic aciduria and homocystinuria, cblC type",," Methylmalonic aciduria and homocystinuria, cblC type"
-PCNT," Microcephalic osteodysplastic primordial dwarfism, type II","MOH: Druze - Druze (Nationwide), Druze"," Microcephalic osteodysplastic primordial dwarfism, type II"
-CEP152," Microcephaly 9, primary, Autosomal Recessive","Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Jisser el Zarka)"," Microcephaly 9, primary, Autosomal Recessive"
-FRMD4A, Microcephaly intellectual disability and dysmorphism,"Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Microcephaly intellectual disability and dysmorphism
-MED17," Microcephaly, postnatal progressive, with seizures and brain atrophy ((ICCA)","Jewish, MOH: Jewish - Kavkazi, Kavkazi"," Microcephaly, postnatal progressive, with seizures and brain atrophy ((ICCA)"
-CENPJ," Microcephaly, primary, Autosomal Recessive","Ethiopian, Jewish"," Microcephaly, primary, Autosomal Recessive"
-TUBGCP4," Microcephaly, primary, Autosomal Recessive","Ashkenazi, Jewish"," Microcephaly, primary, Autosomal Recessive"
-PCDH12," Microcephaly, seizures, spasticity, and brain calcification (MISSBC)","MOH: Druze - Druze, Druze, Israeli Arab, Druze, Muslim"," Microcephaly, seizures, spasticity, and brain calcification (MISSBC)"
-TRMT10A," Microcephaly, short stature, and impaired glucose metabolism","Jewish, Muslim, Bukharian, Israeli Arab"," Microcephaly, short stature, and impaired glucose metabolism"
-STRA6, Microphthalmia,"Iraqi, Syrian, Syrian/Iraqi, Jewish", Microphthalmia
-ALDH1A3," Microphthalmia, isolated 8","Muslim, Israeli Arab"," Microphthalmia, isolated 8"
-RYR1, Minicore myopathy with external ophthalmoplegia,"Druze, Non Jewish, Druze", Minicore myopathy with external ophthalmoplegia
-NDUFA11, Mitochondrial complex I deficiency - NDUFA11 gene,"Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Mitochondrial complex I deficiency - NDUFA11 gene
-NDUFAF5, Mitochondrial complex I deficiency - NDUFAF5 gene,"Ashkenazi, Jewish", Mitochondrial complex I deficiency - NDUFAF5 gene
-NDUFS6, Mitochondrial complex I deficiency - NDUFS6 gene,"Jewish, MOH: Jewish - Kavkazi, Kavkazi", Mitochondrial complex I deficiency - NDUFS6 gene
-NDUFS2, Mitochondrial complex I deficiency-NDUFS2 gene,"Christian, Israeli Arab", Mitochondrial complex I deficiency-NDUFS2 gene
-UQCRQ," Mitochondrial complex III deficiency, nuclear type 4","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)"," Mitochondrial complex III deficiency, nuclear type 4"
-DGUOK, Mitochondrial DNA depletion syndrome (hepatocerebral type),"unknown, MOH: unknown - unknown", Mitochondrial DNA depletion syndrome (hepatocerebral type)
-TYMP, Mitochondrial DNA depletion syndrome 1 (MNGIE type),"Ashkenazi, Jewish, Iranian", Mitochondrial DNA depletion syndrome 1 (MNGIE type)
-TK2, Mitochondrial DNA depletion syndrome 2 (myopathic type),, Mitochondrial DNA depletion syndrome 2 (myopathic type)
-SUCLA2, Mitochondrial DNA depletion syndrome 5,"Non Jewish, Muslim", Mitochondrial DNA depletion syndrome 5
-MPV17, Mitochondrial DNA depletion syndrome 6 (hepatocerebral type),"Bedouin, Israeli Arab", Mitochondrial DNA depletion syndrome 6 (hepatocerebral type)
-RRM2B, Mitochondrial DNA depletion syndrome 8,"Muslim, Israeli Arab, Non Jewish", Mitochondrial DNA depletion syndrome 8
-FOXRED1, Mitochondrial encephalomyopathy complex I deficiency,"Jewish, Iranian", Mitochondrial encephalomyopathy complex I deficiency
-FDX1L, Mitochondrial muscle myopathy,"Jewish, Moroccan", Mitochondrial muscle myopathy
-PUS1, Mitochondrial myopathy and sideroblastic anemia 1,"Jewish, Iranian", Mitochondrial myopathy and sideroblastic anemia 1
-ECHS1, Mitochondrial short-chain enoyl-CoA hydratase 1 deficiency,Jewish, Mitochondrial short-chain enoyl-CoA hydratase 1 deficiency
-MOCS1, Molybdenum cofactor deficiency A,"Muslim, Israeli Arab", Molybdenum cofactor deficiency A
-MOCS2, Molybdenum cofactor deficiency Type B,"Christian Druze, Druze, MOH: Druze - Christian Druze (Pekiin)", Molybdenum cofactor deficiency Type B
-MCIDAS, Mucociliary clearance disorder,"Jewish, Iranian", Mucociliary clearance disorder
-GNPTAB, Mucolipidosis III alpha/beta,"Ashkenazi, Jewish", Mucolipidosis III alpha/beta
-GNPTG, Mucolipidosis III gamma,"Druze, Muslim, Tunisian, Druze, Israeli Arab, Jewish, Non Jewish, MOH: Non Jewish - Druze (Bet Jan)", Mucolipidosis III gamma
-MCOLN1, Mucolipidosis type IV - ML4,"Jewish, HMO: Jewish - Ashkenazi", Mucolipidosis type IV - ML4
-SGSH, Mucopolysaccharidisis type IIIA (Sanfilippo A),"Muslim, Jewish, North African, Israeli Arab, Jewish, Israeli Arab, Karaite, Muslim, Christian, Yemeni, Muslim, unknown", Mucopolysaccharidisis type IIIA (Sanfilippo A)
-IDUA, Mucopolysaccharidosis Type IH - Hurler syndrome,"Jewish, Druze, Israeli Arab, Druze, Muslim, Druze, Druze, Israeli Arab, Non Jewish, MOH: Druze - Druze (Majar)", Mucopolysaccharidosis Type IH - Hurler syndrome
-NAGLU, Mucopolysaccharidosis type IIIB (Sanfilippo B),"Israeli Arab, Non Jewish, Arab, unknown", Mucopolysaccharidosis type IIIB (Sanfilippo B)
-PIGN, Multiple congenital anomalies-hypotonia-seizures syndrome 1,"Muslim, Israeli Arab, Non Jewish", Multiple congenital anomalies-hypotonia-seizures syndrome 1
-PIGT, Multiple congenital anomalies-hypotonia-seizures syndrome 3,Jewish, Multiple congenital anomalies-hypotonia-seizures syndrome 3
-SUMF1, Multiple sulfatase deficiency,"Ashkenazi, Jewish", Multiple sulfatase deficiency
-LAMA2," Muscular dystrophy, congenital, due to partial LAMA2 deficiency","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin"," Muscular dystrophy, congenital, due to partial LAMA2 deficiency"
-CAPN3," Muscular dystrophy, limb-girdle, type 2A","Jewish, Syrian"," Muscular dystrophy, limb-girdle, type 2A"
-DYSF," Muscular dystrophy, limb-girdle, type 2B","Jewish, Muslim, Muslim, Yemeni, Israeli Arab, Jewish, Kavkazi, Israeli Arab, Libyan, Non Jewish"," Muscular dystrophy, limb-girdle, type 2B"
-SGCG," Muscular dystrophy, limb-girdle, type 2C","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Shibli)"," Muscular dystrophy, limb-girdle, type 2C"
-GMPPB, Muscular dystrophy-dystroglycanopathy,"Ashkenazi, Jewish", Muscular dystrophy-dystroglycanopathy
-ISPD," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies),","MOH: Israeli Arab - Muslim (Jerusalem (Jabel el Moukaber)), Muslim, Israeli Arab"," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies),"
-FKTN," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 4 - Walker Warburg syndrome","Jewish, Ashkenazi, MOH: Jewish - Ashkenazi"," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 4 - Walker Warburg syndrome"
-DAG1," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 9","Muslim, Israeli Arab"," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 9"
-B3GALNT2," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 11)","Jewish, North African"," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 11)"
-POMGNT2," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 8)","Jewish, Yemeni"," Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 8)"
-FKRP," Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 5","Bedouin, Israeli Arab, Non Jewish, MOH: Israeli Arab - Bedouin (Tuba-Zangariyye)"," Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 5"
-SLC18A3," Myasthenia gravis, congenital","Jewish, Yemeni"," Myasthenia gravis, congenital"
-CHRNE," Myasthenic syndrome, congenital, 4B, fast-channel","Ashkenazi, Jewish"," Myasthenic syndrome, congenital, 4B, fast-channel"
-COLQ," Myasthenic syndrome, congenital, 5","Muslim, Israeli Arab, MOH: Israeli Arab - Muslim (Reine)"," Myasthenic syndrome, congenital, 5"
-RAPSN," Myasthenic syndrome, congenital, associated with acetylcholine receptor deficiency","Jewish, Georgian, Iranian, Iraqi, Yemeni, Ashkenazi, unknown, Iranian"," Myasthenic syndrome, congenital, associated with acetylcholine receptor deficiency"
-MEGF10," Myopathy, areflexia, respiratory distress, and dysphagia, early-onset","Ashkenazi, Jewish"," Myopathy, areflexia, respiratory distress, and dysphagia, early-onset"
-PAX7," Myopathy, congenital, progressive, with scoliosis","Bedouin, Israeli Arab"," Myopathy, congenital, progressive, with scoliosis"
-KY," Myopathy, myofibrillar, 7","Muslim, Israeli Arab"," Myopathy, myofibrillar, 7"
-P3H2," Myopia, high, with cataract and vitreoretinal degeneration","Bedouin, Israeli Arab"," Myopia, high, with cataract and vitreoretinal degeneration"
-CLCN1," Myotonia congenita, Autosomal Recessive","MOH: Non Jewish - Bedouin (Negev), Israeli Arab, Bedouin, Non Jewish, Israeli Arab, Non Jewish, Bedouin, Muslim"," Myotonia congenita, Autosomal Recessive"
-CLCN1," Myotonia congenita,Autosomal Recessive",," Myotonia congenita,Autosomal Recessive"
-NEB, Nemaline myopathy 2,"Jewish, HMO: Jewish - Ashkenazi", Nemaline myopathy 2
-TNNT1," Nemaline myopathy 5, Amish type","Muslim, Palestinian"," Nemaline myopathy 5, Amish type"
-KLHL40," Nemaline myopathy 8, Autosomal Recessive","Muslim, Israeli Arab"," Nemaline myopathy 8, Autosomal Recessive"
-INVS," Nephronophthisis 2, infantile","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)"," Nephronophthisis 2, infantile"
-NPHS2, Nephrotic syndrome,"Non Jewish, Israeli Arab, Palestinian, Muslim", Nephrotic syndrome
-NPHS1, Nephrotic syndrome type 1,"MOH: Non Jewish - Bedouin (Kamanneh), Jewish, Non Jewish, Ashkenazi, Bedouin", Nephrotic syndrome type 1
-ARHGDIA," Nephrotic syndrome, type 8","Ashkenazi, Jewish"," Nephrotic syndrome, type 8"
-SPINK5, Netherton syndrome,"Muslim, Israeli Arab", Netherton syndrome
-PLAA," Neurodevelopmental disorder with progressive microcephaly, spasticity, and brain anomalies","Muslim, Israeli Arab"," Neurodevelopmental disorder with progressive microcephaly, spasticity, and brain anomalies"
-TMEM260," Neurodevelopmental, Cardiac, and Renal Syndrome","Ashkenazi, Jewish"," Neurodevelopmental, Cardiac, and Renal Syndrome"
-CLN8," Neuronal ceroid lipofuscinosis type 8, including northern epilepsy","Muslim, Israeli Arab"," Neuronal ceroid lipofuscinosis type 8, including northern epilepsy"
-IGHMBP2," Neuronopathy, distal hereditary motor, type VI","Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Dir el Assad), MOH: Israeli Arab - Muslim (Jisser el Zarka)"," Neuronopathy, distal hereditary motor, type VI"
-G6PC3," Neutropenia, severe congenital 4, Autosomal Recessive","Muslim, Israeli Arab, Israeli Arab, Palestinian, Bedouin"," Neutropenia, severe congenital 4, Autosomal Recessive"
-VPS45," Neutropenia, severe congenital, 5, Autosomal Recessive","Muslim, Palestinian"," Neutropenia, severe congenital, 5, Autosomal Recessive"
-SMPD1," Niemann-Pick disease type B, SMPD1-related","Russian, Jewish"," Niemann-Pick disease type B, SMPD1-related"
-NPC1, Niemann-Pick disease type C1,"Iranian, Iraqi, Kurd, Jewish", Niemann-Pick disease type C1
-TRPM1," Night blindness, congenital stationary (complete), 1C, Autosomal Recessive",Jewish," Night blindness, congenital stationary (complete), 1C, Autosomal Recessive"
-GPC6, Omodysplasia 1,"Non Jewish, Non Jewish, unknown", Omodysplasia 1
-OTC, Ornithine transcarbamylase deficiency,, Ornithine transcarbamylase deficiency
-PPIB," Osteogenesis imperfecta, type IX","Muslim, Palestinian"," Osteogenesis imperfecta, type IX"
-CRTAP," Osteogenesis imperfecta, type VII",Palestinian," Osteogenesis imperfecta, type VII"
-FKBP10," Osteogenesis imperfecta, type XI",Palestinian," Osteogenesis imperfecta, type XI"
-TMEM38B," Osteogenesis imperfecta, type XIV","Israeli Arab, Palestinian, MOH: Israeli Arab - Bedouin (Negev)"," Osteogenesis imperfecta, type XIV"
-TCIRG1," Osteopetrosis, Autosomal Recessive 1","Jewish, Muslim, MOH: Israeli Arab - Bedouin (Negev), Non Jewish, Israeli Arab, MOH: Non Jewish - Bedouin, Bedouin, Ashkenazi"," Osteopetrosis, Autosomal Recessive 1"
-SNX10," Osteopetrosis, Autosomal Recessive 8","Israeli Arab, Non Jewish, Bedouin, Muslim"," Osteopetrosis, Autosomal Recessive 8"
-COL11A2, Otospondylomegaepiphyseal dysplasia (ZW),"Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)", Otospondylomegaepiphyseal dysplasia (ZW)
-PARK2," Parkinson disease, early onset","Muslim, Israeli Arab"," Parkinson disease, early onset"
-SLC26A4, Pendred syndrome,"Jewish, Muslim, Non Jewish, Palestinian, MOH: Non Jewish - Bedouin (Galil), Israeli Arab, Iranian, Bedouin, Ashkenazi, Israeli Arab, Non Jewish, Muslim, unknown", Pendred syndrome
-ARFGEF2, Periventricular heterotopia with microcephaly,"Non Jewish, Muslim", Periventricular heterotopia with microcephaly
-PEX1, Peroxisome biogenesis disorder 1A (Zellweger),"Ashkenazi, Jewish", Peroxisome biogenesis disorder 1A (Zellweger)
-PEX6, Peroxisome biogenesis disorder 4B (Zellweger syndrome),"Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Peroxisome biogenesis disorder 4B (Zellweger syndrome)
-PEX2, Peroxisome biogenesis disorder 5A (Zellweger),, Peroxisome biogenesis disorder 5A (Zellweger)
-PAH, Phenylketonuria,Jewish, Phenylketonuria
-PCK1," Phosphoenolpyruvate carboxykinase-1, cytosolic, deficiency","Ashkenazi, Jewish"," Phosphoenolpyruvate carboxykinase-1, cytosolic, deficiency"
-PHGDH, Phosphoglycerate dehydrogenase deficiency,"Ashkenazi, Jewish", Phosphoglycerate dehydrogenase deficiency
-CECR1," Polyarteritis nodosa, childhood-onset","Jewish, Georgian"," Polyarteritis nodosa, childhood-onset"
-PKHD1," Polycystic kidney & hepatic disease, PKHD1-related","Ashkenazi, Jewish"," Polycystic kidney & hepatic disease, PKHD1-related"
-GAA, Pompe (Glycogen storage disease type II),Israeli Arab, Pompe (Glycogen storage disease type II)
-VRK1, Pontocerebellar hypoplasia type 1A,"Ashkenazi, Jewish", Pontocerebellar hypoplasia type 1A
-SepSecS, Pontocerebellar hypoplasia type 2D,"MOH: Jewish - Iraqi (cover 95% Iraqi), Iraqi, Jewish, MOH: Jewish - Moroccan, Moroccan", Pontocerebellar hypoplasia type 2D
-EXOSC3," Pontocerebellar hypoplasia, type 1B","Muslim, Israeli Arab"," Pontocerebellar hypoplasia, type 1B"
-EXOSC8," Pontocerebellar hypoplasia, type 1C","Muslim, unknown, Non Jewish, Palestinian"," Pontocerebellar hypoplasia, type 1C"
-VPS53," Pontocerebellar hypoplasia, type 2E (PCCA2)","Jewish, MOH: Jewish - Moroccan, Moroccan"," Pontocerebellar hypoplasia, type 2E (PCCA2)"
-RARS2," Pontocerebellar hypoplasia, type 6","Jewish, Moroccan"," Pontocerebellar hypoplasia, type 6"
-PEPD, Prolidase deficiency,"Druze, Muslim, MOH: Druze - Druze (Bukata, Majdal Shams, Masade, Ein Qiniyye); Non Jewish - Druze (Yarka), Muslim (Yarka), Israeli Arab, Druze, Bedouin, Druze, Israeli Arab, Non Jewish", Prolidase deficiency
-PCCA," Propionic acidemia, PCCA-related","Ashkenazi, Jewish"," Propionic acidemia, PCCA-related"
-PCCB," Propionic acidemia, PCCB-related",," Propionic acidemia, PCCB-related"
-CLCN5," Proteinuria, low molecular weight, with hypercalciuric nephrocalcinosis","Jewish, Non Ashkenazi, Ashkenazi, Iranian"," Proteinuria, low molecular weight, with hypercalciuric nephrocalcinosis"
-MYH2, Proximal myopathy and ophthalmoplegia,"Jewish, Muslim, Non Jewish, Iranian", Proximal myopathy and ophthalmoplegia
-SCNN1A, Pseudohypoaldosteronism type I - SCNN1A gene,"Jewish, Iranian", Pseudohypoaldosteronism type I - SCNN1A gene
-SCNN1B, Pseudohypoaldosteronism type I - SCNN1B gene,"Ashkenazi, Jewish", Pseudohypoaldosteronism type I - SCNN1B gene
-CTSK, Pycnodysostosis,"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Buene Nujidat)", Pycnodysostosis
-PHYH, Refsum disease,"Ashkenazi, Jewish", Refsum disease
-SLC4A4," Renal tubular acidosis (RTA), proximal, with ocular abnormalities and mental retardation","Bedouin, Christian, Israeli Arab, Non Jewish, MOH: Israeli Arab - Bedouin"," Renal tubular acidosis (RTA), proximal, with ocular abnormalities and mental retardation"
-RP1, Retinitis pigmentosa 1,"Ashkenazi, Jewish, Yemeni", Retinitis pigmentosa 1
-TULP1, Retinitis pigmentosa 14,"Muslim, Jewish, Ethiopian, Druze, Muslim, Druze, Palestinian, Israeli Arab", Retinitis pigmentosa 14
-EYS, Retinitis pigmentosa 25,Israeli Arab, Retinitis pigmentosa 25
-CERKL, Retinitis pigmentosa 26,"Jewish, Yemeni", Retinitis pigmentosa 26
-NRL, Retinitis pigmentosa 27,"Iraqi, Jewish, Jewish, unknown, Bukharian, unknown", Retinitis pigmentosa 27
-FAM161A, Retinitis pigmentosa 28,"Jewish, Non Jewish, Palestinian, Ashkenazi, Bulgarian, Libyan, Moroccan, North African, Sephardi, Syrian, Turkish, Ashkenazi, Bulgarian, Libyan, Moroccan, Syrian, Tunisian, syrian, Ashkenazi, Syrian, Muslim, unknown", Retinitis pigmentosa 28
-PRCD, Retinitis pigmentosa 36,"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Ein Mahel)", Retinitis pigmentosa 36
-MERTK, Retinitis pigmentosa 38,"Muslim, Israeli Arab", Retinitis pigmentosa 38
-PDE6A, Retinitis pigmentosa 43,"Muslim, Israeli Arab, Bedouin, Non Jewish", Retinitis pigmentosa 43
-CNGB1, Retinitis pigmentosa 45,"Bukharian, Jewish, Ashkenazi", Retinitis pigmentosa 45
-CNGA1, Retinitis pigmentosa 49,"Jewish, Moroccan", Retinitis pigmentosa 49
-C2ORF71, Retinitis pigmentosa 54,"Muslim, Jewish, Ethiopian, Turkish, Israeli Arab, Iranian", Retinitis pigmentosa 54
-PDE6G, Retinitis pigmentosa 57,"Non Jewish, MOH: Non Jewish - Muslim (Ilut), Muslim", Retinitis pigmentosa 57
-DHDDS, Retinitis pigmentosa 59,"Ashkenazi, Jewish", Retinitis pigmentosa 59
-MAK, Retinitis pigmentosa 62,"Ashkenazi, Jewish, Iraqi, Kurd", Retinitis pigmentosa 62
-C8orf37, Retinitis pigmentosa 64,"Muslim, Druze, Non Jewish, Israeli Arab, Non Jewish, MOH: Druze - Druze (Julis)", Retinitis pigmentosa 64
-KIZ, Retinitis pigmentosa 69,"Jewish, Ashkenazi, North African", Retinitis pigmentosa 69
-HGSNAT, Retinitis pigmentosa 73,"Ashkenazi, Jewish", Retinitis pigmentosa 73
-SCAPER, Retinitis pigmentosa with intellectual disability,"Bedouin, Non Jewish, MOH: Non Jewish - Bedouin (Negev)", Retinitis pigmentosa with intellectual disability
-PDE6B, Retinitis pigmentosa-40,"Muslim, Israeli Arab", Retinitis pigmentosa-40
-PEX7, Rhizomelic chondrodysplasia punctata type 1,"Muslim, Israeli Arab", Rhizomelic chondrodysplasia punctata type 1
-VDR," Rickets, vitamin D-resistant, type IIA","Jewish, Muslim, MOH: Israeli Arab - Muslim (Tamra), Israeli Arab, Non Jewish"," Rickets, vitamin D-resistant, type IIA"
-ESCO2, Roberts-SC phocomelia syndrome,"Jewish, Syrian", Roberts-SC phocomelia syndrome
-HEXB," Sandhoff disease, infantile, juvenile, and adult forms",," Sandhoff disease, infantile, juvenile, and adult forms"
-SMARCAL1, Schimke immunoosseous dysplasia,"Jewish, Ashkenazi, Israeli Arab, Jewish, Non Jewish, Christian, Muslim, unknown", Schimke immunoosseous dysplasia
-JAK3," SCID, autosomal recessive, T-negative/B-positive type","Non Jewish, Muslim"," SCID, autosomal recessive, T-negative/B-positive type"
-KCNJ10, SESAME syndrome,"Jewish, Georgian", SESAME syndrome
-RAG1," Severe combined immudeficiency, B cell-negative, RAG1-related","Israeli Arab, Non Jewish, Arab, unknown, Bedouin, MOH: Israeli Arab - Bedouin (Rumat al-Heib)"," Severe combined immudeficiency, B cell-negative, RAG1-related"
-RAG2," Severe combined immudeficiency, B cell-negative, RAG2-related","Jewish, Muslim, Arab, unknown, Israeli Arab, Jewish, Georgian, Iraqi, Muslim, MOH: Non Jewish - Muslim (Dir el Assad), Israeli Arab, Non Jewish"," Severe combined immudeficiency, B cell-negative, RAG2-related"
-RAPSN," Severe combined immudeficiency, B cell-negative, RAG2-related","Ashkenazi, Jewish"," Severe combined immudeficiency, B cell-negative, RAG2-related"
-ADA, Severe combined immunodeficiency due to ADA deficiency,Jewish, Severe combined immunodeficiency due to ADA deficiency
-DCLRE1C," Severe combined immunodeficiency, Athabascan type","Non Jewish, Bedouin"," Severe combined immunodeficiency, Athabascan type"
-HAX1," Severe congenital neutropenia type 3 (SCN3), a.k.a. Kostmann disease","Ashkenazi, Jewish"," Severe congenital neutropenia type 3 (SCN3), a.k.a. Kostmann disease"
-TKT," Short stature, developmental delay, and congenital heart defects","Ashkenazi, Jewish"," Short stature, developmental delay, and congenital heart defects"
-POC1A," Short stature, onychodysplasia, facial dysmorphism, and hypotrichosis","Israeli Arab, Non Jewish, Muslim, unknown, MOH: Non Jewish - unknown (Sulam)"," Short stature, onychodysplasia, facial dysmorphism, and hypotrichosis"
-SLC17A5," Sialic acid storage disorder, infantile (ISSD)","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Negev)"," Sialic acid storage disorder, infantile (ISSD)"
-DHCR7, Smith Lemli Opitz syndrome,"Ashkenazi, Jewish", Smith Lemli Opitz syndrome
-KIF1C," Spastic ataxia 2, Autosomal Recessive","Muslim, Israeli Arab"," Spastic ataxia 2, Autosomal Recessive"
-SPG11," Spastic paraplegia 11, Autosomal Recessive","Jewish, Christian, MOH: Israeli Arab - Christian (Majar), Israeli Arab, Bedouin, Ashkenazi"," Spastic paraplegia 11, Autosomal Recessive"
-FA2H," Spastic paraplegia 35, Autosomal Recessive","Muslim, Israeli Arab"," Spastic paraplegia 35, Autosomal Recessive"
-AP4B1," Spastic paraplegia 47, Autosomal Recessive","Non Jewish, Muslim"," Spastic paraplegia 47, Autosomal Recessive"
-TECPR2," Spastic paraplegia 49, Autosomal Recessive","Jewish, Bukharian, Ashkenazi, MOH: Jewish - Bukharian"," Spastic paraplegia 49, Autosomal Recessive"
-VPS37A," Spastic paraplegia 53, Autosomal Recessive","MOH: Non Jewish - Muslim (Nahaf), Muslim, Israeli Arab, Non Jewish"," Spastic paraplegia 53, Autosomal Recessive"
-C12ORF65," Spastic paraplegia 55, Autosomal Recessive","Muslim, Israeli Arab, Druze"," Spastic paraplegia 55, Autosomal Recessive"
-CYP7B1," Spastic paraplegia 5A, Autosomal Recessive","Jewish, Tunisian"," Spastic paraplegia 5A, Autosomal Recessive"
-IBA57," Spastic paraplegia 74, Autosomal Recessive","Muslim, Israeli Arab"," Spastic paraplegia 74, Autosomal Recessive"
-DSTYK," Spastic paraplegia, complicated",Israeli Arab," Spastic paraplegia, complicated"
-SLC1A4," Spastic tetraplegia, thin corpus callosum, and progressive microcephaly","Jewish, Iraqi, Non Jewish, Palestinian, Ashkenazi, Muslim, unknown"," Spastic tetraplegia, thin corpus callosum, and progressive microcephaly"
-SMN1, Spinal muscular atrophy-1,"All, Israeli Arab, MOH: All - unknown; Israeli Arab - Bedouin", Spinal muscular atrophy-1
-DLL3," Spondylocostal dysostosis 1, Autosomal Recessive","Jewish, Muslim, Israeli Arab, Ashkenazi"," Spondylocostal dysostosis 1, Autosomal Recessive"
-ACP5, Spondyloenchondrodysplasia with immune dysregulation,"Muslim, Israeli Arab", Spondyloenchondrodysplasia with immune dysregulation
-MATN3, Spondyloepimetaphyseal dysplasia,"Muslim, Israeli Arab", Spondyloepimetaphyseal dysplasia
-DDRGK1, Spondyloepimetaphyseal dysplasia (Shohat-type),"Iraqi, Jewish", Spondyloepimetaphyseal dysplasia (Shohat-type)
-DDR2," Spondylometaepiphyseal dysplasia, short limb-hand type","Muslim, Israeli Arab"," Spondylometaepiphyseal dysplasia, short limb-hand type"
-NUP62," Striatonigral degeneration, Infantile Bilateral Striatal Necrosis (IBSN)","Israeli Arab, Bedouin, MOH: Israeli Arab - Bedouin (Kfar Kassem, Negev)"," Striatonigral degeneration, Infantile Bilateral Striatal Necrosis (IBSN)"
-LIFR, Stuve-Wiedemann syndrome/Schwartz-Jampel type 2 syndrome-LIFR related,"Jewish, Muslim, Israeli Arab, Non Jewish, Palestinian, MOH: Israeli Arab - Muslim (Jerusalem (Jabel el Moukaber)); Non Jewish - Muslim (Jabel el Moukaber)", Stuve-Wiedemann syndrome/Schwartz-Jampel type 2 syndrome-LIFR related
-HEXA, Tay-Sachs disease,"Jewish, Muslim, Israeli Arab, Ashkenazi", Tay-Sachs disease
-SLC19A2, Thiamine-responsive megaloblastic anemia syndrome,"Jewish, Muslim, Israeli Arab, Ashkenazi", Thiamine-responsive megaloblastic anemia syndrome
-MPL," Thrombocytopenia, congenital amegakaryocytic","Jewish, Muslim, Israeli Arab, Druze, Bedouin, Ashkenazi"," Thrombocytopenia, congenital amegakaryocytic"
-HPD, Thyrosinemia type III,"Druze, MOH: Druze - Druze (Julis)", Thyrosinemia type III
-SAMD9," Tumoral calcinosis, familial, normophosphatemic","Jewish, Yemeni"," Tumoral calcinosis, familial, normophosphatemic"
-GALNT3," Tumoral calcinosis, hyperphosphatemic, familial","Muslim, Israeli Arab, Druze"," Tumoral calcinosis, hyperphosphatemic, familial"
-FAH," Tyrosinemia, type I","Ashkenazi, Jewish"," Tyrosinemia, type I"
-ECM1, Urbach-Wiethe disease,"Muslim, Israeli Arab", Urbach-Wiethe disease
-CDH23, Usher Syndrome Type ID,"Jewish, Algerian", Usher Syndrome Type ID
-MYO7A," Usher syndrome, type 1B","Muslim, Tunisian, Bulgarian, Iranian, Ashkenazi, Jewish, Algerian, Moroccan, North African, Non Jewish, Palestinian, Israeli Arab, Jewish, Israeli Arab, Bedouin, Muslim, unknown, Bukharian, Turkish, Samaritan, Ashkenazi, Muslim, Moroccan"," Usher syndrome, type 1B"
-USH1C," Usher syndrome, type 1C","Muslim, Jewish, Ashkenazi, Israeli Arab, Non Jewish, Yemeni"," Usher syndrome, type 1C"
-PCDH15," Usher syndrome, type 1F","Jewish, Ashkenazi, HMO: Jewish - Ashkenazi"," Usher syndrome, type 1F"
-USH1G," Usher syndrome, type 1G","Non Jewish, Bedouin"," Usher syndrome, type 1G"
-USH2A," Usher syndrome, type 2A","Jewish, Non Ashkenazi"," Usher syndrome, type 2A"
-ADGRV1," Usher syndrome, type 2C",," Usher syndrome, type 2C"
-CLRN1," Usher syndrome, type 3A","Jewish, Ashkenazi, HMO: Jewish - Ashkenazi, Bedouin, Non Jewish, Yemeni"," Usher syndrome, type 3A"
-ARSG," Usher syndrome, type IV","Jewish, unknown, Yemeni, unknown"," Usher syndrome, type IV"
-CASQ2," Ventricular tachycardia, catecholaminergic polymorphic, 2","Bedouin, MOH: Israeli Arab - Bedouin (Salame); Non Jewish - Bedouin (Kamanneh), Israeli Arab, Non Jewish"," Ventricular tachycardia, catecholaminergic polymorphic, 2"
-CRB2, Ventriculomegaly with cystic kidney disease,"Ashkenazi, Jewish", Ventriculomegaly with cystic kidney disease
-EPG5, Vici syndrome,"Jewish, Israeli Arab, Ashkenazi", Vici syndrome
-TSPAN12," Vitroretinal vascular malformations, congenital","Bedouin, Israeli Arab"," Vitroretinal vascular malformations, congenital"
-POMT1," Walker-Warburg Syndrome, type A, 1","Ashkenazi, Jewish"," Walker-Warburg Syndrome, type A, 1"
-POMT2," Walker-Warburg Syndrome, type A, 2","Israeli Arab, Non Jewish, Arab, Muslim, unknown"," Walker-Warburg Syndrome, type A, 2"
-DDX11, Warsaw breakage syndrome,"Ashkenazi, Jewish", Warsaw breakage syndrome
-RECQL2, Werner syndrome,Jewish, Werner syndrome
-ATP7B, Wilson disease,"Jewish, Kavkazi, Israeli Arab", Wilson disease
-WFS1," Wolfram-like syndrome, Autosomal Dominant","Jewish, North African"," Wolfram-like syndrome, Autosomal Dominant"
-LIPA, Wolman disease,"MOH: Israeli Arab - Muslim (Dir el Assad); Non Jewish - Muslim (Baene), Muslim, Ashkenazi, Bedouin, Bukharian, Iranian, Muslim, Israeli Arab, Jewish, Palestinian, Israeli Arab, Non Jewish", Wolman disease
-DCAF17, Woodhouse-Sakati syndome,"Muslim, Palestinian", Woodhouse-Sakati syndome
-XPC," Xeroderma pigmentosum, group C","Ashkenazi, Jewish"," Xeroderma pigmentosum, group C"
-ERCC2," Xeroderma pigmentosum, group D","Iraqi, Jewish"," Xeroderma pigmentosum, group D"
-ERCC5, Xeroderma pigmentosum/Cockayne,"Israeli Arab, Muslim, MOH: Israeli Arab - Muslim (Furedis)", Xeroderma pigmentosum/Cockayne
-ABCD1, X-linked adrenoleukodystrophy,"Jewish, Non Jewish, Moroccan, Muslim", X-linked adrenoleukodystrophy
+Gene,Disease,Ethnicity
+COLEC11,3MC syndrome 2,"Bedouin, Non Jewish"
+SERAC1,"3-methylglutaconic aciduria with deafness, encephalopathy, and Leigh-like syndrome","Israeli Arab, Palestinian, Muslim, Druze"
+OPA3,"3-methylglutaconic aciduria, type III - Costeff","Iraqi, Jewish"
+MTTP,Abetalipoproteinemia ABL,"Iranian, Ashkenazi, North African, Jewish"
+CNGA3,Achromatopsia-2 - total color blindness,"Israeli Arab, Kurd, Bedouin, Iraqi, Muslim, Jewish, Iranian, Druze, Ashkenazi, Yemeni"
+CNGB3,"Achromatopsia-3,macular degeneration, juvenile","Israeli Arab, Kavkazi, Muslim, North African, Jewish, Ashkenazi"
+SLC39A4,Acrodermatitis enteropathica,"Israeli Arab, Muslim"
+ACADVL,"Acyl-CoA dehydrogenase, very long-chain, VLCAD deficiency","Israeli Arab, Bedouin, Bukharian, Iraqi, Muslim, Jewish, Non Jewish"
+EOGT,Adams-Oliver syndrome 4,"Israeli Arab, Bedouin"
+CYP11A1,"Adrenal insufficiency, congenital, with 46XY sex reversal, partial or complete","Israeli Arab, Bedouin"
+TBX19,Adrenocorticotropic hormone deficiency,"Israeli Arab, Druze, Muslim, Christian"
+FGB,Afibrinogenemia congenital,"Muslim, Non Jewish"
+SAMHD1,Aicardi Goutieres syndrome,"Israeli Arab, Muslim, Ashkenazi, Jewish"
+RNASEH2B,Aicardi-Goutieres syndrome 2,"Israeli Arab, Muslim"
+GMPPA,"Alacrima, achalasia, and mental retardation syndrome","Israeli Arab, Muslim"
+TYR,"Albinism, oculocutaneous, type IA (OCA1A)","Israeli Arab, Tunisian, Moroccan, Libyan, Tunisia/Egypt, Muslim, Christian Druze, Jewish, Christian, Druze, Georgian, Ashkenazi, Non Jewish"
+OCA2,"Albinism, oculocutaneous, type II","Ashkenazi, Jewish"
+SLC45A2,"Albinism, oculocutaneous, type IV",Jewish
+HGD,Alkaptonuria,"Israeli Arab, Bedouin"
+COL4A3,"Alport Syndrome, COL4A3-Related","Ashkenazi, Jewish"
+COL4A4,"Alport syndrome, COL4A4-Related","Iraqi, Jewish, Tunisian"
+COL4A5,"Alport syndrome, COL4A5-Related","Moroccan, Iraqi, Jewish, Ashkenazi"
+ALMS1,Alstrom syndrome,"Israeli Arab, Muslim"
+FAM20A,"Amelogenesis imperfecta, type IG (enamel-renal syndrome)","Israeli Arab, Bedouin"
+POR,Antley-Bixler syndrome with genital anomalies and disordered steroidogenesis,"Israeli Arab, Bedouin"
+ASL,Argininosuccinic aciduria,"Druze, Non Jewish"
+VPS33B,Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome,"Israeli Arab, Druze, Muslim"
+SLC35A3,"Arthrogryposis, mental retardation, and seizures","Ashkenazi, Jewish"
+WISP3,"Arthropathy, progressive pseudorheumatoid, of childhood","Israeli Arab, Kurd, Muslim, Jewish"
+ASNS,Asparagine synthetase deficiency,"Iranian, Jewish"
+AGA,Aspartylglucosaminuria,"Israeli Arab, Muslim"
+MRE11A,Ataxia Telangiectasia like disorder,"Israeli Arab, Bedouin, Christian, Non Jewish"
+APTX,"Ataxia, early-onset, with oculomotor apraxia and hypoalbuminemia","Israeli Arab, Muslim"
+ATM,Ataxia-tyelangiectasia,"Israeli Arab, Moroccan, Bedouin, Muslim, Jewish, Christian, Druze, Non Jewish, Tunisian, Yemeni"
+TMEM70,"ATPase deficiency, nuclear encoded","Israeli Arab, Bedouin, Muslim"
+AIRE,"Autoimmune polyendocrinopathy syndrome , type I (APS-1) with or without reversible metaphyseal dysplasia","Israeli Arab, Iraqi, Muslim, Jewish, Christian, Iranian"
+PSMB8,"Autoinflammation, lipodystrophy, and dermatosis syndrome","Ashkenazi, Jewish"
+FLT4,Autosomal Recessive Hereditary Lymphedema,"Israeli Arab, Muslim"
+BBS1,Bardet-Biedl syndrome 1,"Israeli Arab, Muslim, Jewish"
+BBS10,Bardet-Biedl syndrome 10,"Israeli Arab, Bedouin, Jewish"
+TRIM32,Bardet-Biedl syndrome 11,"Israeli Arab, Bedouin"
+BBS2,Bardet-Biedl syndrome 2,"Israeli Arab, Moroccan, Bedouin, Jewish, Ashkenazi"
+ARL6,Bardet-Biedl syndrome 3,"Israeli Arab, Bedouin"
+BBS4,Bardet-Biedl syndrome 4,"Israeli Arab, Bedouin, Non Jewish"
+BBS7,Bardet-Biedl syndrome 7,"Israeli Arab, Muslim"
+BBS9,Bardet-Biedl syndrome 9,"Israeli Arab, Bedouin, Muslim, Druze"
+RFX5,"Bare lymphocyte syndrome, type II (SCID)","Bedouin, Non Jewish"
+CLCNKB,"Bartter syndrome, type 3 and Gitelman syndrome","Israeli Arab, Bedouin, Jewish, Ashkenazi, Non Jewish"
+BSND,"Bartter syndrome, type 4a infantile variant with sensorineuronal deafness","Israeli Arab, Bukharian, Bedouin, Jewish"
+MED25,Basel-Vanagaite-Smirin-Yosef syndrome,"Israeli Arab, Muslim"
+UPB1,Beta-ureidopropionase deficiency,"Ashkenazi, Jewish"
+CYP4V2,Bietti crystalline corneoretinal dystrophy,"Jewish, Yemeni"
+BTD,Biotinidase deficiency,"Israeli Arab, Muslim"
+CCDC174,Birk Volodarsky PMR Synderome Hypotonia and psychomotor developmental delay,"Ethiopian, Bedouin, Israeli Arab, Jewish"
+SLC30A9,Birk-Landau-Perez cerebro-renal syndrome,"Israeli Arab, Bedouin, Non Jewish"
+BLM,Bloom syndrome,"Israeli Arab, Palestinian, Muslim, Jewish, Russian, Ashkenazi, Non Ashkenazi"
+BMPR1B,Brachydactyly type A2,"Bedouin, Non Jewish"
+ZNF469,Brittle cornea syndrome 1,"Israeli Arab, Muslim, Jewish, Tunisian"
+ASPA,Canavan Disease,"Ashkenazi, Jewish"
+CPS1,Carbamoylphosphate synthetase I deficiency,"Israeli Arab, Bedouin, Christian, Jewish, Druze, Non Jewish, Ashkenazi"
+PPP1R13L,Cardio-Cutaneous Syndrome DCM,"Israeli Arab, Non Jewish, Christian"
+TTN,"Cardiomyopathy, dilated - Lethal Congenital Arthrogryposis","Israeli Arab, Bedouin, Muslim"
+SDHA,"Cardiomyopathy, dilated , 1GG neonatal isolated","Israeli Arab, Bedouin, Ashkenazi, Jewish"
+SLC22A5,"Carnitine deficiency, systemic primary","Iranian, Jewish"
+CPT1A,Carnitine palmitoyltransferase 1 deficiency,Druze
+SLC25A20,Carnitine-acylcarnitine translocase deficiency - CACT,"Israeli Arab, Palestinian, Bedouin, Muslim, Non Jewish"
+THG1L,Cerebellar ataxia and developmental delay,"Ashkenazi, Jewish"
+GATM,Cerebral creatine deficiency syndrome 3,"Jewish, Yemeni"
+SNAP29,"Cerebral dysgenesis, neuropathy, ichthyosis, and palmoplantar keratoderma syndrome - CEDNIK Syndrome","Israeli Arab, Muslim"
+CYP27A1,Cerebrotendinous xanthomatosis,"Moroccan, Jewish, Druze, Algerian, Non Jewish, Tunisian, Ashkenazi"
+PPT1,"Ceroid lipofuscinosis, neuronal, 1","Ashkenazi, Jewish"
+TPP1,"Ceroid lipofuscinosis, neuronal, 2","Israeli Arab, Muslim"
+CLN5,"Ceroid lipofuscinosis, neuronal, 5","Israeli Arab, Palestinian, Muslim"
+CLN6,"Ceroid lipofuscinosis, neuronal, 6","Bedouin, Muslim, Non Jewish"
+MFSD8,"Ceroid lipofuscinosis, neuronal, 7","Israeli Arab, Palestinian, Muslim, Christian, Non Jewish"
+ABHD5,Chanarin-Dorfman syndrome,"Israeli Arab, Iraqi, Muslim, Jewish"
+ABCB11,"Cholestasis, progressive familial intrahepatic type 2","Israeli Arab, Palestinian, Muslim, Jewish, Ashkenazi, Non Jewish"
+VPS13A,Choreoacanthocytosis,"Israeli Arab, Iraqi, Muslim, Jewish, Ashkenazi, Tunisian"
+NCF1,Chronic granulomatous disease due to deficiency of NCF-1,"Israeli Arab, Palestinian, Kavkazi, Bedouin, All, Jewish, Georgian, Ashkenazi, Ethiopian"
+NCF2,Chronic granulomatous disease due to deficiency of NCF-2,"Israeli Arab, Palestinian, Muslim, Non Jewish"
+CYBA,"Chronic granulomatous disease,autosomal, due to deficiency of CYBA","Israeli Arab, Palestinian, Moroccan, Bedouin, Muslim, Jewish, Non Jewish, Arab, Yemeni"
+GPSM2,Chudley-McCullough syndrome,"Palestinian, Muslim, Non Jewish"
+DNAI1,"Ciliary dyskinesia, primary, 1, with or without situs inversus","Ashkenazi, Jewish"
+RSPH9,"Ciliary dyskinesia, primary, 12","Israeli Arab, Bedouin"
+DNAL1,"Ciliary dyskinesia, primary, 16","Israeli Arab, Bedouin"
+CCDC114,"Ciliary dyskinesia, primary, 20","Ashkenazi, Jewish"
+C21orf59,"Ciliary dyskinesia, primary, 26","Ashkenazi, Jewish"
+CCDC65,"Ciliary dyskinesia, primary, 27","Ashkenazi, Jewish"
+DNAH5,"Ciliary dyskinesia, primary, 3, with or without situs inversus (CILD3/PCD)","Druze, Ashkenazi, Jewish"
+DNAH11,"Ciliary dyskinesia, primary, 7, with or without situs inversus","Ethiopian, Ashkenazi, Jewish"
+DNAI2,"Ciliary dyskinesia, primary, 9, with or without situs inversus","Iranian, Ashkenazi, Jewish"
+ASS1,"Citrullinemia,classic","Israeli Arab, Muslim"
+ERCC8,"Cockayne syndrome, type A","Israeli Arab, Muslim, Jewish, Christian Druze, Druze, Ashkenazi, Non Jewish"
+ERCC6,"Cockayne syndrome, type B","Druze, Non Jewish"
+COQ4,"Coenzyme Q10 deficiency, primary, 7","Ashkenazi, Jewish"
+VPS13B,Cohen syndrome,"Palestinian, Ashkenazi, Jewish"
+SLC25A1,Combined D-2- and L-2-hydroxyglutaric aciduria,"Ashkenazi, Jewish"
+ACSF3,Combined malonic and methylmalonic aciduria,"Ashkenazi, Jewish"
+C12ORF65,"Spastic paraplegia 55, Autosomal Recessive","Israeli Arab, Muslim, Jewish, Druze, Indian"
+PLAA,"Neurodevelopmental disorder with progressive microcephaly, spasticity, and brain anomalies","Israeli Arab, Muslim"
+RPGRIP1,Cone-rod dystrophy 13,"Christian, Non Jewish"
+RAB28,Cone-rod dystrophy 18,"Moroccan, Jewish"
+ABCA4,Cone-rod dystrophy 3,"Israeli Arab, Moroccan, Bedouin, Christian, Jewish, Non Jewish"
+ADAM9,cone-rod dystrophy 9,"Iraqi, Jewish"
+HACD1,Congenital myopathy,"Israeli Arab, Bedouin"
+SLC26A3,Congenital chloride diarhhea (CLD),"Israeli Arab, Muslim"
+NGLY1,Congenital disorder of deglycosylation,Druze
+MPDU1,"Congenital disorder of glycosylation, type If","Palestinian, Muslim, Non Jewish"
+SLC35C1,"Congenital disorder of glycosylation, type IIc","Israeli Arab, Muslim"
+B4GALT1,"Congenital disorder of glycosylation, type IId","Bedouin, Non Jewish"
+DOLK,"Congenital disorder of glycosylation, type Im","Israeli Arab, Druze, Bedouin"
+PGM1,"Congenital disorder of glycosylation, type It","Israeli Arab, Bedouin"
+CPT2,"CPT deficiency, hepatic, type II","Ashkenazi, Jewish"
+ATP6V0A2,"Cutis laxa, Autosomal Recessive, type IIA","Israeli Arab, Bedouin"
+CFTR,Cystic fibrosis,"Israeli Arab, Palestinian, Kavkazi, Bedouin, Jewish, Georgian, Balkan, Moroccan, Muslim, Christian, Ashkenazi, Tunisian, mixed, libyan, Iraqi, Non Jewish, Arab, Ethiopian, Yemeni"
+CTNS,"Cystinosis,CTNS-related","Israeli Arab, Palestinian, Moroccan, Muslim, Jewish"
+STRC,"Deafness, Autosomal Recessive 16","Ashkenazi, Jewish"
+GJB2,"Deafness, autosomal recessive 1A","Israeli Arab, Palestinian, Bedouin, Bukharian, Iraqi, Muslim, Jewish, Georgian, Non Jewish, Ashkenazi"
+GJB6,"Deafness, Autosomal Recessive 1B","Ashkenazi, Jewish"
+OTOA,"Deafness, Autosomal Recessive 22",Jewish
+TRIOBP,"Deafness, Autosomal Recessive 28","Palestinian, Muslim, Non Jewish"
+MYO15A,"Deafness, Autosomal Recessive 3","Palestinian, Muslim, Jewish, Iranian, Non Jewish, Ashkenazi"
+PJVK,"Deafness, Autosomal Recessive 59","Israeli Arab, Muslim"
+TMC1,"Deafness, Autosomal Recessive 7","Israeli Arab, Moroccan, Bedouin, Jewish, Non Jewish"
+SYNE4,"Deafness, Autosomal Recessive 76","Iraqi, Jewish"
+LOXHD1,"Deafness, Autosomal Recessive 77","Israeli Arab, Muslim, Jewish, Ashkenazi"
+TMPRSS3,"Deafness, Autosomal Recessive 8/10","Israeli Arab, Muslim, Non Jewish"
+OTOF,"Deafness, Autosomal Recessive 9","Israeli Arab, Ashkenazi, Christian, Jewish"
+DHCR24,Desmosterolosis,"Israeli Arab, Bedouin"
+AQP2,"Diabetes insipidus, nephrogenic","Israeli Arab, Bedouin, Non Jewish"
+BMPER,Diaphanospondylodysostosis,"Israeli Arab, Muslim"
+DGAT1,"Diarrhea 7, congenital","Ashkenazi, Jewish"
+DLD,Dihydrolipoamide Dehydrogenase Deficiency,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Ashkenazi"
+INSR,"Leprechaunism, Donohue syndrome","Palestinian, Muslim, Jewish, Druze, Non Jewish, Ashkenazi"
+ELP1,"Dysautonomia, familial","Ashkenazi, Jewish"
+CDAN1,"Dyserythropoietic anemia, congenital, type Ia","Bedouin, Non Jewish"
+SEC23B,"Dyserythropoietic anemia, congenital, type II","Moroccan, Jewish"
+RTEL1,Dyskeratosis congenita,"Druze, Ashkenazi, Jewish"
+COL7A1,"Dystrophic epidermolysis bullosa, Autosomal Recessive,COL7A1-Related","Israeli Arab, Bedouin, Muslim, Jewish, Ashkenazi, Non Jewish"
+ST3GAL3,Early infantile epileptic encephalopathy 15,"Palestinian, Muslim"
+EDAR,"Ectodermal dysplasia 10B, hypohidrotic/hair/tooth type, Autosomal Recessive","Druze, Non Jewish"
+ADAMTS2,"Ehlers Danlos syndrome, type VIIC","Ashkenazi, Jewish"
+COL17A1,"Epidermolysis bullosa, junctional,","Israeli Arab, Muslim"
+KRT14,Epidermolysis bullosa simplex,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Ashkenazi, Non Jewish"
+DST,"Epidermolysis bullosa simplex, Autosomal Recessive 2","Ashkenazi, Jewish"
+LAMC2,"Epidermolysis bullosa, junctional, Herlitz type","Israeli Arab, Muslim"
+LAMB3,"Epidermolysis bullosa, junctional, non-Herlitz type","Israeli Arab, Muslim, Jewish, Non Jewish, Ashkenazi"
+ITGB4,"Epidermolysis bullosa, junctional, with pyloric atresia - Carmi syndrome","Bedouin, Non Jewish"
+PRICKLE1,"Epilepsy, progressive myoclonic 1B","Israeli Arab, Muslim"
+EPM2A,"Epilepsy, progressive myoclonic 2A (Lafora)","Israeli Arab, Palestinian, Muslim"
+ALDH7A1,"Epilepsy, pyridoxine-dependent","Georgian, Jewish"
+SZT2,"Epileptic encephalopathy, early infantile, 18","Iraqi, Jewish"
+DSG1,"Erythroderma, congenital, with palmoplantar keratoderma, hypotrichosis, and hyper IgE","Iranian, Druze, Jewish, Syrian"
+CSTA,"Exfoliative ichthyosis, Autosomal Recessive, ichthyosis bullosa of Siemens-like","Israeli Arab, Bedouin"
+F7,Factor VII deficiency,"Israeli Arab, Muslim, Druze, Non Jewish, Arab"
+FANCG,Fanconi Anemia - complementation group G,"Israeli Arab, Muslim, Non Jewish"
+FANCA,"Fanconi anemia, complementation group A","Israeli Arab, Moroccan, Muslim, Jewish, Druze, Non Jewish, Tunisian, Yemeni"
+FANCC,"Fanconi anemia, complementation group C","Ashkenazi, Jewish"
+SLC2A2,Fanconi-Bickel syndrome,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Druze"
+ALDOB,Fructose intolerance,"European, Ashkenazi, Jewish"
+FH,"Fumarase deficiency, leiomyomatosis and renal cell cancer","Iranian, Jewish"
+GALT,Galactosemia,"Israeli Arab, Christian, Jewish, Ashkenazi"
+GBA,"Gaucher disease, , type I","Israeli Arab, Palestinian, Kurd, Bedouin, Muslim, Jewish, Ashkenazi"
+GAN,Giant axonal neuropathy 1,"Israeli Arab, Muslim"
+ITGA2B,"Glanzmann thrombasthenia, ITGA2B-related","Palestinian, Iraqi, Muslim, Jewish, Non Jewish, Ashkenazi"
+ITGB3,"Glanzmann thrombasthenia, ITGB3-related","Palestinian, Iraqi, Jewish"
+CYP1B1,"Glaucoma 3A, primary open angle, congenital, juvenile, or adult onset","Israeli Arab, Bedouin, Muslim, Druze, Non Jewish"
+NNT,Glucocorticoid deficiency 4,"Israeli Arab, Muslim"
+ETFDH,Glutaric acidemia IIC,"Israeli Arab, Muslim, Non Jewish, Arab"
+GCDH,Glutaricaciduria type I,"Israeli Arab, Kurd, Bedouin, Iraqi, Muslim, Jewish, Non Jewish, Arab"
+GLDC,"Glycine encephalopathy and non-ketoic hyperglycinemia, GLDC-related","Israeli Arab, Bedouin, Muslim, Non Jewish"
+AMT,"Glycine encephalopathy, AMT-related","Israeli Arab, Muslim"
+G6PC,Glycogen storage disease Ia - GDS1a,"Israeli Arab, Muslim, Jewish, Ashkenazi"
+SLC37A4,Glycogen storage disease Ib,"Israeli Arab, Bedouin, All, Muslim, Non Jewish"
+AGL,Glycogen storage disease III,"Israeli Arab, Palestinian, Moroccan, Muslim, Jewish"
+PHKG2,Glycogen storage disease IXc,"Israeli Arab, Muslim"
+GLB1,"GM1-gangliosidosis, type I","Israeli Arab, Palestinian, Moroccan, Muslim, Jewish, Non Jewish, Arab"
+KIAA1279,Goldberg-Shprintzen megacolon syndrome,"Ashkenazi, Jewish"
+NBEAL2,Gray platelet syndrome,"Israeli Arab, Bedouin, Muslim, Jewish, Ashkenazi"
+MLPH,"Griscelli syndrome, type 3","Palestinian, Muslim"
+GH1,"Growth hormone deficiency, isolated, type IA","Israeli Arab, Bedouin, Ashkenazi, Jewish"
+GHRHR,"Growth hormone deficiency, isolated, type IB","Muslim, Non Jewish"
+FTO,"Growth retardation, developmental delay, coarse facies, and early death","Israeli Arab, Muslim"
+OAT,Gyrate atrophy of choroid and retina with or without ornithinemia,"Iraqi, Jewish, Syrian"
+CTSC,Haim-Munk syndrome,"Cochin, Jewish, Indian"
+HBB,"Hemoglobipathies (Including sickle-cell anemia and beta thalassemia, Hb C, D, E, O)","Israeli Arab, Palestinian, Kurd, Bedouin, Muslim, Jewish, Non Jewish, Arab"
+CD59,"Hemolytic anemia & immune-mediated polyneuropathy, CD59-related","Libyan, Moroccan, Egyptian, Jewish"
+CFH,"Hemolytic uremic syndrome, complement factor H deficiency","Bedouin, Non Jewish"
+UNC13D,"Hemophagocytic lymphohistiocytosis, familial, 3","Ashkenazi, Jewish"
+GNE,Hereditary inclusion body myopathy (HIBM),"Karaite, Bedouin, Muslim, Jewish, Iranian, Non Jewish"
+HPS1,Hermansky-Pudlak syndrome 1,"Ashkenazi, Jewish"
+HPS3,Hermansky-Pudlak syndrome 3,"Non Jewish, Ashkenazi, Jewish"
+HPS6,Hermansky-Pudlak syndrome 6,"Bedouin, Non Jewish"
+SLC29A3,Histiocytosis-lymphadenopathy plus syndrome,"Israeli Arab, Muslim"
+HMGCL,HMG-CoA lyase deficiency,"Israeli Arab, Palestinian, Muslim, Non Jewish"
+MTHFR,Homocystinuria due to MTHFR deficiency,"Israeli Arab, Bukharian, Muslim, Jewish, Georgian, Ashkenazi"
+CBS,"Homocystinuria, thrombosis, hyperhomocysteinemic","Muslim, Jewish, Arab, Ashkenazi, Non Jewish"
+CCDC88C,"Hydrocephalus, nonsyndromic, Autosomal Recessive","Ashkenazi, Jewish"
+GLRA1,"Hyperekplexia, hereditary 1, autosomal dominant or recessive","Druze, Non Jewish"
+MVK,Hyper-IgD syndrome,"Ashkenazi, Jewish"
+DOCK8,"Hyper-IgE recurrent infection syndrome, autosomal recessive","Bedouin, Non Jewish"
+ABCC8,"Hyperinsulinemic hypoglycemia, familial, 1 (PHHI/HHF1)","Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Non Jewish, Ashkenazi"
+AGXT,"Hyperoxaluria, primary, type I","Israeli Arab, Palestinian, Libyan, Muslim, Jewish, Christian, Druze, Non Jewish, Arab"
+GRHPR,"Hyperoxaluria, primary, type II","Jewish, Yemeni"
+HOGA1,"Hyperoxaluria, primary, type III","Druze, Ashkenazi, Jewish"
+PGAP3,Hyperphosphatasia with mental retardation syndrome 4,"Israeli Arab, Muslim"
+SLCO2A1,"Hypertrophic osteoarthropathy, primary, Autosomal Recessive 2","Ashkenazi, Jewish"
+SARS2,"Hyperuricemia, pulmonary hypertension, renal failure, and alkalosis","Israeli Arab, Muslim, Non Jewish"
+CYP11B2,"Hypoaldosteronism, congenital, due to CMO II deficiency","Iranian, Jewish"
+TRPM6,"Hypomagnesemia 1, intestinal","Israeli Arab, Bedouin, Non Jewish, Arab"
+VPS11,Hypomyelination and developmental delay,"Ashkenazi, Jewish"
+TBCE,Hypoparathyroidism retardation dysmorphism syndrome,"Israeli Arab, Palestinian, Bedouin, Muslim, Non Jewish"
+ALPL,"Hypophosphatasia, infantile","Israeli Arab, Muslim"
+TSHR,"Hypothyroidism, congenital, nongoitrous, 1","Israeli Arab, Bedouin, Muslim, Non Jewish"
+UNC80,"Hypotonia, infantile, with psychomotor retardation and characteristic facies 2 (HPFR2)","Israeli Arab, Bedouin, Muslim, Palestinian"
+2p21,Hypotonia-cystinuria syndrome,"Bedouin, Non Jewish"
+TGM1,"Ichthyosis, congenital, Autosomal Recessive 1","Israeli Arab, Muslim, Jewish, Druze, Ashkenazi/muslim.Druze"
+ABCA12,"Ichthyosis, congenital, Autosomal Recessive 4A","Israeli Arab, Muslim, Jewish, Ashkenazi"
+CYP4F22,Congenital recessive ichthyoses (CRI),"Ashkenazi, Jewish"
+LRBA,"Immunodeficiency, common variable, 8, with autoimmunity","Israeli Arab, Palestinian, Muslim"
+ZBTB24,Immunodeficiency-centromeric instability-facial anomalies syndrome-2,"Ashkenazi, Jewish"
+ACO2,Infantile cerebellar-retinal degeneration,"Israeli Arab, Muslim"
+PLA2G6,Infantile neuroaxonal dystrophy 1 (INAD),"Israeli Arab, Palestinian, Bedouin, Muslim, Non Jewish"
+IL10RA,"Inflammatory bowel disease 28, early onset, autosomal recessive","Israeli Arab, Bedouin, All, Non Jewish"
+SCN9A,"Insensitivity to pain, congenital, with anhidrosis (CIPA)","Israeli Arab, Bedouin, Jewish"
+NTRK1,"Insensitivity to pain, congenital, with anhidrosis (CIPA)","Israeli Arab, Moroccan, Bedouin, Muslim, Jewish"
+IVD,Isovaleric academia,Jewish
+CNNM4,Jalili syndrome,"Palestinian, Muslim"
+TMEM67,Joubert syndrome type 6 (MSK3),"Israeli Arab, Muslim, Ashkenazi, Jewish"
+CEP104,Joubert syndrome (JBTS),"Israeli Arab, Muslim"
+TMEM216,Joubert syndrome 2 (MKS2),"Israeli Arab, Muslim, Jewish, Ashkenazi"
+AHI1,Joubert syndrome-3,"Palestinian, Muslim, Non Jewish"
+FERMT1,Kindler syndrome,"Palestinian, Kurd, Muslim, Jewish, Druze"
+ROGDI,Kohlschutter-Tonz syndrome,Druze
+GALC,Krabbe disease,"Israeli Arab, Druze, Muslim, Non Jewish"
+GHR,Laron dwarfism,"Israeli Arab, Moroccan, Iraqi, Jewish, Iranian, Non Jewish, Arab, Yemeni, Afghan"
+LAMA3,Laryngoonychocutaneous Syndrome,"Israeli Arab, Muslim, Jewish"
+GUCY2D,"Leber congenital amaurosis 1 , Cone-rod dystrophy 6","Israeli Arab, Moroccan, Bedouin, Muslim, North African, Jewish, Ashkenazi, Tunisian, Non Jewish"
+RDH12,Leber congenital amaurosis 13,"Israeli Arab, Moroccan, Turkish, Bedouin, Muslim, Jewish, Christian, Tunisian, Non Ashkenazi"
+RPE65,Leber congenital amaurosis 2,"Israeli Arab, Muslim, North African, Jewish, Ashkenazi"
+AIPL1,Leber congenital amaurosis 4,"Israeli Arab, Muslim, North African, Jewish"
+LCA5,Leber congenital amaurosis 5,"Israeli Arab, Muslim, Jewish, Ashkenazi"
+CRB1,Leber congenital amaurosis 8,"Israeli Arab, Kurd, Iraqi, Muslim, Jewish, Mixed"
+NDUFS4,Leigh syndrome,"Ashkenazi, Jewish"
+SURF1,"Leigh syndrome, due to COX deficiency",Jewish
+ERBB3,Lethal congenital contractural syndrome 2,"Bedouin, Non Jewish"
+PIP5K1C,Lethal congenital contractural syndrome 3,"Israeli Arab, Bedouin"
+MYBPC1,Lethal congenital contracture syndrome 4,"Israeli Arab, Druze, Bedouin, Non Jewish"
+AIMP1,"Leukodystrophy, hypomyelinating, 3","Israeli Arab, Bedouin"
+HSPD1,"Leukodystrophy, hypomyelinating, 4, HLD4 (HSP60)","Israeli Arab, Bedouin"
+HIKESHI,"Leukodystrophy, early onset spastic paraparesis,acquired microcephaly, optic atrophy and risk of early death","Ashkenazi, Jewish"
+DARS2,Leukoencephalopathy with brain stem and spinal cord involvement and lactate elevation,"Ashkenazi, Jewish"
+TRMU,"LIFT, Liver failure infantile transient","Israeli Arab, Muslim, Jewish, Yemeni"
+ANO5,Limb-girdle muscular dystrophy,"Ashkenazi, Jewish"
+CDK5,Lissencephaly 7 with cerebellar hypoplasia,"Israeli Arab, Muslim"
+HADHA,Long-Chain hydroxylacyl-CoA dehydrogenase deficiency (LCHAD),Jewish
+RIN2,"Macrocephaly, alopecia, cutis laxa, and scoliosis","Israeli Arab, Muslim"
+ZMPSTE24,Mandibuloacral dysplasia with type B lipodystrophy,"Ashkenazi, Jewish"
+BCKDHA,"Maple syrup urine disease, type Ia","Israeli Arab, Bedouin, Muslim, Christian, Jewish, Non Jewish, Arab, Ashkenazi"
+BCKDHB,"Maple syrup urine disease, type Ib","Israeli Arab, Muslim, Jewish, Druze, Ashkenazi, Non Jewish"
+DBT,"Maple syrup urine disease, type II","Israeli Arab, Druze, Bedouin"
+MKS1,Meckel syndrome 1,"Israeli Arab, Muslim, Non Jewish"
+TMEM231,Meckel syndrome 11,"Israeli Arab, Muslim"
+CEP290,Meckel syndrome 4,"Israeli Arab, Palestinian, Bedouin, Muslim, Christian, Non Jewish"
+RPGRIP1L,Meckel syndrome 5,"Israeli Arab, Bedouin"
+TCTN2,Meckel syndrome 8,"Non Jewish, Muslim, Jewish, Yemeni"
+ACADM,Medium-chain Acyl-CoA dehydrogenase deficiency,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Ashkenazi, Non Jewish"
+MLC1,Megalencephalic leukoencephalopathy with subcortical cysts,"Libyan, Ashkenazi, Jewish"
+TRAPPC9,"Mental retardation, Autosomal Recessive 13","Israeli Arab, Muslim"
+MAN1B1,"Mental retardation, Autosomal Recessive 15","Israeli Arab, Muslim, Non Jewish"
+CC2D1A,"Mental retardation, Autosomal Recessive 3 - MRT3","Muslim, Non Jewish"
+TAF2,"Mental retardation, Autosomal Recessive 40","Israeli Arab, Bedouin"
+ARSA,Metachromatic leukodystrophy - MLD,"Israeli Arab, Bedouin, Muslim, Christian, Jewish, Non Jewish, Yemeni, Ashkenazi"
+MUT,"Methylmalonic acidemia, mut(0) type","Israeli Arab, Non Jewish, Arab"
+MMACHC,"Methylmalonic aciduria and homocystinuria, cblC type",
+PCNT,"Microcephalic osteodysplastic primordial dwarfism, type II","Palestinian, Muslim, Druze, Non Jewish"
+CEP152,"Microcephaly 9, primary, Autosomal Recessive","Israeli Arab, Muslim"
+FRMD4A,Microcephaly intellectual disability and dysmorphism,"Bedouin, Non Jewish"
+MED17,"Microcephaly, postnatal progressive, with seizures and brain atrophy ((ICCA)","Kavkazi, Jewish"
+TRMT10A,"Microcephaly, short stature, and impaired glucose metabolism","Israeli Arab, Bukharian, Muslim, Jewish"
+STRA6,Microphthalmia,"Syrian/Iraqi, Iraqi, Jewish, Syrian"
+ALDH1A3,"Microphthalmia, isolated 8","Israeli Arab, Muslim"
+RYR1,Minicore myopathy with external ophthalmoplegia,"Israeli Arab, Druze, Muslim, Non Jewish"
+NDUFA11,Mitochondrial complex I deficiency - NDUFA11 gene,"Bedouin, Non Jewish"
+NDUFAF5,Mitochondrial complex I deficiency - NDUFAF5 gene,"Ashkenazi, Jewish"
+NDUFS6,Mitochondrial complex I deficiency - NDUFS6 gene,"Kavkazi, Jewish"
+NDUFS2,Mitochondrial complex I deficiency-NDUFS2 gene,"Israeli Arab, Christian"
+UQCRQ,"Mitochondrial complex III deficiency, nuclear type 4","Israeli Arab, Bedouin"
+DGUOK,Mitochondrial DNA depletion syndrome (hepatocerebral type),"Israeli Arab, Muslim, Druze, Non Jewish"
+TYMP,Mitochondrial DNA depletion syndrome 1 (MNGIE type),"Iranian, Ashkenazi, Jewish"
+TK2,Mitochondrial DNA depletion syndrome 2 (myopathic type),"Israeli Arab, Iraqi, Muslim, Jewish, Ashkenazi, Egyptian"
+SUCLA2,Mitochondrial DNA depletion syndrome 5,"Muslim, Non Jewish"
+MPV17,Mitochondrial DNA depletion syndrome 6 (hepatocerebral type),"Israeli Arab, Bedouin"
+RRM2B,Mitochondrial DNA depletion syndrome 8,"Israeli Arab, Muslim, Non Jewish"
+FOXRED1,Mitochondrial encephalomyopathy complex I deficiency,"Iranian, Jewish"
+FDX1L,Mitochondrial muscle myopathy,"Moroccan, Jewish"
+PUS1,Mitochondrial myopathy and sideroblastic anemia 1,"Iranian, Jewish"
+ECHS1,Mitochondrial short-chain enoyl-CoA hydratase 1 deficiency,Jewish
+MOCS1,Molybdenum cofactor deficiency A,"Israeli Arab, Muslim"
+MOCS2,Molybdenum cofactor deficiency Type B,"Druze, Muslim, Christian Druze, Non Jewish"
+MCIDAS,Mucociliary clearance disorder,"Iranian, Jewish"
+GNPTAB,Mucolipidosis III alpha/beta,"Israeli Arab, Muslim, Jewish, Druze, Non Jewish, Ashkenazi"
+GNPTG,Mucolipidosis III gamma,"Israeli Arab, Muslim, Jewish, Druze, Non Jewish, Tunisian"
+MCOLN1,Mucolipidosis type IV - ML4,"Druze, Ashkenazi, Jewish"
+SGSH,Mucopolysaccharidisis type IIIA (Sanfilippo A),"Israeli Arab, Karaite, Muslim, North African, Jewish, Christian, Yemeni"
+IDUA,Mucopolysaccharidosis Type IH - Hurler syndrome,"Israeli Arab, Muslim, Jewish, Druze, Non Jewish"
+NAGLU,Mucopolysaccharidosis type IIIB (Sanfilippo B),"Israeli Arab, Non Jewish, Arab"
+PIGN,Multiple congenital anomalies-hypotonia-seizures syndrome 1,"Israeli Arab, Muslim, Non Jewish"
+PIGT,Multiple congenital anomalies-hypotonia-seizures syndrome 3,Jewish
+SUMF1,Multiple sulfatase deficiency,"Bedouin, Ashkenazi, Non Jewish, Jewish"
+LAMA2,"Muscular dystrophy, congenital, due to partial LAMA2 deficiency","Israeli Arab, Palestinian, Bedouin, Muslim, Christian, Jewish, Non Jewish, Tunisian"
+CAPN3,"Muscular dystrophy, limb-girdle, type 2A","Israeli Arab, Iraqi, Jewish, Christian, Syrian"
+DYSF,"Muscular dystrophy, limb-girdle, type 2B","Israeli Arab, Kavkazi, Libyan, Muslim, Jewish, Non Jewish, Yemeni"
+SGCG,"Muscular dystrophy, limb-girdle, type 2C","Israeli Arab, Bedouin"
+GMPPB,Muscular dystrophy-dystroglycanopathy,"Ashkenazi, Jewish"
+ISPD,"Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies),","Israeli Arab, Muslim"
+FKTN,"Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 4 - Walker Warburg syndrome","Ashkenazi, Jewish"
+DAG1,"Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies), type A, 9","Israeli Arab, Muslim"
+FKRP,"Muscular dystrophy-dystroglycanopathy (limb-girdle), type C, 5","Israeli Arab, Bedouin, Non Jewish"
+CHRNE,"Myasthenic syndrome, congenital, 4B, fast-channel","Israeli Arab, Muslim, Jewish, Ashkenazi"
+COLQ,"Myasthenic syndrome, congenital, 5","Israeli Arab, Palestinian, Bedouin, Iraqi, Muslim, Jewish, Ashkenazi"
+RAPSN,"Myasthenic syndrome, congenital, associated with acetylcholine receptor deficiency","Iraqi, Jewish, Iranian, Georgian, Ashkenazi, Yemeni"
+MEGF10,"Myopathy, areflexia, respiratory distress, and dysphagia, early-onset","Ashkenazi, Jewish"
+P3H2,"Myopia, high, with cataract and vitreoretinal degeneration","Israeli Arab, Bedouin"
+CLCN1,"Myotonia congenita, Autosomal Recessive","Israeli Arab, Bedouin, Muslim, Non Jewish"
+NEB,Nemaline myopathy 2,"Ashkenazi, Jewish"
+TNNT1,"Nemaline myopathy 5, Amish type","Palestinian, Muslim"
+KLHL40,"Nemaline myopathy 8, Autosomal Recessive","Israeli Arab, Muslim"
+INVS,"Nephronophthisis 2, infantile","Israeli Arab, Bedouin"
+NPHS2,Nephrotic syndrome,"Israeli Arab, Palestinian, Muslim, Non Jewish"
+NPHS1,Nephrotic syndrome type 1,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Non Jewish, Ashkenazi"
+ARHGDIA,"Nephrotic syndrome, type 8","Ashkenazi, Jewish"
+SPINK5,Netherton syndrome,"Israeli Arab, Kavkazi, Iraqi, Muslim, Jewish, Georgian, Ashkenazi"
+ARSG,"Usher syndrome, type IV","Jewish, Yemeni"
+CLN8,"Neuronal ceroid lipofuscinosis type 8, including northern epilepsy","Israeli Arab, Muslim"
+IGHMBP2,"Neuronopathy, distal hereditary motor, type VI","Israeli Arab, Muslim"
+G6PC3,"Neutropenia, severe congenital 4, Autosomal Recessive","Israeli Arab, Palestinian, Bedouin, Muslim"
+VPS45,"Neutropenia, severe congenital, 5, Autosomal Recessive","Palestinian, Muslim"
+SMPD1,"Niemann-Pick disease type B, SMPD1-related","Israeli Arab, Muslim, North African, Jewish, Russian, Iranian, Non Jewish, Ashkenazi"
+NPC1,Niemann-Pick disease type C1,"Israeli Arab, Kurd, Bedouin, Iraqi, Muslim, Jewish, Druze, Iranian, Non Jewish, Arab, Ashkenazi"
+TRPM1,"Night blindness, congenital stationary (complete), 1C, Autosomal Recessive","Turkish, Jewish, Iranian, Ashkenazi"
+GPC6,Omodysplasia 1,"Muslim, Non Jewish"
+OTC,Ornithine transcarbamylase deficiency,
+PPIB,"Osteogenesis imperfecta, type IX","Palestinian, Muslim"
+CRTAP,"Osteogenesis imperfecta, type VII","Israeli Arab, Bedouin, Palestinian"
+FKBP10,"Osteogenesis imperfecta, type XI","Israeli Arab, Palestinian, Muslim, Non Jewish, Arab"
+TMEM38B,"Osteogenesis imperfecta, type XIV","Israeli Arab, Palestinian, Bedouin"
+TCIRG1,"Osteopetrosis, Autosomal Recessive 1","Israeli Arab, Bedouin, Muslim, Jewish, Ashkenazi, Non Jewish"
+SNX10,"Osteopetrosis, Autosomal Recessive 8","Israeli Arab, Bedouin, Muslim, Non Jewish"
+COL11A2,Otospondylomegaepiphyseal dysplasia (ZW),"Israeli Arab, Bedouin"
+SLC26A4,Pendred syndrome,"Israeli Arab, Palestinian, Bedouin, Muslim, Jewish, Iranian, Non Jewish, Ashkenazi"
+ARFGEF2,Periventricular heterotopia with microcephaly,"Muslim, Non Jewish"
+PEX6,Peroxisome biogenesis disorder 4B (Zellweger syndrome),"Palestinian, Bedouin, Muslim, Jewish, Non Jewish, Yemeni"
+PEX1,Peroxisome biogenesis disorder 1A (Zellweger),"Ashkenazi, Jewish"
+PEX2,Peroxisome biogenesis disorder 5A (Zellweger),"Israeli Arab, Karaite, Palestinian, Muslim, Jewish, Ashkenazi"
+PAH,Phenylketonuria,"Israeli Arab, Palestinian, Bedouin, All, Muslim, Jewish, Christian, Non Jewish, Arab, Ashkenazi, Yemeni, Non Ashkenazi"
+PCK1,"Phosphoenolpyruvate carboxykinase-1, cytosolic, deficiency","Ashkenazi, Jewish"
+PHGDH,Phosphoglycerate dehydrogenase deficiency,"Ashkenazi, Jewish"
+CECR1,"Polyarteritis nodosa, childhood-onset","Georgian, Jewish"
+PKHD1,"Polycystic kidney & hepatic disease, PKHD1-related","Palestinian, Moroccan, Bedouin, Jewish, Non Jewish, Ashkenazi"
+ADGRG1,Bilateral Frontoparietal Polymicrogyria (BFPP),"Israeli Arab, Palestinian, Karaite, Muslim, Jewish"
+GAA,Pompe (Glycogen storage disease type II),"Israeli Arab, Bedouin, Muslim, Jewish, Druze, Iranian, Non Jewish, Arab"
+VRK1,Pontocerebellar hypoplasia type 1A,"Ashkenazi, Jewish"
+SepSecS,Pontocerebellar hypoplasia type 2D,"Iraqi, Moroccan, Jewish"
+EXOSC3,"Pontocerebellar hypoplasia, type 1B","Israeli Arab, Muslim"
+EXOSC8,"Pontocerebellar hypoplasia, type 1C","Palestinian, Muslim, Non Jewish"
+VPS53,"Pontocerebellar hypoplasia, type 2E (PCCA2)","Moroccan, Jewish"
+RARS2,"Pontocerebellar hypoplasia, type 6","Moroccan, Jewish"
+PEPD,Prolidase deficiency,"Israeli Arab, Bedouin, Muslim, Druze, Non Jewish"
+PCCA,"Propionic acidemia, PCCA-related","Ashkenazi, Jewish"
+PCCB,"Propionic acidemia, PCCB-related",
+CLCN5,"Proteinuria, low molecular weight, with hypercalciuric nephrocalcinosis","Jewish, Iranian, Ashkenazi, Non Ashkenazi"
+MYH2,Proximal myopathy and ophthalmoplegia,"Iranian, Muslim, Non Jewish, Jewish"
+SCNN1A,Pseudohypoaldosteronism type I - SCNN1A gene,"Iranian, Jewish"
+SCNN1B,Pseudohypoaldosteronism type I - SCNN1B gene,"Ashkenazi, Jewish"
+CTSK,Pycnodysostosis,"Israeli Arab, Muslim"
+PCDH12,"Microcephaly, seizures, spasticity, and brain calcification (MISSBC)","Israeli Arab, Druze, Muslim"
+PHYH,Refsum disease,"Ashkenazi, Jewish"
+SLC4A4,"Renal tubular acidosis (RTA), proximal, with ocular abnormalities and mental retardation","Christian, Bedouin, Israeli Arab, Non Jewish"
+RP1,Retinitis pigmentosa 1,"Ashkenazi, Jewish, Yemeni"
+TULP1,Retinitis pigmentosa 14,"Israeli Arab, Palestinian, Muslim, Jewish, Druze, Ethiopian"
+EYS,Retinitis pigmentosa 25,"Israeli Arab, Moroccan, Bedouin, Iraqi, North African, Muslim, Jewish, Non Jewish, Ashkenazi"
+CERKL,Retinitis pigmentosa 26,"Jewish, Yemeni"
+NRL,Retinitis pigmentosa 27,"Bukharian, Iraqi, Jewish"
+FAM161A,Retinitis pigmentosa 28,"Palestinian, Tunisian, Moroccan, Turkish, Libyan, Muslim, North African, Jewish, syrian, Bulgarian, Sephardi, Non Jewish, Ashkenazi, Syrian"
+PRCD,Retinitis pigmentosa 36,"Israeli Arab, Muslim"
+MERTK,Retinitis pigmentosa 38,"Israeli Arab, Muslim"
+PDE6A,Retinitis pigmentosa 43,"Israeli Arab, Bedouin, Muslim, Non Jewish"
+CNGB1,Retinitis pigmentosa 45,"Bukharian, Ashkenazi, Jewish"
+CNGA1,Retinitis pigmentosa 49,"Moroccan, Jewish"
+C2ORF71,Retinitis pigmentosa 54,"Israeli Arab, Muslim, Jewish, Iranian, Ethiopian"
+PDE6G,Retinitis pigmentosa 57,"Muslim, Non Jewish"
+DHDDS,Retinitis pigmentosa 59,"Ashkenazi, Jewish"
+MAK,Retinitis pigmentosa 62,"Kurd, Iraqi, Ashkenazi, Jewish"
+C8orf37,Retinitis pigmentosa 64,"Israeli Arab, Druze, Muslim, Non Jewish"
+KIZ,Retinitis pigmentosa 69,"North African, Jewish, Ashkenazi"
+HGSNAT,Retinitis pigmentosa 73,"Ashkenazi, Jewish"
+PDE6B,Retinitis pigmentosa-40,"Israeli Arab, Muslim"
+PEX7,Rhizomelic chondrodysplasia punctata type 1,"Israeli Arab, Muslim"
+VDR,"Rickets, vitamin D-resistant, type IIA","Israeli Arab, Muslim, Jewish, Non Jewish"
+ESCO2,Roberts-SC phocomelia syndrome,"Jewish, Syrian"
+HEXB,"Sandhoff disease, infantile, juvenile, and adult forms","Israeli Arab, Christian"
+SMARCAL1,Schimke immunoosseous dysplasia,"Israeli Arab, Muslim, Jewish, Christian, Non Jewish, Ashkenazi"
+KCNJ10,SESAME syndrome,"Georgian, Jewish"
+RAG1,"Severe combined immudeficiency, B cell-negative, RAG1-related","Israeli Arab, Bedouin, Non Jewish, Arab"
+RAG2,"Severe combined immudeficiency, B cell-negative, RAG2-related","Israeli Arab, Iraqi, Muslim, Jewish, Georgian, Non Jewish, Arab"
+ADA,Severe combined immunodeficiency due to ADA deficiency,Jewish
+DCLRE1C,"Severe combined immunodeficiency, Athabascan type","Bedouin, Non Jewish"
+HAX1,"Severe congenital neutropenia type 3 (SCN3), a.k.a. Kostmann disease","Ashkenazi, Jewish"
+POC1A,"Short stature, onychodysplasia, facial dysmorphism, and hypotrichosis","Israeli Arab, Muslim, Non Jewish"
+SLC17A5,"Sialic acid storage disorder, infantile (ISSD)","Israeli Arab, Bedouin"
+DHCR7,Smith Lemli Opitz syndrome,"Israeli Arab, Muslim, Jewish, Ashkenazi"
+KIF1C,"Spastic ataxia 2, Autosomal Recessive","Israeli Arab, Muslim"
+KY,"Myopathy, myofibrillar, 7","Israeli Arab, Bedouin, Muslim, Non Jewish"
+SPG11,"Spastic paraplegia 11, Autosomal Recessive","Israeli Arab, Bedouin, Christian, Jewish, Ashkenazi"
+FA2H,"Spastic paraplegia 35, Autosomal Recessive","Israeli Arab, Muslim"
+AP4B1,"Spastic paraplegia 47, Autosomal Recessive","Muslim, Non Jewish"
+TECPR2,"Spastic paraplegia 49, Autosomal Recessive","Bukharian, Ashkenazi, Jewish"
+VPS37A,"Spastic paraplegia 53, Autosomal Recessive","Israeli Arab, Muslim, Non Jewish"
+CYP7B1,"Spastic paraplegia 5A, Autosomal Recessive","Jewish, Tunisian"
+IBA57,"Spastic paraplegia 74, Autosomal Recessive","Israeli Arab, Muslim"
+SLC1A4,"Spastic tetraplegia, thin corpus callosum, and progressive microcephaly","Palestinian, Iraqi, Muslim, Jewish, Non Jewish, Ashkenazi"
+SMN1,Spinal muscular atrophy-1,"Israeli Arab, All, Bedouin"
+DLL3,"Spondylocostal dysostosis 1, Autosomal Recessive","Ashkenazi, Jewish"
+ACP5,Spondyloenchondrodysplasia with immune dysregulation,"Israeli Arab, Iraqi, Muslim, Jewish, Ashkenazi"
+MATN3,Spondyloepimetaphyseal dysplasia,"Israeli Arab, Muslim"
+DDR2,"Spondylometaepiphyseal dysplasia, short limb-hand type","Israeli Arab, Muslim"
+NUP62,"Striatonigral degeneration, Infantile Bilateral Striatal Necrosis (IBSN)","Israeli Arab, Bedouin"
+LIFR,Stuve-Wiedemann syndrome/Schwartz-Jampel type 2 syndrome-LIFR related,"Israeli Arab, Palestinian, Muslim, Jewish, Non Jewish"
+HEXA,Tay-Sachs disease,"Israeli Arab, Moroccan, Bedouin, Muslim, Jewish, Druze, Ashkenazi, Non Jewish"
+SLC19A2,Thiamine-responsive megaloblastic anemia syndrome,"Israeli Arab, Muslim, Ashkenazi, Jewish"
+MPL,"Thrombocytopenia, congenital amegakaryocytic","Israeli Arab, Bedouin, Muslim, Jewish, Druze, Ashkenazi"
+HPD,Thyrosinemia type III,Druze
+SAMD9,"Tumoral calcinosis, familial, normophosphatemic","Jewish, Yemeni"
+GALNT3,"Tumoral calcinosis, hyperphosphatemic, familial","Israeli Arab, Druze, Muslim"
+FAH,"Tyrosinemia, type I","Israeli Arab, Muslim, Jewish, Christian, Ashkenazi"
+CDH23,Usher Syndrome Type ID,"Algerian, Jewish"
+MYO7A,"Usher syndrome, type 1B","Israeli Arab, Palestinian, Tunisian, Moroccan, Turkish, Bukharian, North African, Muslim, Jewish, Iranian, Bulgarian, Algerian, Ashkenazi, Non Jewish, Samaritan"
+USH1C,"Usher syndrome, type 1C","Israeli Arab, Muslim, Jewish, Non Jewish, Yemeni, Ashkenazi"
+PCDH15,"Usher syndrome, type 1F","Ashkenazi, Jewish"
+USH1G,"Usher syndrome, type 1G","Bedouin, Non Jewish"
+USH2A,"Usher syndrome, type 2A","Israeli Arab, Moroccan, Kavkazi, Bukharian, Libyan, Iraqi, Muslim, Jewish, Christian, Iranian, Non Jewish, Tunisian, Ashkenazi, Yemeni, Afghan, Non Ashkenazi"
+ADGRV1,"Usher syndrome, type 2C",
+CLRN1,"Usher syndrome, type 3A","Bedouin, Jewish, Ashkenazi, Non Jewish"
+CASQ2,"Ventricular tachycardia, catecholaminergic polymorphic, 2","Israeli Arab, Bedouin, Non Jewish"
+CRB2,Ventriculomegaly with cystic kidney disease,"Ashkenazi, Jewish"
+EPG5,Vici syndrome,"Israeli Arab, Ashkenazi, Jewish"
+TSPAN12,"Vitroretinal vascular malformations, congenital","Israeli Arab, Bedouin"
+POMT2,"Walker-Warburg Syndrome, type A, 2","Israeli Arab, Muslim, Non Jewish, Arab"
+RECQL2,Werner syndrome,Jewish
+ATP7B,Wilson disease,"Israeli Arab, Palestinian, Moroccan, Kurd, Kavkazi, Libyan, Iraqi, Muslim, Jewish, Druze, Iranian, Non Jewish, Arab, Ashkenazi, Yemeni"
+WFS1,"Wolfram-like syndrome, Autosomal Dominant","Israeli Arab, Muslim, North African, Jewish, Ashkenazi"
+LIPA,Wolman disease,"Israeli Arab, Palestinian, Bedouin, Bukharian, Muslim, Jewish, Iranian, Ashkenazi, Non Jewish"
+DCAF17,Woodhouse-Sakati syndome,"Israeli Arab, Bedouin, Muslim, Palestinian"
+XPC,"Xeroderma pigmentosum, group C","Ashkenazi, Jewish"
+ERCC2,"Xeroderma pigmentosum, group D","Iraqi, Jewish"
+ABCD1,X-linked adrenoleukodystrophy,"Muslim, Non Jewish, Moroccan, Jewish"
+GATC,Hypertophic Cardiomyopathy,"Druze, Jewish, Yemeni"
+NARS2,Combined oxidative phosphorylation deficiency 24 (COXPD24),"Druze, Ashkenazi, Non Jewish, Jewish"
+CYBB,"Chronic granulomatous disease, X-linked",
+AMEL_XY,Gender,
+AMEL-XY_SNP01D,Gender,
+ARSD_X_Y_3,Gender,
+AMEL-XY_SNP05E,Gender,
+JAK3,"SCID, autosomal recessive, T-negative/B-positive type","Muslim, Non Jewish"
+MECR,"Dystonia, childhood-onset, with optic atrophy and basal ganglia abnormalities","Ashkenazi, Jewish"
+CECR1,Adenosine deaminase 2 deficency,Palestinian
+CDK10,Al Kaissi syndrome,"Ashkenazi, Jewish"
+CNTNAP1,Lethal congenital contracture syndrome 7,"Israeli Arab, Muslim"
+VIPAS39,Arthrogryposis renal dysfunction and cholestasis (ARC) syndrome 2,"Israeli Arab, Muslim"
+NECTIN1,"Cleft lip/palate ectodermal dysplasia, CLPED1 (Zlotogora-Ogur syndrome)","Israeli Arab, Muslim"
+TMEM165,Congenital disorder of glycosylation,"Georgian, Jewish"
+ABCA3,"Congenital surfactant deficiency (Surfactant metabolism dysfunction, pulmonary, 3)","Ashkenazi, Jewish"
+CEACAM16,"Deafness, autosomal recessive","Iranian, Jewish"
+KREMEN1,Ectodermal dysplasia,Palestinian
+TRAK1,"Encephalopathy, fatal","Palestinian, Muslim"
+TIMM50,"3-methylglutaconic aciduria, type IX","Israeli Arab, Palestinian, Bedouin, Muslim"
+AVP,Familial neurohypophyseal diabetes insipidus,Palestinian
+XRCC2,Fanconi Anemia,"Israeli Arab, Muslim"
+SLC46A1,"Folate malabsorption, hereditary","Israeli Arab, Muslim"
+RAB27A,"Griscelli syndrome, type 2","Israeli Arab, Muslim"
+TBCD,Infantile neurodegenerative disorder - Early onset progressive encephalopathy (PEBAT),"Cochin, Jewish"
+NPHP1,Joubert syndrome,"Palestinian, Muslim"
+ECM1,Urbach-Wiethe disease,"Israeli Arab, Muslim"
+ITK,Lymphoproliferative syndrome,Arab
+CC2D2A,"Mental retardation, Autosomal Recessive 3 - MRT3","Israeli Arab, Muslim"
+RAPSN,"Severe combined immudeficiency, B cell-negative, RAG2-related","Ashkenazi, Jewish"
+SLC18A3,"Myasthenia gravis, congenital","Jewish, Yemeni"
+CLCN1,"Myotonia congenita,Autosomal Recessive","Kurd, Jewish"
+TMEM260,"Neurodevelopmental, Cardiac, and Renal Syndrome","Ashkenazi, Jewish"
+PAX7,"Myopathy, congenital, progressive, with scoliosis","Israeli Arab, Bedouin"
+PARK2,"Parkinson disease, early onset","Israeli Arab, Muslim"
+CCNO,"Ciliary dyskinesia, primary, 29","Israeli Arab, Moroccan, Muslim, Christian, Jewish, Ashkenazi, Yemeni"
+TKT,"Short stature, developmental delay, and congenital heart defects","Ashkenazi, Jewish"
+DSTYK,"Spastic paraplegia, complicated","Israeli Arab, Muslim"
+DDRGK1,Spondyloepimetaphyseal dysplasia (Shohat-type),"Iraqi, Jewish"
+ERCC5,Xeroderma pigmentosum/Cockayne,"Israeli Arab, Muslim"
+POMT1,"Walker-Warburg Syndrome, type A, 1","Ashkenazi, Jewish"
+ATP8B1,"Cholestasis, progressive familial intrahepatic 1 ","Turkey/Azerbaijan, Jewish"
+GIPC3,"Deafness, autosomal recessive 15","Israeli Arab, Muslim"
+USMG5,Leigh syndrome realted to USMG5,"Ashkenazi, Jewish"
+PTPN23,"Developmental delay, cognitive impairment, and atopic atrophy","Ashkenazi, Jewish"
+SCAPER,Retinitis pigmentosa with intellectual disability,"Bedouin, Non Jewish"
+PMM2,Congenital disorder of glycosylation Ia,"Ashkenazi, Jewish"
+SLC25A15,Hyperornithinemia-hyperammonemia-homocitrullinemia syndrome,"Ashkenazi, Jewish"
+DDX11,Warsaw breakage syndrome,"Ashkenazi, Jewish"
+PLEKHG2,Leukodystrophy and acquired microcephaly with or without dystonia,Arab
+POMGNT2,"Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 8)","Jewish, Yemeni"
+CENPJ,"Microcephaly, primary, Autosomal Recessive","Ethiopian, Jewish"
+TUBGCP4,"Microcephaly, primary, Autosomal Recessive","Ashkenazi, Jewish"
+B3GALNT2,"Muscular dystrophy-dystroglycanopathy (congenital with brain and eye anomalies, type A, 11)","North African, Jewish"
+SLC12A3,"Bartter Syndrome, Gitelman Variant","Israeli Arab, Bedouin"
+DMD,Duchenne muscular dystrophy,"All, Jewish"
