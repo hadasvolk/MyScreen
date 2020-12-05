@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
 from tkinter import simpledialog
+from tkfilebrowser import askopendirname, askopenfilename
 import pandas as pd
 import numpy as np
 import os
@@ -53,7 +54,12 @@ def validate_bams(root, summary):
         button_bam = Button(root, text="Click", command=lambda: var_bam.set(1))
         button_bam.place(relx=.5, rely=.7, anchor="c")
         button_bam.wait_variable(var_bam)
-        BAM_PATH = filedialog.askdirectory(title = "Please choose the results library")
+        # BAM_PATH = filedialog.askdirectory(title = "Please choose the results library")
+        # top = Toplevel()
+        # top.geometry("+{}+{}".format(root.winfo_x(), root.winfo_y()))
+        BAM_PATH = askopendirname(parent=root, title = "Please choose the results library",
+                                  filetypes = [("bam", "*.bam"), ("bai", "*.bai")])
+        # top.mainloop()
         if len(BAM_PATH) == 0:
             Destroying()
             continue
@@ -154,10 +160,14 @@ def validate_extraInfo(root, sample_dict):
         button_extraInfo_no.place(relx=.55, rely=.7, anchor="c")
         button_extraInfo_no.wait_variable(var_extraInfo)
         if var_extraInfo.get():
-            EXTRA_INFO_PATH = filedialog.askopenfilename(initialdir = BAM_PATH,
+            EXTRA_INFO_PATH = askopenfilename(initialdir = BAM_PATH,
                                             title = "Select Extra Info File",
                                             filetypes = (("xlsx files","*.xlsx"),
                                                          ("all files","*.*")))
+            # EXTRA_INFO_PATH = filedialog.askopenfilename(initialdir = BAM_PATH,
+            #                                 title = "Select Extra Info File",
+            #                                 filetypes = (("xlsx files","*.xlsx"),
+            #                                              ("all files","*.*")))
         else:
             EXTRA_INFO_PATH = False
             for k,v in sample_dict.items():
@@ -235,7 +245,7 @@ def getRunName(master, bam_path, illegal = False):
     run = Label(master, text="Insert the name of the run library, including the date",
         font=('calibre', 12, 'bold'))
     run.place(relx=.5, rely=.45, anchor="c")
-    v = StringVar(master, value=bam_path.split('/')[-1])
+    v = StringVar(master, value=bam_path.split('\\')[-1])
     e = Entry(master, textvariable=v, width=50)
     e.place(relx=.5, rely=.55, anchor="c")
     sub_btn = Button(master,text = 'Submit', command=lambda: var.set(1))
