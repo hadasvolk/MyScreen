@@ -19,5 +19,6 @@ MyScreen - NGS Based Carriers Screening
 2. *.\_env\Scripts\activate*
 3. deactivate
 
+# Workflow
 ![Workflow](/Script/images/workflow.PNG)
 
