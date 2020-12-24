@@ -18,3 +18,5 @@ MyScreen - NGS Based Carriers Screening
 1. *cd c:\Gamidor\MyScreen\Script*
 2. *.\_env\Scripts\activate*
 3. deactivate
+
+![alt text](https://github.com/AppliedGenomicsLTD/MyScreen.git/Script/images/workflow.PNG?raw=true)
