@@ -17,9 +17,10 @@ MyScreen - NGS Based Carriers Screening
 # Development under virtualenv
 ## Requirements:
 python 3.8 set as enviorment variable: 'python'
-1. * cd c:\Gamidor\MyScreen\Script
-2. * .\_env\Scripts\activate
-3. * deactivate
+## Execute
+1. *cd c:\Gamidor\MyScreen\Script*
+2. *.\_env\Scripts\activate*
+3. *deactivate*
 
 # Workflow
 ![Workflow](/Script/images/workflow.PNG)
