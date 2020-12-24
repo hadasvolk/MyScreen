@@ -130,7 +130,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         main_logger.error("Failed to exceute AddIgvLink\n{}".format(e))
     # formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     try:
-        formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
+        sample_sum_excel = formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     except Exception as e:
         main_logger.error("Failed to exceute format excel\n{}".format(e))
         app = tools.ProcessError("Format Sample Summary")

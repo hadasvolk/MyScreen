@@ -121,3 +121,9 @@ Classifictions = {
            "CARRIER-Georgian - With soft-clipped reads",  "CNV",  "CNV Big Del Boundaries Different as Reported"],
 "HOM" : ["HOM", "HOM - With soft-clipped reads", "HOM-Problem - With soft-clipped reads"]
 }
+
+Classifictions_star = {
+"WT" : ["WT", '---'],
+"CARRIER" : ["CARRIER", "CNV"],
+"HOM" : ["HOM"]
+}

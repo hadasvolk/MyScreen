@@ -342,8 +342,8 @@ def getHospital_Panel(root, x, PATHS):
 
 def build_dir_tree(root, ver):
     global BAM_PATH
-    if BAM_PATH.split("/")[-1] == ver:
-        BAM_PATH = "/".join(BAM_PATH.split("/")[:-1])
+    if BAM_PATH.split("\\")[-1] == ver:
+        BAM_PATH = "\\".join(BAM_PATH.split("\\")[:-1])
     folder_list_up = []
     folder_list = ["{}".format(ver),
                    "{}/Info".format(ver),
