@@ -19,5 +19,5 @@ MyScreen - NGS Based Carriers Screening
 2. *.\_env\Scripts\activate*
 3. deactivate
 
-![Workflow](https://github.com/AppliedGenomicsLTD/MyScreen.git/Script/images/workflow.PNG)
+![Workflow](https://github.com/AppliedGenomicsLTD/MyScreen/Script/images/workflow.PNG)
 ![alt text](https://github.com/AppliedGenomicsLTD/MyScreen.git/Script/images/workflow.PNG?raw=true)
