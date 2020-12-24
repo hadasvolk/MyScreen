@@ -15,7 +15,7 @@ MyScreen - NGS Based Carriers Screening
 #### MyScreen.NadavPythonPath.exe is for systems where python3 is installed at C:\Python\Python38-32\Python.exe
 
 # Development under virtualenv
-##Requirements:
+## Requirements:
 python 3.8 set as enviorment variable: 'python'
 1. * cd c:\Gamidor\MyScreen\Script
 2. * .\_env\Scripts\activate
