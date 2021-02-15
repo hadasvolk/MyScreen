@@ -22,7 +22,11 @@ import argparse
 import os
 import logging
 
-import cfg
+try:
+    import cfg
+except:
+    sys.path.append(r'c:\Gamidor\MyScreen\Script')
+    import cfg
 
 pd.set_option('display.max_colwidth', None)
 pd.set_option('display.max_columns', None)
@@ -113,7 +117,8 @@ def parserMainFunction(inputFile, outputFile, bamFilesDir, vcfFile, input_file_n
             info = df.iloc[9]
             # this section replace incorrect 1/. call by Pisces to be
             if re.match("1/.", info):
-                phasedVar.set_value(index, sampleName, new_info)
+                # phasedVar.set_value(index, sampleName, new_info)
+                phasedVar.at[index, sampleName] = new_info
 
         # filter the gvcf for everything but the MNP
         # Do not filter or else we will not find the var
