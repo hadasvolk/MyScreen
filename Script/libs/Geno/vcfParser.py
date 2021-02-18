@@ -278,6 +278,7 @@ def parserMainFunction(inputFile, outputFile, bamFilesDir, vcfFile, input_file_n
                             x = AG3268_part1_df.to_string(header=False, index=False).split('\n')
                             vals = [",".join(ele.split()) for ele in x]
                             outfile.write("\t".join(vals) + "\n")  # Write AG3268_part1 first.
+                            # print("\t".join(vals))
 
                     # The medium CNVs dealt separately because of soft clipped reads
                     medium_cnvs = ['chr1-196716420-TATCCAACTTGTGCAAAAAGATAGA-T', 'chr1-235564867-TGGGAGCCACGAA-T',

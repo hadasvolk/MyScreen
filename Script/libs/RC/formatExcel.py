@@ -107,7 +107,7 @@ def adjust_df(df, paths):
         if row.Sample in samples:
             if row.Disease == "No mutations identified (WT).":
                 df.loc[index, "Disease"] = "SAMPLE FAILED"
-                df.loc[index, "AGID"] = "999999"
+                # df.loc[index, "AGID"] = "999999"
             df.loc[index, "Classification"] = "SAMPLE FAILED"
             df.loc[index, "Genotype"] += " and SAMPLE FAILED in CNV analysis"
 
@@ -125,11 +125,12 @@ def adjust_df(df, paths):
         if not tmp.empty:
             for ag in tmp.AGID.unique():
                 tmp_ag = tmp[tmp.AGID == ag].dropna(how='all')
-                for i,(index,row) in enumerate(tmp_ag.iterrows()):
-                    if i == 0:
-                        continue
-                    else:
-                        df.loc[index, 'AGID'] = f'{row.AGID}_{i}'
+                for i,(index,row) in enumerate(tmp_ag.iterrows(), 1):
+                    df.loc[index, 'AGID'] = f'{row.AGID}_{i}'
+                    # if i == 0:
+                    #     continue
+                    # else:
+                    #     df.loc[index, 'AGID'] = f'{row.AGID}_{i}'
 
     return df, run
 
@@ -143,7 +144,7 @@ def header(cell, to_bold):
 
 def excel_formatter(df, paths, Analysis_Version):
     write_path = paths["DIR_TREE"][0]
-    tools.compressed_pickle("{}/summary".format(paths["DIR_TREE"][1]), df)
+    # tools.compressed_pickle("{}/summary".format(paths["DIR_TREE"][-1]), df)
     # print(paths)
     # wb = load_workbook(filename=write_path)
     # ws = wb.active
@@ -349,38 +350,39 @@ def excel_formatter(df, paths, Analysis_Version):
     ws.sheet_view.zoomScale = 85
     wb.save(out_file)
 
-    ws.unmerge_cells('B2:D2')
-    ws.unmerge_cells('B3:D3')
-    ws.unmerge_cells('F2:G2')
-    ws.unmerge_cells('F3:G3')
+    # ws.unmerge_cells('B2:D2')
+    # ws.unmerge_cells('B3:D3')
+    # ws.unmerge_cells('F2:G2')
+    # ws.unmerge_cells('F3:G3')
+    #
+    # ws['B2'] = None
+    # ws['E2'] = None
+    # ws['F2'] = None
+    # ws['B3'] = None
+    # ws['E3'] = None
+    # ws['F3'] = None
+    #
+    # r = ws.max_row
+    # ws.move_range("C5:AH{}".format(r), cols=-1)
+    # ws.move_range("C3:C3", cols=-1)
+    # ws.move_range("D2:D2", cols=-1)
+    # ws.move_range("F2:F2", rows=-1)
+    # ws.move_range("C2:C2", cols=-1, rows=-1)
+    # ws.move_range("A5:AH{}".format(r), rows=2)
+    #
+    # ws['B1'].value = 'Data Analysis Version'
+    # ws['B3'].value = Analysis_Version
+    # ws['D1'].value = 'Run Name'
+    # ws['D3'].value = "{}".format(run)
+    # ws['F1'].value = "Analysis Date"
+    # ws['F3'].value = time.strftime("%d-%B-%Y")
+    #
+    # with open("{}.csv".format(out_file.split('.xlsx')[0]), 'w', newline='') as f:
+    #     c = csv.writer(f)
+    #     for r in ws.rows:
+    #         c.writerow([cell.value for cell in r])
 
-    ws['B2'] = None
-    ws['E2'] = None
-    ws['F2'] = None
-    ws['B3'] = None
-    ws['E3'] = None
-    ws['F3'] = None
-
-    r = ws.max_row
-    ws.move_range("C5:AH{}".format(r), cols=-1)
-    ws.move_range("C3:C3", cols=-1)
-    ws.move_range("D2:D2", cols=-1)
-    ws.move_range("F2:F2", rows=-1)
-    ws.move_range("C2:C2", cols=-1, rows=-1)
-    ws.move_range("A5:AH{}".format(r), rows=2)
-
-    ws['B1'].value = 'Data Analysis Version'
-    ws['B3'].value = Analysis_Version
-    ws['D1'].value = 'Run Name'
-    ws['D3'].value = "{}".format(run)
-    ws['F1'].value = "Analysis Date"
-    ws['F3'].value = time.strftime("%d-%B-%Y")
-
-    with open("{}.csv".format(out_file.split('.xlsx')[0]), 'w', newline='') as f:
-        c = csv.writer(f)
-        for r in ws.rows:
-            c.writerow([cell.value for cell in r])
-    return out_file
+    return out_file, run
 
 
 def AddIgvLink(dataframe, input_path, my_screen_version):

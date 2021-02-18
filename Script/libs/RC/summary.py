@@ -3,16 +3,19 @@ import subprocess
 import logging
 import xlsxwriter
 import docx2pdf
+import pythoncom
 import pandas as pd
 import numpy as np
 from tkinter import *
 from tkinter import ttk
 from tkinter import filedialog
+from pathlib import Path
 
 import cfg
 import tools
 import RCv2
 import formatExcel
+import formatCSV
 
 curDate = datetime.datetime.now().strftime("%d-%m-%Y")
 
@@ -62,7 +65,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     else:
         ag_db = combained
     tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
-    tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][1], curDate), ag_db)
+    tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][-1], curDate), ag_db)
 
     panels = {}
     for panel in cfg.Panels_names[:-1]:
@@ -119,6 +122,7 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
                 PATHS["BAM_PATH"], PATHS["Hospital"], PATHS['SAMPLE_DICT'],
                 cfg.MutPDF, 'main', PATHS["RUN_NAME"], files[3], files[1],
                 PATHS["EXTRA_INFO_PATH"])
+        sample_summary.to_pickle("{}/raw_sample_summary.pkl".format(PATHS["DIR_TREE"][-1]))
     except Exception as e:
         main_logger.error("Failed to exceute MAIN_RCv2wrapper\n{}".format(e))
         app = tools.ProcessError("Report Creator")
@@ -130,14 +134,21 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         main_logger.error("Failed to exceute AddIgvLink\n{}".format(e))
     # formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     try:
-        sample_sum_excel = formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
+        sample_sum_excel, run = formatExcel.excel_formatter(sample_summary, PATHS, cfg.MyScreen_Ver)
     except Exception as e:
         main_logger.error("Failed to exceute format excel\n{}".format(e))
         app = tools.ProcessError("Format Sample Summary")
 
+    try:
+        formatCSV.create_summary_csv(All = files[2], summary = sample_sum_excel,
+            v = cfg.MyScreen_Ver, r = run, d = curDate, out = PATHS["DIR_TREE"][-1])
+    except Exception as e:
+        main_logger.error("Failed to exceute format CSV\n{}".format(e))
+        app = tools.ProcessError("Format Sample Summary CSV")
     if PATHS["Hospital"] != False:
         tools.put_text("Converting Reports to PDF", q, txt)
         try:
+            pythoncom.CoInitialize()
             docx2pdf.convert("{}/REPORTS/".format(PATHS["DIR_TREE"][0]))
         except Exception as e:
             main_logger.error("Failed to convert reports to PDF\n{}".format(e))

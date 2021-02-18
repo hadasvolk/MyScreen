@@ -26,7 +26,7 @@ class TkMethods():
         return start
 
     def processBar(self):
-        processing_bar = ttk.Progressbar(self.root, length=200, orient='horizontal', mode='indeterminate')
+        processing_bar = ttk.Progressbar(self.root, length=170, orient='horizontal', mode='indeterminate')
         processing_bar.place(relx=0.5, rely=0.8, anchor="c")
         processing_bar.start()
         return processing_bar

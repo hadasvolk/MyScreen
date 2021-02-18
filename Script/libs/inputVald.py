@@ -90,7 +90,7 @@ def validate_bams(root, summary):
             SAMPLE_DICT = {key:value for (key,value) in SAMPLE_DICT.items()}
         else:
             try:
-                SAMPLE_DICT = tools.decompress_pickle("/".join([BAM_PATH, "info/sample_dict.pbz2"]))
+                SAMPLE_DICT = tools.decompress_pickle("/".join([BAM_PATH, "info/Summary/sample_dict.pbz2"]))
             except:
                 msg = "No sample_dict.pbz2 file. Unable to determine analysis samples"
                 Destroying()
@@ -178,7 +178,9 @@ def validate_extraInfo(root, sample_dict):
         #Validate extraInfoSheet
         try:
             msg = "Failed to open file"
-            extraInfo = pd.read_excel(EXTRA_INFO_PATH, usecols="A:L")
+            extraInfo = pd.read_excel(EXTRA_INFO_PATH, usecols="A:L", sheet_name='Sheet1', engine='openpyxl')
+            extraInfo.dropna(how='all', inplace=True)
+            extraInfo = extraInfo.applymap(lambda x: x.strip() if isinstance(x, str) else x)
             column_names = ['Sample', 'ID_number', 'Name', 'Source', 'Gender',
                             'City', 'Street', 'Phone', 'Mother Ethnicity',
                             'Father Ethnicity', 'Spouse Sample Number', 'Panel']
@@ -351,7 +353,8 @@ def build_dir_tree(root, ver):
                    "{}/Info/Genotyping/Logs".format(ver),
                    "{}/Info/Genotyping/Logs/PiscesLogs".format(ver),
                    "{}/Info/CNV".format(ver),
-                   "{}/Info/CNV/Logs".format(ver)]
+                   "{}/Info/CNV/Logs".format(ver),
+                   "{}/Info/Summary".format(ver)]
     os.chdir(BAM_PATH)
     for folder in folder_list:
         folder_list_up.append("/".join([BAM_PATH, folder]))

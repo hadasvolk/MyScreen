@@ -26,8 +26,8 @@ HospitalCode = {
 'Bnei-Zion':['MN02633']
 }
 # נספחים ופרוטוקולים
-vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_VALIDATED-Postive_(2020-11-08)Ver2.1.xlsx'.format(curdir)
-appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.1_App.Note.pdf'.format(curdir)
+vald_pos = '{}/../נספחים ופרוטוקולים/MyScreen_DISCLOSE-Postive_(09-02-2021).xlsx'.format(curdir)
+appnote = '{}/../נספחים ופרוטוקולים/MyScreen.V2.2_App.Note.pdf'.format(curdir)
 mut_list = '{}/../נספחים ופרוטוקולים/'.format(curdir)
 
 # Avilable panels

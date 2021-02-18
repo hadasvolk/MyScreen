@@ -5,13 +5,19 @@ import xlsxwriter
 import pandas as pd
 import numpy as np
 from multiprocessing import Pool
+import warnings
+warnings.filterwarnings("ignore")
 
 import VCF
 import verifyAGID
-import cfg
-import tools
-import warnings
-warnings.filterwarnings("ignore")
+try:
+    import cfg
+    import tools
+except:
+    sys.path.append(r'c:\Gamidor\MyScreen\Script')
+    sys.path.append(r'c:\Gamidor\MyScreen\Script\libs')
+    import cfg
+    import tools
 
 date = datetime.datetime.now().strftime("%d-%m-%Y")
 
@@ -320,6 +326,11 @@ def VS2parser(input_path, main_out, extra_info, logger_name):
         if filename.endswith(".vcf"):
             files.append(filename)
 
+    # pool = Pool(cfg.n_workrs)
+    # engine = Engine(input_path, anno, bed, vs2_logger)
+    # data_outputs = pool.map(engine, files)
+    # pool.close()
+    # pool.join()
     try:
         pool = Pool(cfg.n_workrs)
         engine = Engine(input_path, anno, bed, vs2_logger)

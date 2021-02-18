@@ -1,0 +1,79 @@
+Sample,S,Date of Run,Disease,Gene,AGID,Mutation,MOH,Ethnicity,Classification,Clalit Disease Makat,Clalit Mutation Makat,Genotype,GQX,Alt Variant Freq,Read Depth,Alt Read Depth,Allelic Depths,Correlation,N.comp,Custom.first,Custom.last,BF,Reads.expected,Reads.observed,Reads.ratio,Sample Source,Gender,Sex,Mother Ethnicity,Father Ethnicity,Partner Sample
+2665,1,210126_MN00742_0115_A000H3F7HL, Pseudohypoaldosteronism type I - SCNN1B gene,SCNN1B,AG3332,"NM_000336:c.648dupA p.Glu217fs 
+chr16:g.23366682dupA",,Jewish,CARRIER,,,het,100,42.699999999999996,220,94,"126,94",---,---,---,---,---,---,---,---,,,Male,,,
+2665,1,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,6,0.0,90,0,"74,0",---,---,---,---,---,---,---,---,,,Male,,,
+2666,2,210126_MN00742_0115_A000H3F7HL, Usher Syndrome Type ID,CDH23,AG3615,"NM_022124.6:c.7903G>T p.Val2635Phe 
+chr10:g.73565593G>T",,Jewish,CARRIER,,,het,100,46.400000000000006,237,110,"125,110",---,---,---,---,---,---,---,---,,,Male,,,
+2666,2,210126_MN00742_0115_A000H3F7HL, Mitochondrial DNA depletion syndrome 1 (MNGIE type),TYMP,AG2870,"NM_001113755.2:c.866A>C p.Glu289Ala 
+chr22:g.50965067T>G",,Jewish,CARRIER,,,het,100,51.300000000000004,271,139,"131,139",---,---,---,---,---,---,---,---,,,Male,,,
+2666,2,210126_MN00742_0115_A000H3F7HL, Fanconi-Bickel syndrome,SLC2A2,AG2234,"NM_000340.2:c.901C>T p.Arg301Ter 
+chr3:g.170723136G>A",,"Israeli Arab, Palestinian",CARRIER,,,het,100,38.5,270,104,"165,104",---,---,---,---,---,---,---,---,,,Male,,,
+2667,3,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,0,0.0,97,0,"77,0",---,---,---,---,---,---,---,---,,,Female,,,
+2668,4,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Female,,,
+2673,9,210126_MN00742_0115_A000H3F7HL, Cystic fibrosis,CFTR,AG4998,"NM_000492.3:c.416A>C p.H139P 
+chr7:g.117171095A>C",,unknown,CARRIER,,,het,100,42.8,456,195,"261,195",---,---,---,---,---,---,---,---,,,Male,,,
+2674,10,210126_MN00742_0115_A000H3F7HL, Congenital disorder of glycosylation Ia,PMM2,AG5008,"NM_000303:c.422G>A p.R141H 
+chr16:g.8905010G>A",,Jewish,CARRIER,,,het,100,43.5,540,235,"303,235",---,---,---,---,---,---,---,---,,,Female,,,
+2696,12,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Male,,,
+2697,13,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Female,,,
+2698,14,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Female,,,
+2701,17,210126_MN00742_0115_A000H3F7HL," Usher syndrome, type 2A",USH2A,AG3655,"NM_206933.3:c.12575G>A p.Arg4192His 
+chr1:g.215848678C>T",,Jewish,CARRIER,,,het,100,45.2,208,94,"114,94",---,---,---,---,---,---,---,---,,,Female,,,
+2701,17,210126_MN00742_0115_A000H3F7HL, Warsaw breakage syndrome,DDX11,AG5033,"NM_030653.3:c.1763-1G>C 
+chr12:g.31250818G>C",MOH: Jewish - Ashkenazi,Jewish,CARRIER,,,het,100,53.400000000000006,131,70,"61,70",---,---,---,---,---,---,---,---,,,Female,,,
+2701,17,210126_MN00742_0115_A000H3F7HL," Deafness, autosomal recessive",CEACAM16,AG4020,"NM_001039213:c.703C>T p.Arg235Cys 
+chr19:g.45208901C>T",,Jewish,CARRIER,,,het,100,47.099999999999994,208,98,"109,98",---,---,---,---,---,---,---,---,,,Female,,,
+2701,17,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,0,1.0999999999999999,89,1,"70,1",---,---,---,---,---,---,---,---,,,Female,,,
+2701,17,210126_MN00742_0115_A000H3F7HL, Peroxisome biogenesis disorder 5A (Zellweger),PEX2,AG3089,"NM_001079867.1:c.355C>T p.Arg119Ter 
+chr8:g.77896060G>A",,Jewish,CARRIER,,,het,100,38.5,270,104,"165,104",---,---,---,---,---,---,---,---,,,Female,,,
+2703,19,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Male,,,
+2704,20,210126_MN00742_0115_A000H3F7HL, Leigh syndrome realted to USMG5,USMG5,AG4809,"NM_032747:c.87+1G>C 
+chr10:g.105152127C>G",,Jewish,CARRIER,,,het,100,42.6,68,29,"39,29",---,---,---,---,---,---,---,---,,,Female,,,
+2704,20,210126_MN00742_0115_A000H3F7HL, Isovaleric academia,IVD,AG2598,"NM_002225.4:c.148C>T p.Arg50Cys .148C>T (p.R50C).148C>T (p.R50C) 
+chr15:g.40699840C>T",,Jewish,CARRIER,,,het,100,52.5,139,73,"65,73",---,---,---,---,---,---,---,---,,,Female,,,
+2704,20,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,11,0.0,109,0,"90,0",---,---,---,---,---,---,---,---,,,Female,,,
+2706,22,210126_MN00742_0115_A000H3F7HL," Diarrhea 7, congenital",DGAT1,AG2039,"NM_012079.6:c.751+2T>C splice site mutation in intron 8 
+chr8:g.145541756A>G",,Jewish,CARRIER,,,het,100,51.5,204,105,"97,105",---,---,---,---,---,---,---,---,,,Female,,,
+2707,23,210126_MN00742_0115_A000H3F7HL," Dysautonomia, familial",ELP1,AG2056,"NM_003640.5:c.2204+6T>C IVS20+6T>C, (2507+6T>C) Other gene name: IKBKAP 
+chr9:g.111662096A>G",MOH: Jewish - Ashkenazi,Jewish,CARRIER,,,het,100,47.8,201,96,"105,96",---,---,---,---,---,---,---,---,,,Female,,,
+2708,24,210126_MN00742_0115_A000H3F7HL, Hyper-IgD syndrome,MVK,AG2454,"NM_000431.4:c.1129G>A p.Val377Ile 
+chr12:g.110034320G>A",,Jewish,CARRIER,,,het,100,43.4,129,56,"72,56",---,---,---,---,---,---,---,---,,,Male,,,
+2708,24,210126_MN00742_0115_A000H3F7HL," Pontocerebellar hypoplasia, type 2E (PCCA2)",VPS53,AG3294,"NM_001128159.3:c.1556+5G>A [520]Pre 
+chr17:g.465738C>T",MOH: Jewish - Moroccan,Jewish,CARRIER,,,het,100,40.400000000000006,260,105,"154,105",---,---,---,---,---,---,---,---,,,Male,,,
+2708,24,210126_MN00742_0115_A000H3F7HL, Retinitis pigmentosa 25,EYS,AG5316,"NM_001142800.2:c.403_423delinsCTTTT p.Thr135LeufsTer26 
+chr6:g.66204881_66204901delinsAAAAG",,Jewish,CARRIER - With soft-clipped reads,,,het,100,43.3,150,65,"85,65",---,---,---,---,---,---,---,---,,,Male,,,
+2711,26,210126_MN00742_0115_A000H3F7HL," Hyperoxaluria, primary, type I",AGXT,AG2464,"NM_000030:c.26C>A p.Thr9ASn 
+chr2:g.241808308C>A",MOH: Israeli Arab - unknown,Israeli Arab,CARRIER,,,het,100,47.599999999999994,63,30,"32,30",---,---,---,---,---,---,---,---,,,Male,,,
+2712,27,210126_MN00742_0115_A000H3F7HL, Congenital disorder of glycosylation Ia,PMM2,AG5008,"NM_000303:c.422G>A p.R141H 
+chr16:g.8905010G>A",,Jewish,CARRIER,,,het,100,48.9,497,243,"251,243",---,---,---,---,---,---,---,---,,,Female,,,
+2712,27,210126_MN00742_0115_A000H3F7HL, Glycogen storage disease Ia - GDS1a,G6PC,AG2330,"NM_000151.4:c.247C>T p.Arg83Cys R83C 
+chr17:g.41055964C>T",HMO: Jewish - Ashkenazi,Jewish,CARRIER,,,het,100,45.300000000000004,311,141,"169,141",---,---,---,---,---,---,---,---,,,Female,,,
+2714,29,210126_MN00742_0115_A000H3F7HL," Gaucher disease, , type I",GBA,AG2274,"NM_001005741.3:c.1604G>A p.Arg535His ARG496HIS 
+chr1:g.155204793C>T",,Jewish,CARRIER-Problem,,,het,100,28.799999999999997,382,110,"267,110",---,---,---,---,---,---,---,---,,,Female,,,
+2722,31,210126_MN00742_0115_A000H3F7HL, Aicardi Goutieres syndrome,SAMHD1,AG1107,"NM_015474.3:c.676C>G p.R226G 
+chr20:g.35555605G>C",,Jewish,CARRIER,,,het,100,43.9,253,111,"142,111",---,---,---,---,---,---,---,---,,,Female,,,
+2722,31,210126_MN00742_0115_A000H3F7HL, Megalencephalic leukoencephalopathy with subcortical cysts,MLC1,AG2801,"NM_015166.3:c.274C>T p.Pro92Ser PRO92SER 
+chr22:g.50518820G>A",,Jewish,CARRIER,,,het,100,44.6,451,201,"248,201",---,---,---,---,---,---,---,---,,,Female,,,
+2722,31,210126_MN00742_0115_A000H3F7HL, Chronic granulomatous disease due to deficiency of NCF-1,NCF1,AG1470,"NM_000265.6:c.579G>A p.Trp193Ter TRP193TER 
+chr7:g.74197872G>A","MOH: Jewish - Ashkenazi, Ethiopian, Georgian, Kavkazi","Jewish, Palestinian",CARRIER-Georgian,,,het,100,30.9,742,229,"510,229",---,---,---,---,---,---,---,---,,,Female,,,
+2723,32,210126_MN00742_0115_A000H3F7HL," Albinism, oculocutaneous, type II",OCA2,AG1126,"NM_000275.3:c.1327G>A p.Val443Ile 
+chr15:g.28230247C>T",,Jewish,CARRIER,,,het,96,47.099999999999994,51,24,"26,24",---,---,---,---,---,---,---,---,,,Male,,,
+2723,32,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,12,0.0,66,0,"55,0",---,---,---,---,---,---,---,---,,,Male,,,
+2724,33,210126_MN00742_0115_A000H3F7HL," Hyperoxaluria, primary, type I",AGXT,AG2464,"NM_000030:c.26C>A p.Thr9ASn 
+chr2:g.241808308C>A",MOH: Israeli Arab - unknown,Israeli Arab,CARRIER,,,het,52,43.8,32,14,"18,14",---,---,---,---,---,---,---,---,,,Female,,,
+2725,34,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Female,,,
+2727,36,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Female,,,
+2728,37,210126_MN00742_0115_A000H3F7HL," Spastic paraplegia 49, Autosomal Recessive",TECPR2,AG3502,"NM_001172631.2:c.1319delT p.Leu440Argfs*19 
+chr14:g.102898367delT",,Jewish,CARRIER,,,het,100,41.9,74,31,"43,31",---,---,---,---,---,---,---,---,,,Female,,,
+2728,37,210126_MN00742_0115_A000H3F7HL," Sandhoff disease, infantile, juvenile, and adult forms",HEXB,AG3456,"NM_000521:c.1082+5G>A 
+chr5:g.74011520G>A",MOH: Israeli Arab - Christian (Majar),Israeli Arab,WT - Low GQX - NON_REPORTED variant in the same loc,,,hom,11,0.0,71,0,"59,0",---,---,---,---,---,---,---,---,,,Female,,,
+2728,37,210126_MN00742_0115_A000H3F7HL, Cystic fibrosis,CFTR,AG1778,"NM_000492.3:c.1679+1634A>G 1811+1.6kbA->Gc.1680-886A>G 
+chr7:g.117229521A>G",,Jewish,WT-Problem,,,hom,14,0.0,7,0,"7,0",---,---,---,---,---,---,---,---,,,Female,,,
+2728,37,210126_MN00742_0115_A000H3F7HL, Cystic fibrosis,CFTR,AG5120,"NM_000492.4:c.1680-877G>T 
+chr7:g.117229530G>T",,unknown,WT-Problem,,,hom,14,0.0,7,0,"7,0",---,---,---,---,---,---,---,---,,,Female,,,
+2729,38,210126_MN00742_0115_A000H3F7HL,No mutations identified (WT).,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,---,,,Male,,,
