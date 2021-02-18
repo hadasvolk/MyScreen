@@ -47,7 +47,7 @@ def choose(root):
 
         postive = ttk.Style()
         postive.configure('B2.TButton', background='blue')
-        postive = ttk.Button(text="MyScreen VALIDATED\n            Postive",
+        postive = ttk.Button(text="MyScreen DISCLOSE\n            Postive",
                              command=lambda: var.set(2),
                              style='B2.TButton', padding=6)
         postive.place(relx=.25, rely=.75, anchor="c")
