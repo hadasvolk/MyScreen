@@ -136,16 +136,19 @@ def validate_extraInfo(root, sample_dict):
     global EXTRA_INFO_PATH
     global BAM_PATH
     global SMAPLE_DICT
-
     #Help func to destroy GUI
     def Destroying():
         button_extraInfo_no.destroy()
         button_extraInfo_yes.destroy()
         extraInfo_label.destroy()
-        try:
-            warning.destory()
-        except:
-            pass
+
+    def Destroying_warning():
+        warning.pack_forget()
+
+    warning_text = StringVar()
+    warning_text.set("")
+    warning = Label(root, textvariable=warning_text, font=('calibre', 12, 'bold'))
+    warning.place(relx=.5, rely=.35, anchor="c")
 
     while True:
         #GUI Message
@@ -173,6 +176,7 @@ def validate_extraInfo(root, sample_dict):
             for k,v in sample_dict.items():
                 sample_dict[k] = [v, cfg.Panels[0][0]]
             Destroying()
+            warning_text.set("")
             return EXTRA_INFO_PATH, sample_dict
 
         #Validate extraInfoSheet
@@ -190,9 +194,10 @@ def validate_extraInfo(root, sample_dict):
 
         except Exception as e:
             print(e)
-            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
-            warning.place(relx=.5, rely=.35, anchor="c")
+            # warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+            # warning.place(relx=.5, rely=.35, anchor="c")
             Destroying()
+            warning_text.set("# WARNING {}".format(msg))
             continue
 
         samples = []
@@ -201,10 +206,9 @@ def validate_extraInfo(root, sample_dict):
         samples_file = extraInfo.Sample.tolist()
 
         if not (set(samples) == set(samples_file)):
-            msg = "Sample list error\n Missing samples in extra info file. Please review file"
             Destroying()
-            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
-            warning.place(relx=.5, rely=.35, anchor="c")
+            msg = "Sample list error\n Missing samples in extra info file. Please review file"
+            warning_text.set("# WARNING {}".format(msg))
             continue
 
         panels_file = extraInfo.Panel.tolist()
@@ -213,8 +217,9 @@ def validate_extraInfo(root, sample_dict):
         if not set(panels_file).issubset(set(panels_names)):
             msg = "Panel list error\n Some samples are with unkown panel"
             Destroying()
-            warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
-            warning.place(relx=.5, rely=.35, anchor="c")
+            # warning = Label(root, text="# WARNING {}".format(msg), font=('calibre', 12, 'bold'))
+            # warning.place(relx=.5, rely=.35, anchor="c")
+            warning_text.set("# WARNING {}".format(msg))
             continue
 
         for k,v in sample_dict.items():
@@ -223,6 +228,7 @@ def validate_extraInfo(root, sample_dict):
                 x = 'Extended'
             sample_dict[k] = [v, x]
 
+        warning_text.set("")
         Destroying()
         return EXTRA_INFO_PATH, sample_dict
 
