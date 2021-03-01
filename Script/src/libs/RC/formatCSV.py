@@ -131,6 +131,7 @@ def create_summary_csv(**data):
     summary_csv.index.rename('AGID', inplace=True)
     summary_csv.reset_index(inplace=True)
     summary_csv.fillna('---', inplace=True)
+    summary_csv = summary_csv.replace('\n',' ', regex=True) 
 
     header = ",Data Analysis Version,,Run Name,,Analysis Date,,,,,,,,,,,,,,,,,,,,,,,,,,,\n \
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n \
@@ -152,6 +153,8 @@ def create_summary_csv(**data):
 
 
 def csv_dumper(sample_summary_excel):
+    """ Deprected legacy CSV creator"""
+
     anno_geno = pd.read_pickle(cfg.anno_pkl)
     anno_cnv = pd.read_pickle(cfg.annotCNV)
 
