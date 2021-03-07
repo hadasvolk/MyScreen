@@ -1,0 +1,1 @@
+start-process python -arg C:\Gamidor\MyScreen2.2\Script\src\MySc.main.py -WindowStyle Hidden
