@@ -54,11 +54,13 @@ def validate_bams(root, summary):
         button_bam = Button(root, text="Click", command=lambda: var_bam.set(1))
         button_bam.place(relx=.5, rely=.7, anchor="c")
         button_bam.wait_variable(var_bam)
-        # BAM_PATH = filedialog.askdirectory(title = "Please choose the results library")
+        BAM_PATH = filedialog.askdirectory(title = "Please choose the results library",
+            mustexist=True)
+        BAM_PATH = BAM_PATH.replace('/', '\\')
         # top = Toplevel()
         # top.geometry("+{}+{}".format(root.winfo_x(), root.winfo_y()))
-        BAM_PATH = askopendirname(parent=root, title = "Please choose the results library",
-                                  filetypes = [("bam", "*.bam"), ("bai", "*.bai")])
+        # BAM_PATH = askopendirname(parent=root, title = "Please choose the results library",
+        #                           filetypes = [("bam", "*.bam"), ("bai", "*.bai")], initialdir = "D:\\")
         # top.mainloop()
         if len(BAM_PATH) == 0:
             Destroying()
@@ -163,14 +165,15 @@ def validate_extraInfo(root, sample_dict):
         button_extraInfo_no.place(relx=.55, rely=.7, anchor="c")
         button_extraInfo_no.wait_variable(var_extraInfo)
         if var_extraInfo.get():
-            EXTRA_INFO_PATH = askopenfilename(initialdir = BAM_PATH,
-                                            title = "Select Extra Info File",
-                                            filetypes = (("xlsx files","*.xlsx"),
-                                                         ("all files","*.*")))
-            # EXTRA_INFO_PATH = filedialog.askopenfilename(initialdir = BAM_PATH,
+            # EXTRA_INFO_PATH = askopenfilename(initialdir = BAM_PATH,
             #                                 title = "Select Extra Info File",
             #                                 filetypes = (("xlsx files","*.xlsx"),
             #                                              ("all files","*.*")))
+            EXTRA_INFO_PATH = filedialog.askopenfilename(initialdir = BAM_PATH,
+                                            title = "Select Extra Info File",
+                                            filetypes = (("xlsx files","*.xlsx"),
+                                                         ("all files","*.*")))
+            EXTRA_INFO_PATH = EXTRA_INFO_PATH.replace('/', '\\')
         else:
             EXTRA_INFO_PATH = False
             for k,v in sample_dict.items():

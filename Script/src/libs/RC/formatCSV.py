@@ -24,20 +24,9 @@ csv_cols = ['Sample', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
             'Sample Source', 'Mother Ethnicity', 'Father Ethnicity',
             'Partner Sample','AGID', 'IGV Link (open IGV before)', 'Result 2']
 
-''' DMD mutation makats'''
+# DMD mutation makats
+DMD = cfg.DMD
 
-DMD = {
-    'AG5062_1':149201,
-    'AG5062_2':149220,
-    'AG5062_3':149221,
-    'AG5062_4':149222,
-    'AG5062_5':149223,
-    'AG5100_1':19204,
-    'AG5100_2':149226,
-    'AG5100_3':149227,
-    'AG5100_4':149228,
-    'AG5100_5':149229
-    }
 
 def split_rows(df):
 
@@ -112,7 +101,7 @@ def create_summary_csv(**data):
 
     same_cols = set(summary.columns) - set(annotated.columns) - set(cnv_anno.columns)
     same_cols.remove('IGV Link (open IGV before)')
-    
+
     for sample in set(annotated.Sample.tolist()):
         sample =str(sample)
         cur = annotated[annotated.Sample == sample]
@@ -174,15 +163,17 @@ def create_summary_csv(**data):
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, \n \
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, \n".format(data["v"], data["r"], data["d"])
 
-    with open("{}/sample_summary-{}.csv".format(data["out"], data["d"]), 'w',
-        newline='', encoding='utf-8') as fp:
+    csv_file = "{}/sample_summary-{}.csv".format(data["out"], data["d"])
+    with open(csv_file, 'w', newline='', encoding='utf-8') as fp:
         fp.write(header)
         summary_csv[csv_cols].to_csv(fp, index=False)
 
-    with open("{}/sample_summary-{}.psv".format(data["out"], data["d"]), 'w',
-        newline='', encoding='utf-8') as fp:
+    psv_file = "{}/sample_summary-{}.psv".format(data["out"], data["d"])
+    with open(psv_file, 'w', newline='', encoding='utf-8') as fp:
         fp.write(header.replace(',', '|'))
         summary_csv[csv_cols].to_csv(fp, index=False, sep="|")
+
+    return csv_file, psv_file
 
 
 

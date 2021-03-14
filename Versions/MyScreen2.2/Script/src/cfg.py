@@ -1,10 +1,15 @@
 import sys, os, time, datetime
 
-curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
-date = datetime.datetime.now().strftime("%d-%m-%Y")
-
 # Number of working threads
 n_workrs = 5
+
+# Path to output CSV and PSV results
+# For example: CSV_dir = r"C:\Gamidor\csv directory name"
+CSV_dir = r"path\to\directory"
+
+# Working directory and date time
+curdir = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
+date = datetime.datetime.now().strftime("%d-%m-%Y")
 
 #Global Strings to incoopraite in GUI and to change in version update
 MyScreen_Ver = "MyScreen_Analysis_v2.2"
@@ -23,10 +28,10 @@ HospitalCode = {
 'Carmel':['MN00885'],
 'Maccabi':['M06216'],
 'Meir':['MN01010'],
-'Bnei-Zion':['MN02633']
+'Bnei-Zion':['M02633']
 }
 # נספחים ופרוטוקולים
-vald_pos = os.path.join(curdir, '..', 'נספחים ופרוטוקולים', 'MyScreen_DISCLOSE-Postive_(09-02-2021).xlsx')
+vald_pos = os.path.join(curdir, '..', 'נספחים ופרוטוקולים', 'MyScreen_DISCLOSE-Postive_(11-03-2021).xlsx')
 appnote = os.path.join(curdir, '..', 'נספחים ופרוטוקולים', 'MyScreen.V2.2_App.Note.pdf')
 mut_list = os.path.join(curdir, '..', 'נספחים ופרוטוקולים')
 
@@ -34,6 +39,21 @@ mut_list = os.path.join(curdir, '..', 'נספחים ופרוטוקולים')
 Panels = [['Extended', '0001'], ['Clalit', '0002'], ['Bedouin', '0003']]
 Panels_names = [item[0] for item in Panels]
 path_to_panel = os.path.join(curdir, 'docs')
+
+# DMD mutation makats
+DMD = {
+    'AG5062_1':149201,
+    'AG5062_2':149220,
+    'AG5062_3':149221,
+    'AG5062_4':149222,
+    'AG5062_5':149223,
+    'AG5100_1':149204,
+    'AG5100_2':149226,
+    'AG5100_3':149227,
+    'AG5100_4':149228,
+    'AG5100_5':149229
+    }
+
 
 # Images
 AG_logo = os.path.join(curdir, 'images', 'ag_logo.ico')

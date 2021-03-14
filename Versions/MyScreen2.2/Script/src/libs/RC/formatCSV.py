@@ -3,6 +3,7 @@ import sys
 import os
 import pandas as pd
 import numpy as np
+from openpyxl import load_workbook
 
 try:
     import cfg
@@ -22,6 +23,10 @@ csv_cols = ['Sample', 'Test Code', 'Test Name', 'Disease', 'Gene', 'Mutation',
             'Reads Observed', 'Reads Ratio', 'Analyzed Gender', 'Reported Gender',
             'Sample Source', 'Mother Ethnicity', 'Father Ethnicity',
             'Partner Sample','AGID', 'IGV Link (open IGV before)', 'Result 2']
+
+# DMD mutation makats
+DMD = cfg.DMD
+
 
 def split_rows(df):
 
@@ -77,7 +82,13 @@ def create_summary_csv(**data):
     All_split.drop(columns=['Coordinate', 'Variant', 'Chr', 'gdna', 'Custom Annotation', 'Custom Annotation 2', 'Type', 'SoftClipped Reads'], inplace=True)
     All_split.set_index('AGID', inplace=True)
 
-    summary = pd.read_excel(data["summary"], engine = 'openpyxl', skiprows=4)
+    wb = load_workbook(filename = data["summary"])
+    sheet_name = wb.sheetnames[0]
+    ws = wb[sheet_name]
+    summary = pd.DataFrame(ws.values)
+    summary.columns = summary.iloc[4]
+    summary = summary.iloc[5:]
+    summary.reset_index(inplace=True)
     summary.set_index('AGID', inplace = True)
 
     summary_csv = pd.DataFrame(columns=summary.columns)
@@ -89,6 +100,7 @@ def create_summary_csv(**data):
     panels_agids = get_panels_agids()
 
     same_cols = set(summary.columns) - set(annotated.columns) - set(cnv_anno.columns)
+    same_cols.remove('IGV Link (open IGV before)')
 
     for sample in set(annotated.Sample.tolist()):
         sample =str(sample)
@@ -122,6 +134,7 @@ def create_summary_csv(**data):
             dmd_ag = dmd[dmd.AGID == ag]
             for i,(index,row) in enumerate(dmd_ag.iterrows(), 1):
                 cur_panel.loc[index, 'AGID'] = f'{row.AGID}_{i}'
+                cur_panel.loc[index, 'Clalit Mutation Makat'] = DMD[f'{row.AGID}_{i}']
                 cur_panel.loc[index, 'Result 2'] = cur_panel.loc[index, 'Mutation']
         cur_panel.set_index('AGID', inplace=True)
 
@@ -133,6 +146,16 @@ def create_summary_csv(**data):
     summary_csv.fillna('---', inplace=True)
     summary_csv = summary_csv.replace('\n',' ', regex=True)
 
+    def split_join(x):
+        try:
+            return ' '.join(x.split())
+        except:
+            return x
+
+    string_cols = summary_csv.dtypes[summary_csv.dtypes == 'object'].index.tolist()
+    for col in string_cols:
+        summary_csv[col] = summary_csv[col].apply(lambda x: split_join(x))
+
     header = ",Data Analysis Version,,Run Name,,Analysis Date,,,,,,,,,,,,,,,,,,,,,,,,,,,\n \
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n \
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,\n \
@@ -140,15 +163,17 @@ def create_summary_csv(**data):
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, \n \
         ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,, \n".format(data["v"], data["r"], data["d"])
 
-    with open("{}/sample_summary-{}.csv".format(data["out"], data["d"]), 'w',
-        newline='', encoding='utf-8') as fp:
+    csv_file = "{}/sample_summary-{}.csv".format(data["out"], data["d"])
+    with open(csv_file, 'w', newline='', encoding='utf-8') as fp:
         fp.write(header)
         summary_csv[csv_cols].to_csv(fp, index=False)
 
-    with open("{}/sample_summary-{}.psv".format(data["out"], data["d"]), 'w',
-        newline='', encoding='utf-8') as fp:
+    psv_file = "{}/sample_summary-{}.psv".format(data["out"], data["d"])
+    with open(psv_file, 'w', newline='', encoding='utf-8') as fp:
         fp.write(header.replace(',', '|'))
         summary_csv[csv_cols].to_csv(fp, index=False, sep="|")
+
+    return csv_file, psv_file
 
 
 
@@ -198,8 +223,8 @@ def csv_dumper(sample_summary_excel):
 
 if __name__ == "__main__":
 
-    all_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210121_MN00937_0057_A000H37MCG\MyScreen_Analysis_v2.2_RESULTS\Info\Genotyping\Logs\All.filtered.pbz2'
-    summary_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210121_MN00937_0057_A000H37MCG\MyScreen_Analysis_v2.2_RESULTS\sample_summary-17-02-2021.xlsx'
+    all_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210131_MN00937_0058_A000H3F7NG\MyScreen_Analysis_v2.2_RESULTS\Info\Genotyping\Logs\All.filtered.pbz2'
+    summary_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210131_MN00937_0058_A000H3F7NG\MyScreen_Analysis_v2.2_RESULTS\sample_summary-24-02-2021.xlsx'
 
     ver = "MyScreen_Analysis_v2.1"
     run = "201101_MN00742_0104_A000H37LNW"

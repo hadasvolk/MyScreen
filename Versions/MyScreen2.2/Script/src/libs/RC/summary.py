@@ -1,4 +1,5 @@
 import sys, os, time, datetime
+import shutil
 import subprocess
 import logging
 import xlsxwriter
@@ -140,11 +141,27 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
         app = tools.ProcessError("Format Sample Summary")
 
     try:
-        formatCSV.create_summary_csv(All = files[2], summary = sample_sum_excel,
-            v = cfg.MyScreen_Ver, r = run, d = curDate, out = PATHS["DIR_TREE"][-1])
+        csv_file, psv_file = formatCSV.create_summary_csv(All = files[2],
+            summary = sample_sum_excel, v = cfg.MyScreen_Ver, r = run, d = curDate,
+            out = PATHS["DIR_TREE"][-1])
     except Exception as e:
         main_logger.error("Failed to exceute format CSV\n{}".format(e))
         app = tools.ProcessError("Format Sample Summary CSV")
+
+
+    main_logger.info("Additional CSV output directory {}".format(os.path.isdir(cfg.CSV_dir)))
+    try:
+        shutil.copy(csv_file, os.path.join(cfg.CSV_dir,
+            "sample_summary-{}.csv".format(curDate)))
+        shutil.copy(psv_file, os.path.join(cfg.CSV_dir,
+            "sample_summary-{}.psv".format(curDate)))
+        main_logger.info("Outputed CSV and PSV in {}".format(cfg.CSV_dir))
+    except IOError as e:
+        main_logger.info("Unable to copy file. %s" % e)
+    except:
+        main_logger.info("Unexpected error:", sys.exc_info())
+
+
     if PATHS["Hospital"] != False:
         tools.put_text("Converting Reports to PDF", q, txt)
         try:
