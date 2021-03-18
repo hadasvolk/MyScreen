@@ -365,7 +365,7 @@ def createReports(sample, sampleStatus, posResFiltered, decon_filtered,
         p2 = document.paragraphs[2].add_run(ID)
         p2.font.name = 'Arial'
         p2.font.size = Pt(12)
-    name = sampleInfoTable.at[sample, 'name']
+    name = str(sampleInfoTable.at[sample, 'name'])
     if type(name) != float and type(name) != np.float64:
         p3 = document.paragraphs[3].add_run(name)
         p3.font.name = 'Arial'

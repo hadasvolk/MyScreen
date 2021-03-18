@@ -93,7 +93,7 @@ def _gui_thread(root, initial_information, text_eve, PATHS):
     tools.compressed_pickle("{}/sample_dict".format(DIR_TREE[-1]), PATHS["SAMPLE_DICT"])
 
     log = tools.setup_logger('stdout', '{}/.out.log'.format(DIR_TREE[-1], curDate), logging.DEBUG)
-    sys.stdout = tools.LoggerWriter(log.debug)
+    # sys.stdout = tools.LoggerWriter(log.debug)
     # sys.stderr = tools.ProcessError("Unexpected error occured")
 
     main_logger = tools.setup_logger('main', '{}/MyScreen_Analysis-{}.log'.format(DIR_TREE[1], curDate))

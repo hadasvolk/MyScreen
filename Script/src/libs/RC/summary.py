@@ -59,14 +59,17 @@ def summaryThread(root, PATHS, ver, curDir, initial_information, cnvCompl, text_
     combained.insert(0, 'Analysis Date', curDate)
     combained.insert(0, 'Run Name', PATHS["RUN_NAME"])
 
-    if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
-        ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
-        ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
-        ag_db.drop_duplicates(keep='last', inplace=True)
-    else:
-        ag_db = combained
-    tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
-    tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][-1], curDate), ag_db)
+    try:
+        if os.path.isfile("{}.pbz2".format(cfg.AG_DB)):
+            ag_db = tools.decompress_pickle("{}.pbz2".format(cfg.AG_DB))
+            ag_db = pd.concat([ag_db, combained], ignore_index=True, sort=False)
+            ag_db.drop_duplicates(keep='last', inplace=True)
+        else:
+            ag_db = combained
+        tools.compressed_pickle("{}".format(cfg.AG_DB), ag_db)
+        tools.compressed_pickle("{}/AG_DB_{}".format(PATHS["DIR_TREE"][-1], curDate), ag_db)
+    except Exception as e:
+        main_logger.info("Failed to aggregate raw results in Appendix\n{}".format(e))
 
     panels = {}
     for panel in cfg.Panels_names[:-1]:

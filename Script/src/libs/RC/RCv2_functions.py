@@ -405,7 +405,7 @@ def createResultSummaries(output, office_version, MyScreen_version, logger_name,
         rc_logger.info("Creating docx reports...")
         for cur_sample in sorted(sampleSet): # Iterate over every sample.
             rc_logger.info("\tIn sample " + cur_sample + "...")
-            # createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital)
+            # createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital, paths)
             try:
                 createReports(cur_sample, sampleStatus, posResFiltered, decon_filtered, sampleInfoTable, office, output_folder, MyScreen_version, logger_name, hospital, paths)
             except Exception as e:
