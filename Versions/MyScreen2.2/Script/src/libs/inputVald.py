@@ -193,6 +193,8 @@ def validate_extraInfo(root, sample_dict):
                             'Father Ethnicity', 'Spouse Sample Number', 'Panel']
             extraInfo.set_axis(column_names, axis=1, inplace=True)
             msg = "Invalid sample number\nPlease check input file"
+            if extraInfo.Sample.dtypes == 'float64':
+                extraInfo.Sample = extraInfo.Sample.astype(int)
             extraInfo.Sample = extraInfo.Sample.astype(str)
 
         except Exception as e:
@@ -205,6 +207,10 @@ def validate_extraInfo(root, sample_dict):
 
         samples = []
         for i in SAMPLE_DICT.values():
+            try:
+                i = str(int(i))
+            except:
+                pass
             samples.append(i)
         samples_file = extraInfo.Sample.tolist()
 
