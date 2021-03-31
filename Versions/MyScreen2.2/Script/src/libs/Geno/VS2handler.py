@@ -202,7 +202,6 @@ class Engine():
                 & (self.anno.REF == vars[0]) & (self.anno.variant == vars[1])
                 & (self.anno.GT1 == allel1) & (self.anno.GT2 == allel2)]
             cur_anno.reset_index(drop=True, inplace=True)
-
             if not cur_anno.empty:
                 gene = cur_anno.annotation1[0].split(':')[0]
                 vcf.loc[index, 'Gene'] = gene

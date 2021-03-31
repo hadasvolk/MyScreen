@@ -73,9 +73,42 @@ def get_annos():
     return ganno, cnv_anno
 
 
+def explode(df, lst_cols, fill_value='', preserve_index=False):
+    # make sure `lst_cols` is list-alike
+    if (lst_cols is not None
+        and len(lst_cols) > 0
+        and not isinstance(lst_cols, (list, tuple, np.ndarray, pd.Series))):
+        lst_cols = [lst_cols]
+    # all columns except `lst_cols`
+    idx_cols = df.columns.difference(lst_cols)
+    # calculate lengths of lists
+    lens = df[lst_cols[0]].str.len()
+    # preserve original index values    
+    idx = np.repeat(df.index.values, lens)
+    # create "exploded" DF
+    res = (pd.DataFrame({
+                col:np.repeat(df[col].values, lens)
+                for col in idx_cols},
+                index=idx)
+             .assign(**{col:np.concatenate(df.loc[lens>0, col].values)
+                            for col in lst_cols}))
+    # append those rows that have empty lists
+    if (lens == 0).any():
+        # at least one list in cells is empty
+        res = (res.append(df.loc[lens==0, idx_cols], sort=False)
+                  .fillna(fill_value))
+    # revert the original index order
+    res = res.sort_index()
+    # reset index if requested
+    if not preserve_index:        
+        res = res.reset_index(drop=True)
+    return res
+
+
 def create_summary_csv(**data):
 
     All_split = split_rows(tools.decompress_pickle(data["All"]))
+    All_split = All_split[All_split.AGID != 'AGID Not Found']
     All_split[['Sample', 'S']] = All_split.Sample.str.split('_S',expand=True)
     All_split['Disease'] = All_split['Custom Annotation'].apply(lambda x : x.split(':')[1])
     All_split.rename(columns={'Custom Annotation 3':'MOH', 'Custom Annotation 4':'Ethnicity'}, inplace=True)
@@ -88,7 +121,10 @@ def create_summary_csv(**data):
     summary = pd.DataFrame(ws.values)
     summary.columns = summary.iloc[4]
     summary = summary.iloc[5:]
+    summary['AGID'] = summary['AGID'].apply(lambda x: x.split('/'))
+    summary = explode(summary, ['AGID'])
     summary.reset_index(inplace=True)
+    summary = summary[summary.AGID != 'AGID Not Found']
     summary.set_index('AGID', inplace = True)
 
     summary_csv = pd.DataFrame(columns=summary.columns)
@@ -111,11 +147,17 @@ def create_summary_csv(**data):
         cur['S'] = cur.iloc[0]['S']
 
         in_positive = summary[summary['Sample'].astype('str') == sample]
-
+        in_positive = in_positive[~in_positive.index.duplicated(keep='first')]
         panel = in_positive.iloc[0]['Test Name']
-        pos = in_positive.index.tolist()
-
         cur_panel = panels_agids[panel].join(cur, how='left')
+        not_in_panel = [x for x in in_positive.index.tolist() if x not in cur_panel.index.tolist()] 
+        try:
+            not_in_panel.remove('AG0000')
+        except ValueError:
+            pass  # do nothing!
+        in_positive.drop(not_in_panel, inplace=True)
+        pos = in_positive.index.tolist()
+        
         if pos != ['AG0000']:
             pos = [x.split('_')[0] for x in pos]
             cur_panel.drop(pos, inplace=True)
@@ -223,15 +265,15 @@ def csv_dumper(sample_summary_excel):
 
 if __name__ == "__main__":
 
-    all_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210131_MN00937_0058_A000H3F7NG\MyScreen_Analysis_v2.2_RESULTS\Info\Genotyping\Logs\All.filtered.pbz2'
-    summary_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Belinson\210131_MN00937_0058_A000H3F7NG\MyScreen_Analysis_v2.2_RESULTS\sample_summary-24-02-2021.xlsx'
+    all_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Zer\210324_MN00742_0120_A000H3F7NM\MyScreen_Analysis_v2.2_RESULTS\Info\Genotyping\Logs\All.filtered.pbz2'
+    summary_path = r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Zer\210324_MN00742_0120_A000H3F7NM\MyScreen_Analysis_v2.2_RESULTS\sample_summary-26-03-2021.xlsx'
 
-    ver = "MyScreen_Analysis_v2.1"
-    run = "201101_MN00742_0104_A000H37LNW"
+    ver = "MyScreen_Analysis_v2.2"
+    run = "210324_MN00742_0120_A000H3F7NM"
     date = "30-Nov-20"
     o = os.getcwd()
 
     create_summary_csv(All = all_path, summary = summary_path, v = ver, r = run,
         d = date, out = o)
 
-    # csv_dumper(r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Zer\201122_MN00742_0106_A000H37LVW\MyScreen_Analysis_v2.1_RESULTS\sample_summary-14-12-2020.xlsx')
+    # csv_dumper(r'c:\Users\hadas\AGcloud\AGshared\Gamidor\Capture_Panel\HospitalRuns\Zer\201122_MN00742_0106_A000H37LVW\MyScreen_Analysis_v2.1_RESULTS\sample_summary-26-03-2021.xlsx')

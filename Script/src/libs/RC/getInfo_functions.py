@@ -66,8 +66,10 @@ def get_INFO_posRes(i, posResFiltered, logger_name):
     Classification = posResFiltered.iloc[i]['Classification'] # Get Classification.
     location = posResFiltered.iloc[i]['gdna']
     gDNA = posResFiltered.iloc[i]['gdna']
-    mutation = CA2 + ' ' + '\n' + location # Mutation for excel tables.
-    mutation_gDNA = CA2 + ' ' + '\n' + gDNA # Mutation for reports.
+    mutation = "{} \n {}".format(CA2, location) # Mutation for excel tables.
+    mutation_gDNA = "{} \n {}".format(CA2, gDNA) # Mutation for reports.
+    # mutation = CA2 + ' ' + '\n' + location # Mutation for excel tables.
+    # mutation_gDNA = CA2 + ' ' + '\n' + gDNA # Mutation for reports.
     GQX = posResFiltered.iloc[i]['GQX'] # Get GQX.
     AVF = posResFiltered.iloc[i]['Alt Variant Freq'] # Get Alt Variant Freq.
     RD = posResFiltered.iloc[i]['Read Depth'] # Get Read Depth.

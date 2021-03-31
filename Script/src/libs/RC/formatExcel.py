@@ -286,9 +286,13 @@ def excel_formatter(df, paths, Analysis_Version):
 
         if igv.row != 5:  # don't color the header
             igv.font = Font(u='single', color=colors.BLUE)  # add blue color to the link
-
-        if ' - With soft-clipped reads' in geno.value:
-            fill(geno, purple_softclipped)
+        try:
+            if ' - With soft-clipped reads' in geno.value:
+                fill(geno, purple_softclipped)
+        except:
+            geno.value = "unknown variant : please refer to VS2.vcf"
+            cells[4].value = "unknown variant : please refer to VS2.vcf"
+            cells[6].value = "unknown variant : please refer to VS2.vcf"
 
         if Reported_Gender.value != Analyzed_Gender.value and Reported_Gender.value != None:
             fill(Reported_Gender, yellow)

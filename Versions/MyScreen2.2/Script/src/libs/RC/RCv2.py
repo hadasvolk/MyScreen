@@ -9,7 +9,15 @@ import datetime
 import pandas as pd
 import numpy as np
 
-import cfg
+try:
+    import cfg
+    import libs.tools as tools
+except:
+    sys.path.append(r'c:\Gamidor\MyScreen\Script\src')
+    sys.path.append(r'c:\Gamidor\MyScreen\Script\src\libs')
+    import cfg
+    import tools
+    
 from libs.RC.RCv2_functions import createResultSummaries
 from libs.RC.formatExcel import excel_formatter, AddIgvLink
 
