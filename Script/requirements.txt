@@ -22,7 +22,7 @@ pyparsing==2.4.7
 python-dateutil==2.8.1
 python-docx==0.8.10
 pytz==2020.1
-pywin32==227
+pywin32==301
 six==1.15.0
 tkfilebrowser==2.3.2
 toposort==1.5
