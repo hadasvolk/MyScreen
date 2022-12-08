@@ -1,5 +1,5 @@
 Babel==2.9.0
-certifi==2020.6.20
+certifi==2022.12.7
 click==7.1.2
 cycler==0.10.0
 docx==0.2.4
